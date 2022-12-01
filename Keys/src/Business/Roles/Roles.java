@@ -4,10 +4,46 @@
  */
 package Business.Roles;
 
+import Business.EcoSystem;
+import Business.UserAccountManagement.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
- * @author manuc
+ * @author Manoj Chandrasekaran
  */
-public class Roles {
-    
+public abstract class Roles {
+    public abstract JPanel createWorkArea(JPanel userProcessContainer,
+            UserAccount account,
+            EcoSystem business);
+
+    @Override
+    public String toString() {
+        return this.getClass().getName();
+    }
+
+    public enum TypeOfRole {
+
+        Admin_Builder("AdminBuilder"),
+        Student("Student"),
+        Consultant("Consultant"),
+        Admin_Marketplace("AdminMarketplace"),
+        Admin_PointOfContact("AdminPoc"),
+        System_Admin("SysAdmin");
+
+        private String value;
+
+        private TypeOfRole(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return value;
+        }
+    }
 }

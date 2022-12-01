@@ -4,10 +4,19 @@
  */
 package Business.Roles;
 
+import Business.EcoSystem;
+import Business.UserAccountManagement.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
- * @author manuc
+ * @author Manoj Chandrasekaran
  */
-public class ConsultantRole {
-    
+public class ConsultantRole extends Roles {
+
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    //TODO create JPanel
 }

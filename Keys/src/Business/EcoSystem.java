@@ -6,8 +6,21 @@ package Business;
 
 /**
  *
- * @author manuc
+ * @author Manoj Chandrasekaran
  */
-public class EcoSystem {
+public class EcoSystem extends SystemModel {
+    
+    private static EcoSystem business;
+    
+    public static EcoSystem getInstance(){
+        if(business==null){
+            business=new EcoSystem();
+        }
+        return business;
+    }
+    
+    public static void setInstance(EcoSystem system) {	
+        business = system;	
+    }
     
 }
