@@ -4,14 +4,18 @@
  */
 package UserInterface;
 
+import Business.DatabaseUtil.DB4OUtil;
+import Business.EcoSystem;
 import Business.SystemModel;
 
 /**
  *
- * @author manuc
+ * @author Manoj Chandrasekaran
  */
 public class MainJFrame extends javax.swing.JFrame {
     
+    private EcoSystem ecoSystem;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     private SystemModel systemModel;
 
     /**
@@ -20,6 +24,7 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         initComponents();
         systemModel = new SystemModel();
+        ecoSystem = dB4OUtil.retrieveSystem();
         this.setSize(1920, 1080);
         this.setResizable(false);
     }
