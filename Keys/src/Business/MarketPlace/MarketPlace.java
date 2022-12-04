@@ -16,7 +16,7 @@ import java.util.Map;
 public class MarketPlace extends UserAccount {
      Map<String, Integer> marketMap = new HashMap<String, Integer>();
      String userId;
-    String password;
+    String password; 
     String storeName;
     String storeLocation;
    
