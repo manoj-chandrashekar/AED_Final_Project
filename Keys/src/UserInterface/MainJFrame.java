@@ -7,13 +7,14 @@ package UserInterface;
 import Business.DatabaseUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.SystemModel;
+import java.awt.CardLayout;
 
 /**
  *
  * @author Manoj Chandrasekaran
  */
 public class MainJFrame extends javax.swing.JFrame {
-    
+
     private EcoSystem ecoSystem;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     private SystemModel systemModel;
@@ -27,8 +28,9 @@ public class MainJFrame extends javax.swing.JFrame {
         ecoSystem = dB4OUtil.retrieveSystem();
         this.setSize(1920, 1080);
         this.setResizable(false);
+        setLoginPage();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -92,8 +94,15 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables
+
+    private void setLoginPage() {
+        UserLogin wa = new UserLogin(workArea, ecoSystem);
+        workArea.add("UserLogin", wa);
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
     }
+}
