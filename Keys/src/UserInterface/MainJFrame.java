@@ -4,17 +4,22 @@
  */
 package UserInterface;
 
+import Business.SystemModel;
+
 /**
  *
  * @author manuc
  */
 public class MainJFrame extends javax.swing.JFrame {
+    
+    private SystemModel systemModel;
 
     /**
      * Creates new form MainJFrame
      */
     public MainJFrame() {
         initComponents();
+        systemModel = new SystemModel();
         this.setSize(1920, 1080);
         this.setResizable(false);
     }
