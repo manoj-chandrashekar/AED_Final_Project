@@ -6,6 +6,7 @@ package Business.Roles;
 
 import Business.EcoSystem;
 import Business.UserAccountManagement.UserAccount;
+import UserInterface.SysAdmin.SysAdminWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -15,8 +16,8 @@ import javax.swing.JPanel;
 public class System_Admin extends Roles {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem ecoSystem) {
+        return new SysAdminWorkAreaJPanel(userProcessContainer, ecoSystem);
     }
     
 }

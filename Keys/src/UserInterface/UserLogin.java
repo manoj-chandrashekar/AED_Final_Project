@@ -6,7 +6,10 @@ package UserInterface;
 
 
 import Business.EcoSystem;
+import Business.Roles.Roles;
+import Business.Roles.System_Admin;
 import Business.UserAccountManagement.UserAccount;
+import UserInterface.SysAdmin.SysAdminWorkAreaJPanel;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -21,18 +24,17 @@ public class UserLogin extends javax.swing.JPanel {
     /**
      * Creates new form UserLogin
      */
-    EcoSystem system;
+    EcoSystem ecoSystem;
     JPanel workArea;
-    UserAccount userAcc;
+    UserAccount userAccount;
     JPanel JPanel;
 
-    public UserLogin(JPanel workArea, EcoSystem system) {
+    public UserLogin(JPanel workArea, EcoSystem ecoSystem) {
         initComponents();
 
-        this.system = system;
+        this.ecoSystem = ecoSystem;
         this.workArea = workArea;
         this.setSize(1920, 1080);
-        // this.setResizable(false);
     }
 
     /**
@@ -120,18 +122,36 @@ public class UserLogin extends javax.swing.JPanel {
 
         jLabel1.setBackground(new java.awt.Color(102, 102, 255));
         jLabel1.setForeground(new java.awt.Color(153, 153, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/LoginPage.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/LoginPage.jpeg"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1920, 1080));
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
-        
+        String userName = userNameTextField.getText();
+        char[] userpasswordCharArray = passwordTextField.getPassword();
+        String password = String.valueOf(userpasswordCharArray);
+
+        userAccount = ecoSystem.getUserAccDirectory().authenticateUser(userName, password);
+
+        // to check if the useraccount is null and display an error message
+        if (userAccount == null) {
+            JOptionPane.showMessageDialog(this, "Invalid credentials");
+            return;
+        } else {
+            userNameTextField.setText("");
+            passwordTextField.setText("");
+            
+            Roles userRole = userAccount.getRole();
+            
+            if (userRole instanceof System_Admin) {
+                showSystemAdminWorkAreaJPanel(new System_Admin());
+            }
+        }
     }
 
     private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_signUpButtonActionPerformed
         // TODO add your handling code here:
-
 
     }
 
@@ -148,6 +168,14 @@ public class UserLogin extends javax.swing.JPanel {
     private javax.swing.JButton signUpButton;
     private javax.swing.JTextField userNameTextField;
     // End of variables declaration//GEN-END:variables
+
+    private void showSystemAdminWorkAreaJPanel(System_Admin systemAdmin) {
+        JPanel sysAdminWorkAreaJPanel = systemAdmin.createWorkArea(workArea, userAccount, ecoSystem);
+//        SysAdminWorkAreaJPanel sysAdminWorkAreaJPanel = new SysAdminWorkAreaJPanel(workArea, ecoSystem);
+        workArea.add("SysAdminWorkAreaJPanel", sysAdminWorkAreaJPanel);
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
+    }
 
     
 }
