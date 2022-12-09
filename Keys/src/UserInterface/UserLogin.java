@@ -5,7 +5,10 @@
 package UserInterface;
 
 
+import Business.Consultant.Consultant;
+import Business.Consultant.ConsultantDirectory;
 import Business.EcoSystem;
+import Business.Roles.ConsultantRole;
 import Business.Roles.Roles;
 import Business.Roles.System_Admin;
 import Business.UserAccountManagement.UserAccount;
@@ -146,6 +149,20 @@ public class UserLogin extends javax.swing.JPanel {
             
             if (userRole instanceof System_Admin) {
                 showSystemAdminWorkAreaJPanel(new System_Admin());
+            } else if (userRole instanceof ConsultantRole) {
+                ConsultantDirectory consultantDirectory = ecoSystem.getConsultantDirectory();
+                ArrayList<Consultant> consultants = consultantDirectory.getConsultants();
+                int count = 0;
+                
+                for(Consultant consultant: consultants) {
+                    if(userAccount.getUsername().matches(consultant.getUsername())) {
+                        viewConsultantScreen();
+                        count++;
+                    }
+                }
+                if (count == 0) {
+                    JOptionPane.showMessageDialog(this, "Invalid credentials");
+                }
             }
         }
     }
@@ -175,6 +192,10 @@ public class UserLogin extends javax.swing.JPanel {
         workArea.add("SysAdminWorkAreaJPanel", sysAdminWorkAreaJPanel);
         CardLayout layout = (CardLayout) workArea.getLayout();
         layout.next(workArea);
+    }
+
+    private void viewConsultantScreen() {
+        
     }
 
     

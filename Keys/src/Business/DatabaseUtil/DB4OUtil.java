@@ -65,15 +65,15 @@ public class DB4OUtil {
     public EcoSystem retrieveSystem(){
         ObjectContainer conn = createConnection();
           
-//    ObjectSet<EcoSystem> systems = conn.query(EcoSystem.class); // Change to the object you want to save
+    ObjectSet<EcoSystem> systems = conn.query(EcoSystem.class); // Change to the object you want to save
         EcoSystem system;
       system = SystemConfig.configureSystem();  
-//        if (systems.size() == 0){
-//            system = SystemConfig.configureSystem();  // If there's no System in the record, create a new one
-//        }
-//        else{
-//            system = systems.get(systems.size() - 1);
-//        }
+        if (systems.size() == 0){
+            system = SystemConfig.configureSystem();  // If there's no System in the record, create a new one
+        }
+        else{
+            system = systems.get(systems.size() - 1);
+        }
         conn.close();
         return system;
     }
