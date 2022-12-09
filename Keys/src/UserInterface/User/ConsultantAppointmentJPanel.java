@@ -2,20 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UserInterface.user;
+package UserInterface.User;
 
-import Business.Doctor.Doctor;
+import Business.Consultant.Consultant;
 import Business.EcoSystem;
-import Business.UserAcc.UserAcc;
-import Business.WorkQueue.DoctorsAppointment;
-import Business.WorkQueue.DoctorsAppointment_Dir;
-import Business.WorkQueue.SearchApp;
-import Business.userR.User;
-import Utility.Notification;
+import Business.UserAccountManagement.UserAccount;
+import Business.WorkQueue.ConsultantAppointment;
+import Business.WorkQueue.ConsultantAppointmentDirectory;
+//import Business.WorkQueue.SearchApp;
+import Business.User.User;
+import Business.WorkQueue.SearchApplication;
+//import Utility.Notification;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -24,18 +26,18 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author shrikrishnajoisa
+ * @author Nagarjun Mallesh
  */
-public class ConsultantAppointment extends javax.swing.JPanel {
+public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ConsultantAppointment
      */
-    UserAcc userAcc;
+    UserAccount userAcc;
     EcoSystem system;
     JPanel rightSidePanel;
 
-    public ConsultantAppointment(EcoSystem system, JPanel rightSidePanel, UserAcc userAcc) {
+    public ConsultantAppointmentJPanel(EcoSystem system, JPanel rightSidePanel, UserAccount userAcc) {
         initComponents();
         this.system = system;
         this.rightSidePanel = rightSidePanel;
@@ -61,6 +63,7 @@ public class ConsultantAppointment extends javax.swing.JPanel {
         timeCombo = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         specializationCombo = new javax.swing.JComboBox<>();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         viewAppointmentButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDocAvail = new javax.swing.JTable();
@@ -105,6 +108,7 @@ public class ConsultantAppointment extends javax.swing.JPanel {
             }
         });
         jPanel2.add(specializationCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 38, 235, 36));
+        jPanel2.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 230, 30));
 
         container.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 1090, 90));
 
@@ -209,6 +213,7 @@ public class ConsultantAppointment extends javax.swing.JPanel {
     private javax.swing.JButton cancel;
     private javax.swing.JPanel container;
     private javax.swing.JButton findDoctor;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -223,11 +228,11 @@ public class ConsultantAppointment extends javax.swing.JPanel {
 
     private void specializationCombo() {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        ArrayList<Doctor> doc = system.getDoctorDir().getDoc();
-        int l = doc.size();
+        ArrayList<Consultant> consultant = system.getConsultantDirectory().getConsultants();
+        int l = consultant.size();
         ArrayList<String> specialization = new ArrayList<String>();
         for (int i = 0; i < l; i++) {
-            Doctor d1 = doc.get(i);
+            Consultant d1 = consultant.get(i);
             if (!specialization.contains(d1.getSpecialization())) {
               
                 specialization.add(d1.getSpecialization());
@@ -244,15 +249,15 @@ public class ConsultantAppointment extends javax.swing.JPanel {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         {
             String specialSelect = specializationCombo.getSelectedItem().toString();
-            ArrayList<Doctor> doclist = system.getDoctorDir().getDoc();
-            int l = doclist.size();
+            ArrayList<Consultant> consultantList = system.getConsultantDirectory().getConsultants();
+            int l = consultantList.size();
 
             tblDocAvail.setModel(new DefaultTableModel(null, new String[]{"Name", "Hospital", "Spealization", "Phone Number"}));
             for (int i = 0; i < l; i++) {
-                Doctor doc = doclist.get(i);
-                if (doc.getSpecialization().matches(specialSelect)) {
+                Consultant consultant = consultantList.get(i);
+                if (consultant.getSpecialization().matches(specialSelect)) {
                     DefaultTableModel table = (DefaultTableModel) tblDocAvail.getModel();
-                    String content[] = {doc.getFirstName(), doc.getSpecialization(), doc.getHospital(), doc.getPhoneNum()};
+                    String content[] = {consultant.getName(), consultant.getSpecialization(), consultant.getRentalAgency(), consultant.getPhoneNo().toString()};
                     table.addRow(content);
                 }
             }
@@ -260,13 +265,13 @@ public class ConsultantAppointment extends javax.swing.JPanel {
 
     }
 
-    public void sendmail() {
-        Notification notification = new Notification();
-        String toEmail = "aedproject22@gmail.com";
-        String emailSubject = "Doctor Appointment confirmation";
-        String emailContent = "Successfully booked your doctor appointment!!";
-        notification.sendMail(toEmail, emailSubject, emailContent);
-    }
+//    public void sendmail() {
+//        Notification notification = new Notification();
+//        String toEmail = "aedproject22@gmail.com";
+//        String emailSubject = "Doctor Appointment confirmation";
+//        String emailContent = "Successfully booked your doctor appointment!!";
+//        notification.sendMail(toEmail, emailSubject, emailContent);
+//    }
 
     private void bookDocAppointment() {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -277,37 +282,42 @@ public class ConsultantAppointment extends javax.swing.JPanel {
             if (jDateChooser1.getDate() != null) {
                 int rand = 1 + (int) (Math.random() * 100);
                 boolean appoint = false;
-                SimpleDateFormat sdate = new SimpleDateFormat("yyyy-MM-dd");
-                String appDate = sdate.format(jDateChooser1.getDate());
+//                SimpleDateFormat sdate = new SimpleDateFormat("yyyy-MM-dd");
+//                String appDate = sdate.format(jDateChooser1.getDate());
+                Date appDate = jDateChooser1.getDate();
                 DateTimeFormatter datetf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                LocalDateTime date2 = LocalDateTime.now();
+                Date currentDate = new Date();
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                formatter.format(currentDate);
+                //LocalDateTime date2 = LocalDateTime.now();
                 String name = (model.getValueAt(selectedRow, 0).toString());
-                String date = specializationCombo.getSelectedItem().toString();
+                String time = timeCombo.getSelectedItem().toString();
+                //String date = specializationCombo.getSelectedItem().toString();
                 if(isAreadyBooked(appDate)){
                     JOptionPane.showMessageDialog(null,"Appointment already booked for the chosen date.");
                     return;
                 }
-                else if (appDate.compareTo(date2.toString()) >= 0) {
-                    appoint = verify(name, appDate, date);
+                else if (appDate.compareTo(currentDate) >= 0) {
+                    appoint = verify(name, appDate, time);
                     if (appoint == false) {
-                        DoctorsAppointment doc = new DoctorsAppointment();
-                        doc.setId(rand);
-                        doc.setDoctorsName(name);
+                        ConsultantAppointment consultant = new ConsultantAppointment();
+                        consultant.setId(rand);
+                        consultant.setConsultantName(name);
                         String verifyName = (model.getValueAt(selectedRow, 1).toString());
-                        doc.setLastName(verifyName);
-                        doc.setDate(appDate);
-                        doc.setStatus("Appointment Booked");
-                        doc.setTime(timeCombo.getSelectedItem().toString());
+                        consultant.setLastName(verifyName);
+                        consultant.setDate(appDate);
+                        consultant.setStatus("Appointment Booked");
+                        consultant.setTime(timeCombo.getSelectedItem().toString());
                         //System.out.print(doc.getTime());
                         User user = (User) (userAcc);
-                        doc.setUserId(user.getUserId());
-                        doc.setUserName(user.getFirstName());
-                        DoctorsAppointment_Dir docDir = system.getDocAppDir();
-                        docDir.addrequest(doc);
-                        SearchApp check = system.getCheckApplication();
+                        consultant.setUserId(user.getUserId());
+                        consultant.setUserName(user.getFirstName());
+                        ConsultantAppointmentDirectory consultantDir = system.getConsultantAppointmentDir();
+                        consultantDir.addRequest(consultant);
+                        SearchApplication check = system.getCheckApplication();
                         Map<String, List<String>> aList = check.getSearchByName();
                         List<String> list = new ArrayList<>();
-                        list.add(appDate);
+                        list.add(appDate.toString());
                         list.add(timeCombo.getSelectedItem().toString());
                         aList.put(name, list);
                        
@@ -332,16 +342,16 @@ public class ConsultantAppointment extends javax.swing.JPanel {
 
     }
     
-    public boolean isAreadyBooked(String date){
-        DoctorsAppointment_Dir docDir = system.getDocAppDir();
-        ArrayList<DoctorsAppointment> appointments = docDir.getAppointments();
+    public boolean isAreadyBooked(Date date){
+        ConsultantAppointmentDirectory consultantDir = system.getConsultantAppointmentDir();
+        List<ConsultantAppointment> appointments = consultantDir.getAppointments();
         int size = appointments.size();
         User a =(User)(userAcc);
         String userId = a.getUserId();
         for(int i=0; i<size; i++){
-            DoctorsAppointment appointment = appointments.get(i);
+            ConsultantAppointment appointment = appointments.get(i);
             if(appointment.getUserId().matches(userId)){
-                String currentAppointment = appointment.getDate();
+                Date currentAppointment = appointment.getDate();
                 if(currentAppointment.compareTo(date) == 0){
                     return true;
                 }
@@ -350,19 +360,19 @@ public class ConsultantAppointment extends javax.swing.JPanel {
         return false;
     }
 
-    private boolean verify(String name, String date1, String date) {
+    private boolean verify(String name, Date appointmentDate, String time) {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
         boolean rand = false;
-        SearchApp check = system.getCheckApplication();
+        SearchApplication check = system.getCheckApplication();
         Map<String, List<String>> appList = check.getSearchByName();
         for (Map.Entry mapElement : appList.entrySet()) {
             if (mapElement.getKey().toString().matches(name)) {
-                List<String> appointmet = (List) mapElement.getValue();
-                String name1 = appointmet.get(0);
-                String name2 = appointmet.get(1);
-                if (name1.matches(date1)) {
-                    if (name2.matches(date)) {
+                List<String> appointment = (List) mapElement.getValue();
+                String name1 = appointment.get(0);
+                String name2 = appointment.get(1);
+                if (name1.matches(appointmentDate.toString())) {
+                    if (name2.matches(time)) {
                         rand = true;
                         break;
                     }
@@ -388,19 +398,19 @@ public class ConsultantAppointment extends javax.swing.JPanel {
     private void displayAppointmentStatus() {
         // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
-        DoctorsAppointment_Dir docDir = system.getDocAppDir();
-        ArrayList<DoctorsAppointment> docappList = docDir.getAppointments();
-        int l = docappList.size();
+        ConsultantAppointmentDirectory consultantDir = system.getConsultantAppointmentDir();
+        List<ConsultantAppointment> consultantApplicationList = consultantDir.getAppointments();
+        int l = consultantApplicationList.size();
 
         tblDocAvail.setModel(new DefaultTableModel(null, new String[]{"AppID", "Name", "Date", "Time", "status"}));
         for (int i = 0; i < l; i++) {
-            DoctorsAppointment docApp = docappList.get(i);
+            ConsultantAppointment consultantApplication = consultantApplicationList.get(i);
 
-            if (docApp.getUserId().matches(userAcc.getUserName())) {
+            if (consultantApplication.getUserId().matches(userAcc.getUsername())) {
 
                 DefaultTableModel table = (DefaultTableModel) tblDocAvail.getModel();
-                String r1 = String.valueOf(docApp.getId());
-                String r2[] = {r1, docApp.getDoctorsName(), docApp.getDate(), docApp.getTime(), docApp.getStatus()};
+                String r1 = String.valueOf(consultantApplication.getId());
+                String r2[] = {r1, consultantApplication.getConsultantName(), consultantApplication.getDate().toString(), consultantApplication.getTime(), consultantApplication.getStatus()};
                 table.addRow(r2);
             }
         }
@@ -413,17 +423,17 @@ public class ConsultantAppointment extends javax.swing.JPanel {
         if (selectedRow >= 0) {
             int sRow = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
 
-            DoctorsAppointment_Dir docDir = system.getDocAppDir();
-            ArrayList<DoctorsAppointment> docAppList = docDir.getAppointments();
-            int l = docAppList.size();
+            ConsultantAppointmentDirectory consultantAppointmentDirectory = system.getConsultantAppointmentDir();
+            List<ConsultantAppointment> consultantApplnList = consultantAppointmentDirectory.getAppointments();
+            int l = consultantApplnList.size();
             User u = (User) userAcc;
             for (int i = 0; i < l; i++) {
-                DoctorsAppointment docApp = docAppList.get(i);
-                if (sRow == docApp.getId()) {
+                ConsultantAppointment consultantAppln = consultantApplnList.get(i);
+                if (sRow == consultantAppln.getId()) {
                  
-                    if (docApp.getStatus().matches("Appointment Booked")) {
-                        docApp.setStatus("Cancelled");
-                        verify(docApp.getDoctorsName(), docApp.getDate(), docApp.getTime());
+                    if (consultantAppln.getStatus().matches("Appointment Booked")) {
+                        consultantAppln.setStatus("Cancelled");
+                        verify(consultantAppln.getConsultantName(), consultantAppln.getDate(), consultantAppln.getTime());
 
                     } else {
                         JOptionPane.showMessageDialog(null, "Wrong Move!!");
