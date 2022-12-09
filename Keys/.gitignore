@@ -10,6 +10,7 @@ nbdist/
 nbactions.xml
 .DS_Store
 src/.DS_Store
+Databank.db4o
 
 nb-configuration.xml
 
