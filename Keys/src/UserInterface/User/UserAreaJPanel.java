@@ -316,7 +316,7 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     private void bookAppointmentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookAppointmentMousePressed
         // TODO add your handling code here:
         
-        //bookAppointment();
+        bookAppointment();
     }//GEN-LAST:event_bookAppointmentMousePressed
 
     private void testingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_testingMousePressed
@@ -387,24 +387,24 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel timeLabel;
     // End of variables declaration//GEN-END:variables
 
-//    private void bookAppointment() {
-//        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//      emergencyReport.setBackground(new Color(255,255,255));
-//        medicine.setBackground(new Color(255,255,255));
-//         bloodDonation.setBackground(new Color(255,255,255));
-//         //vaccination.setBackground(new Color(255,255,255));
-//        testing.setBackground(new Color(255,255,255));
-//    bookAppointment.setBackground(new Color(213,230,249));
-//        //255,255,255 PandemicTestCentreJPanel
-//        //BloodDonations pcr=new BloodDonations (system, container);
-//        //DoctorAppointment pr=new DoctorAppointment (system, container,userAcc);
-//
-//        //rightSidePanel.add(pr);
-//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-//        layout.next(rightSidePanel);
-//    
-//    
-//    }
+    private void bookAppointment() {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+      emergencyReport.setBackground(new Color(255,255,255));
+        medicine.setBackground(new Color(255,255,255));
+         bloodDonation.setBackground(new Color(255,255,255));
+         //vaccination.setBackground(new Color(255,255,255));
+        testing.setBackground(new Color(255,255,255));
+        bookAppointment.setBackground(new Color(213,230,249));
+        //255,255,255 PandemicTestCentreJPanel
+        //BloodDonations pcr=new BloodDonations (system, container);
+        ConsultantAppointmentJPanel pr=new ConsultantAppointmentJPanel (system, container,userAcc);
+
+        //rightSidePanel.add(pr);
+        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
+        layout.next(rightSidePanel);
+    
+    
+    }
 //
 //    private void vaccinationStatus() {
 //        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

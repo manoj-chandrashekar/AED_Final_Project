@@ -10,6 +10,8 @@ import Business.PointOfContact.Ambulance.AmbulanceDirectory;
 import Business.PointOfContact.Fire.FireDirectory;
 import Business.PointOfContact.Maintenance.MaintenanceDirectory;
 import Business.UserAccountManagement.UserAccountDirectory;
+import Business.WorkQueue.ConsultantAppointmentDirectory;
+import Business.WorkQueue.SearchApplication;
 
 /**
  *
@@ -23,6 +25,11 @@ public class SystemModel {
     private AmbulanceDirectory ambulanceDirectory;
     private FireDirectory fireDirectory;
     private MaintenanceDirectory maintenanceDirectory;
+    private ConsultantAppointmentDirectory consultantAppointmentDir;
+    
+    
+    private SearchApplication checkApplication;
+    
 
     public SystemModel() {
         userAccDirectory = new UserAccountDirectory();
@@ -31,7 +38,31 @@ public class SystemModel {
         ambulanceDirectory = new AmbulanceDirectory();
         fireDirectory = new FireDirectory();
         maintenanceDirectory = new MaintenanceDirectory();
+        consultantDirectory = new ConsultantDirectory();
+        checkApplication = new SearchApplication();
     }
+
+    public SearchApplication getCheckApplication() {
+        if(checkApplication == null){
+            checkApplication = new SearchApplication();
+        }
+        return checkApplication;
+    }
+
+    public void setCheckApplication(SearchApplication checkApplication) {
+        this.checkApplication = checkApplication;
+    }
+    
+    
+
+    public ConsultantAppointmentDirectory getConsultantAppointmentDir() {
+        return consultantAppointmentDir;
+    }
+
+    public void setConsultantAppointmentDir(ConsultantAppointmentDirectory consultantAppointmentDir) {
+        this.consultantAppointmentDir = consultantAppointmentDir;
+    }
+    
 
     public UserAccountDirectory getUserAccDirectory() {
         return userAccDirectory;

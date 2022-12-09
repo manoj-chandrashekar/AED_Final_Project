@@ -141,9 +141,6 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel9">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\19452\Downloads\Iconskeys\exit.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="jLabel9"/>
                       </Properties>
                       <Constraints>
@@ -206,9 +203,6 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel27">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\19452\Downloads\Iconskeys\poclogo.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="jLabel9"/>
                       </Properties>
                       <Constraints>
@@ -271,9 +265,6 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel25">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\19452\Downloads\Iconskeys\optionslog.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="jLabel9"/>
                       </Properties>
                       <Constraints>
@@ -336,9 +327,6 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel24">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\19452\Downloads\Iconskeys\manageappointment.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="jLabel9"/>
                       </Properties>
                       <Constraints>
@@ -401,9 +389,6 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel19">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\19452\Downloads\Iconskeys\marketlogo.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="jLabel9"/>
                       </Properties>
                       <Constraints>
@@ -414,9 +399,6 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel20">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\19452\Downloads\Iconskeys\marketlogo.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="jLabel9"/>
                       </Properties>
                       <Constraints>
@@ -427,9 +409,6 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel23">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\19452\Downloads\Iconskeys\marketlogo.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="jLabel9"/>
                       </Properties>
                       <Constraints>
@@ -492,9 +471,6 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel18">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\19452\Downloads\Iconskeys\consultantreq.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="jLabel9"/>
                       </Properties>
                       <Constraints>
@@ -513,11 +489,6 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel4">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\19452\Downloads\Iconskeys\keyslogo.png"/>
-                    </Property>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="0" y="0" width="290" height="130"/>
