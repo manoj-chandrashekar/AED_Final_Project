@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UserInterface.user;
+package UserInterface.User;
 
 import Business.DatabaseUtil.DB4OUtil;
 import Business.EcoSystem;
-import Business.UserAcc.UserAcc;
-import Utility.MapCoordinates;
+import Business.UserAccountManagement.UserAccount;
+//import Utility.MapCoordinates;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -21,17 +21,17 @@ import javax.swing.Timer;
 
 /**
  *
- * @author raksh
+ * @author Nagarjun Mallesh
  */
 public class UserAreaJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form UserAreaJPanel
      */
-    private UserAcc userAcc;
+    private UserAccount userAcc;
     private EcoSystem system;
     private JPanel container;
-    MapCoordinates locationPoint;
+    //MapCoordinates locationPoint;
   private DB4OUtil dB4OUtil = DB4OUtil.getInstance();    
     Timer timer;
     
@@ -51,7 +51,7 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     }
     
    
-    public UserAreaJPanel(  JPanel userProcessContainer, UserAcc userAcc,EcoSystem system) {
+    public UserAreaJPanel(  JPanel userProcessContainer, UserAccount userAcc,EcoSystem system) {
         initComponents();
         this.system = system;
         this.container = userProcessContainer;
@@ -316,30 +316,30 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     private void bookAppointmentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookAppointmentMousePressed
         // TODO add your handling code here:
         
-        bookAppointment();
+        //bookAppointment();
     }//GEN-LAST:event_bookAppointmentMousePressed
 
     private void testingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_testingMousePressed
         // TODO add your handling code here:
-        PandemicTest();
+        //PandemicTest();
     }//GEN-LAST:event_testingMousePressed
 
     private void bloodDonationMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bloodDonationMousePressed
         // TODO add your handling code here:
-        BloodDonation();
+        //BloodDonation();
     }//GEN-LAST:event_bloodDonationMousePressed
 
     private void medicineMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_medicineMousePressed
         // TODO add your handling code here:
 
-        PharmacyOrder();
+        //PharmacyOrder();
 
     }//GEN-LAST:event_medicineMousePressed
 
     private void emergencyReportMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emergencyReportMousePressed
         // TODO add your handling code here:
 
-        displayEmergencyScreen();
+        //displayEmergencyScreen();
         
         
 
@@ -387,105 +387,105 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel timeLabel;
     // End of variables declaration//GEN-END:variables
 
-    private void bookAppointment() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-      emergencyReport.setBackground(new Color(255,255,255));
-        medicine.setBackground(new Color(255,255,255));
-         bloodDonation.setBackground(new Color(255,255,255));
-         vaccination.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(255,255,255));
-    bookAppointment.setBackground(new Color(213,230,249));
-        //255,255,255 PandemicTestCentreJPanel
-        //BloodDonations pcr=new BloodDonations (system, container);
-        DoctorAppointment pr=new DoctorAppointment (system, container,userAcc);
-
-        rightSidePanel.add(pr);
-        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-        layout.next(rightSidePanel);
-    
-    
-    }
-
-    private void vaccinationStatus() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
-        emergencyReport.setBackground(new Color(255,255,255));
-        medicine.setBackground(new Color(255,255,255));
-         bloodDonation.setBackground(new Color(255,255,255));
-         bookAppointment.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(255,255,255));
-        vaccination.setBackground(new Color(213,230,249));
-        //255,255,255 PandemicTestCentreJPanel
-        VaccinationAppointments pcr=new VaccinationAppointments (system, container,userAcc);
-        rightSidePanel.add(pcr);
-        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-        layout.next(rightSidePanel);
-    }
-
-    private void PandemicTest() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        emergencyReport.setBackground(new Color(255,255,255));
-        medicine.setBackground(new Color(255,255,255));
-         bloodDonation.setBackground(new Color(255,255,255));
-         vaccination.setBackground(new Color(255,255,255));
-        bookAppointment.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(213,230,249));
-        //255,255,255 PandemicTestCentreJPanel
-        TestRegistration pcr=new TestRegistration (system, rightSidePanel,userAcc);
-        rightSidePanel.add(pcr);
-        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-        layout.next(rightSidePanel);
-    }
-    
-    private void BloodDonation() {
-        emergencyReport.setBackground(new Color(255,255,255));
-        medicine.setBackground(new Color(255,255,255));
-        bloodDonation.setBackground(new Color(213,230,249));
-        vaccination.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(255,255,255));
-        bookAppointment.setBackground(new Color(255,255,255));
-      
-        BloodDonations pcr = new BloodDonations(system, container, userAcc);
-        rightSidePanel.add(pcr);
-        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-        layout.next(rightSidePanel);
-    
-    }
-   
-
-    private void displayEmergencyScreen() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
-     emergencyReport.setBackground(new Color(213,230,249));
-        medicine.setBackground(new Color(255,255,255));
-        bloodDonation.setBackground(new Color(255,255,255));
-        vaccination.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(255,255,255));
-        bookAppointment.setBackground(new Color(255,255,255));
-      
-        EmergencyReport pcr = new EmergencyReport(rightSidePanel,system,userAcc,locationPoint);
-        rightSidePanel.add(pcr);
-        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-        layout.next(rightSidePanel);
-    
-    
-    }
-
-    private void PharmacyOrder() {
-       // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        emergencyReport.setBackground(new Color(255,255,255));
-        medicine.setBackground(new Color(213,230,249));
-        bloodDonation.setBackground(new Color(255,255,255));
-        vaccination.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(255,255,255));
-        bookAppointment.setBackground(new Color(255,255,255));
-
-        MedicineReport pcr = new MedicineReport(container, system, userAcc);
-
-        rightSidePanel.add(pcr);
-        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-        layout.next(rightSidePanel);
-    
-    
-    }
+//    private void bookAppointment() {
+//        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//      emergencyReport.setBackground(new Color(255,255,255));
+//        medicine.setBackground(new Color(255,255,255));
+//         bloodDonation.setBackground(new Color(255,255,255));
+//         //vaccination.setBackground(new Color(255,255,255));
+//        testing.setBackground(new Color(255,255,255));
+//    bookAppointment.setBackground(new Color(213,230,249));
+//        //255,255,255 PandemicTestCentreJPanel
+//        //BloodDonations pcr=new BloodDonations (system, container);
+//        //DoctorAppointment pr=new DoctorAppointment (system, container,userAcc);
+//
+//        //rightSidePanel.add(pr);
+//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
+//        layout.next(rightSidePanel);
+//    
+//    
+//    }
+//
+//    private void vaccinationStatus() {
+//        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    
+//        emergencyReport.setBackground(new Color(255,255,255));
+//        medicine.setBackground(new Color(255,255,255));
+//         bloodDonation.setBackground(new Color(255,255,255));
+//         bookAppointment.setBackground(new Color(255,255,255));
+//        testing.setBackground(new Color(255,255,255));
+//        //vaccination.setBackground(new Color(213,230,249));
+//        //255,255,255 PandemicTestCentreJPanel
+//        //VaccinationAppointments pcr=new VaccinationAppointments (system, container,userAcc);
+//        rightSidePanel.add(pcr);
+//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
+//        layout.next(rightSidePanel);
+//    }
+//
+//    private void PandemicTest() {
+//        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//        emergencyReport.setBackground(new Color(255,255,255));
+//        medicine.setBackground(new Color(255,255,255));
+//         bloodDonation.setBackground(new Color(255,255,255));
+//         vaccination.setBackground(new Color(255,255,255));
+//        bookAppointment.setBackground(new Color(255,255,255));
+//        testing.setBackground(new Color(213,230,249));
+//        //255,255,255 PandemicTestCentreJPanel
+//        TestRegistration pcr=new TestRegistration (system, rightSidePanel,userAcc);
+//        rightSidePanel.add(pcr);
+//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
+//        layout.next(rightSidePanel);
+//    }
+//    
+//    private void BloodDonation() {
+//        emergencyReport.setBackground(new Color(255,255,255));
+//        medicine.setBackground(new Color(255,255,255));
+//        bloodDonation.setBackground(new Color(213,230,249));
+//        vaccination.setBackground(new Color(255,255,255));
+//        testing.setBackground(new Color(255,255,255));
+//        bookAppointment.setBackground(new Color(255,255,255));
+//      
+//        BloodDonations pcr = new BloodDonations(system, container, userAcc);
+//        rightSidePanel.add(pcr);
+//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
+//        layout.next(rightSidePanel);
+//    
+//    }
+//   
+//
+//    private void displayEmergencyScreen() {
+//        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    
+//     emergencyReport.setBackground(new Color(213,230,249));
+//        medicine.setBackground(new Color(255,255,255));
+//        bloodDonation.setBackground(new Color(255,255,255));
+//        vaccination.setBackground(new Color(255,255,255));
+//        testing.setBackground(new Color(255,255,255));
+//        bookAppointment.setBackground(new Color(255,255,255));
+//      
+//        EmergencyReport pcr = new EmergencyReport(rightSidePanel,system,userAcc,locationPoint);
+//        rightSidePanel.add(pcr);
+//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
+//        layout.next(rightSidePanel);
+//    
+//    
+//    }
+//
+//    private void PharmacyOrder() {
+//       // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//        emergencyReport.setBackground(new Color(255,255,255));
+//        medicine.setBackground(new Color(213,230,249));
+//        bloodDonation.setBackground(new Color(255,255,255));
+//        vaccination.setBackground(new Color(255,255,255));
+//        testing.setBackground(new Color(255,255,255));
+//        bookAppointment.setBackground(new Color(255,255,255));
+//
+//        MedicineReport pcr = new MedicineReport(container, system, userAcc);
+//
+//        rightSidePanel.add(pcr);
+//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
+//        layout.next(rightSidePanel);
+//    
+//    
+//    }
 }

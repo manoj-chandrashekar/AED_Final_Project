@@ -4,10 +4,19 @@
  */
 package Business.Roles;
 
+import Business.EcoSystem;
+import Business.UserAccountManagement.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author nagarjunmallesh
  */
-public class BuilderAdmin {
+public class BuilderAdmin extends Roles {
+
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
