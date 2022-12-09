@@ -16,17 +16,19 @@ public class Consultant extends UserAccount {
     String userId;
     String accPassword;
     String name;
+    String specialization;
     Long phoneNo;
     String rentalAgency;
     String specialization;
 
-    public Consultant(String userId, String accPassword, String name, Long phoneNo, String rentalAgency, String specialization) {
+    public Consultant(String userId, String accPassword, String name, String specialization, Long phoneNo, String rentalAgency) {
         setUsername(userId);
         setPwd(accPassword);
         setRole(new ConsultantRole());
         this.userId = userId;
         this.accPassword = accPassword;
         this.name = name;
+        this.specialization = specialization;
         this.phoneNo = phoneNo;
         this.rentalAgency = rentalAgency;
         this.specialization=specialization;
@@ -81,8 +83,18 @@ public class Consultant extends UserAccount {
         this.rentalAgency = rentalAgency;
     }
 
-    
-    
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
     
     
 }
