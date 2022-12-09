@@ -71,7 +71,7 @@ public class UserLogin extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 255));
         jLabel3.setText("Welcome Back.");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 450, -1));
 
         jLabel4.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(73, 84, 90));
