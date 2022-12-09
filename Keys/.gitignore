@@ -1,10 +1,15 @@
 # NetBeans specific #
 nbproject/private/
+nbproject/project.properties/
+src/Business/DatabaseUtil/
 build/
 nbbuild/
 dist/
 nbdist/
 nbactions.xml
+.DS_Store
+src/.DS_Store
+../.DS_Store
 nb-configuration.xml
 
 # Class Files #
