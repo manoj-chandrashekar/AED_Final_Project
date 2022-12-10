@@ -4,6 +4,7 @@
  */
 package Business;
 
+import Business.Builder.BuilderDirectory;
 import Business.Builder.ListingsDirectory;
 import Business.Consultant.ConsultantDirectory;
 import Business.PointOfContact.Ambulance.AmbulanceDirectory;
@@ -28,6 +29,8 @@ public class SystemModel {
     private MaintenanceDirectory maintenanceDirectory;
     private EmergencyRequestDirectory emergencyRequestDirectory;
     private ConsultantAppointmentDirectory consultantAppointmentDir;
+    
+    private BuilderDirectory builderDirectory;
     private SearchApplication checkApplication;
     
 
@@ -41,6 +44,7 @@ public class SystemModel {
         emergencyRequestDirectory = new EmergencyRequestDirectory();
         consultantDirectory = new ConsultantDirectory();
         checkApplication = new SearchApplication();
+        builderDirectory = new BuilderDirectory();
     }
 
     public SearchApplication getCheckApplication() {
@@ -122,6 +126,16 @@ public class SystemModel {
     }
     
     
+    public BuilderDirectory getBuilderDirectory() {
+        if(builderDirectory == null) {
+            builderDirectory = new BuilderDirectory();
+        }
+        return builderDirectory;
+    }
+
+    public void setBuilderDirectory(BuilderDirectory builderDirectory) {
+        this.builderDirectory = builderDirectory;
+    }
     
     
 }
