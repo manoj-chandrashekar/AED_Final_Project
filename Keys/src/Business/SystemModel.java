@@ -16,13 +16,14 @@ import Business.WorkQueue.ConsultantAppointmentDirectory;
 import Business.WorkQueue.SearchApplication;
 import Business.MarketPlace.MarketPlaceDirectory;
 import Business.WorkQueue.DonateProductDirectory;
+import Business.WorkQueue.ListingRequestDirectory;
 
 /**
  *
  * @author Manoj Chandrasekaran
  */
 public class SystemModel {
-    
+
     private UserAccountDirectory userAccDirectory;
     private ListingsDirectory listingsDirectory;
     private ConsultantDirectory consultantDirectory;
@@ -33,10 +34,10 @@ public class SystemModel {
     private ConsultantAppointmentDirectory consultantAppointmentDir;
     private MarketPlaceDirectory marketPlaceDirectory;
     private DonateProductDirectory donateProdirectory;
-    
+
     private BuilderDirectory builderDirectory;
+    private ListingRequestDirectory listingRequestDirectory;
     private SearchApplication checkApplication;
-    
 
     public SystemModel() {
         userAccDirectory = new UserAccountDirectory();
@@ -51,6 +52,15 @@ public class SystemModel {
         builderDirectory = new BuilderDirectory();
         marketPlaceDirectory = new MarketPlaceDirectory();
         donateProdirectory = new DonateProductDirectory();
+        listingRequestDirectory = new ListingRequestDirectory();
+    }
+
+    public ListingRequestDirectory getListingRequestDirectory() {
+        return listingRequestDirectory;
+    }
+
+    public void setListingRequestDirectory(ListingRequestDirectory listingRequestDirectory) {
+        this.listingRequestDirectory = listingRequestDirectory;
     }
 
     public DonateProductDirectory getDonateProdirectory() {
@@ -70,7 +80,7 @@ public class SystemModel {
     }
 
     public SearchApplication getCheckApplication() {
-        if(checkApplication == null){
+        if (checkApplication == null) {
             checkApplication = new SearchApplication();
         }
         return checkApplication;
@@ -79,8 +89,6 @@ public class SystemModel {
     public void setCheckApplication(SearchApplication checkApplication) {
         this.checkApplication = checkApplication;
     }
-    
-    
 
     public ConsultantAppointmentDirectory getConsultantAppointmentDir() {
         return consultantAppointmentDir;
@@ -89,7 +97,6 @@ public class SystemModel {
     public void setConsultantAppointmentDir(ConsultantAppointmentDirectory consultantAppointmentDir) {
         this.consultantAppointmentDir = consultantAppointmentDir;
     }
-    
 
     public UserAccountDirectory getUserAccDirectory() {
         return userAccDirectory;
@@ -146,10 +153,9 @@ public class SystemModel {
     public void setEmergencyRequestDirectory(EmergencyRequestDirectory emergencyRequestDirectory) {
         this.emergencyRequestDirectory = emergencyRequestDirectory;
     }
-    
-    
+
     public BuilderDirectory getBuilderDirectory() {
-        if(builderDirectory == null) {
+        if (builderDirectory == null) {
             builderDirectory = new BuilderDirectory();
         }
         return builderDirectory;
@@ -158,6 +164,5 @@ public class SystemModel {
     public void setBuilderDirectory(BuilderDirectory builderDirectory) {
         this.builderDirectory = builderDirectory;
     }
-    
-    
+
 }

@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author shrikrishnajoisa
+ * @author Nagarjun Mallesh
  */
 public class MarketPlaceGiveawayJPanel extends javax.swing.JPanel {
 

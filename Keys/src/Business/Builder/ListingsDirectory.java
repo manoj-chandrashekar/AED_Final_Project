@@ -12,6 +12,23 @@ import java.util.List;
  * @author nagarjunmallesh
  */
 public class ListingsDirectory {
+    List<Listings> listingsDirectory = new ArrayList<Listings>();
+
+    public List<Listings> getListingsDirectory() {
+        return listingsDirectory;
+    }
+
+    public void setListingsDirectory(List<Listings> listingsDirectory) {
+        this.listingsDirectory = listingsDirectory;
+    }
+    
+    public void addListings(Listings listing){
+        listingsDirectory.add(listing);
+    }
+    
+    public void removeListings(Listings listing){
+        listingsDirectory.remove(listing);
+    }
     
     List<Listings> listings = new ArrayList<>();
 
