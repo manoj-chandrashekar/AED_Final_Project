@@ -92,7 +92,7 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        bloodDonation = new javax.swing.JPanel();
+        marketPlace = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -143,7 +143,6 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         jLabel22.setText("Sign Out");
         goBack.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\exit.png")); // NOI18N
         jLabel9.setText("jLabel9");
         goBack.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, -1));
 
@@ -166,7 +165,6 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         jLabel17.setText("Point of contact");
         emergencyReport.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel27.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\poclogo.png")); // NOI18N
         jLabel27.setText("jLabel9");
         emergencyReport.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, -1));
 
@@ -189,7 +187,6 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         jLabel15.setText("View available options");
         medicine.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel25.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\optionslog.png")); // NOI18N
         jLabel25.setText("jLabel9");
         medicine.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, -1));
 
@@ -212,42 +209,38 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         jLabel11.setText("Survey");
         testing.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 150, -1));
 
-        jLabel24.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\manageappointment.png")); // NOI18N
         jLabel24.setText("jLabel9");
         testing.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, -1));
 
         jPanel3.add(testing, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 290, 60));
 
-        bloodDonation.setBackground(new java.awt.Color(255, 255, 255));
-        bloodDonation.setPreferredSize(new java.awt.Dimension(100, 48));
-        bloodDonation.addMouseListener(new java.awt.event.MouseAdapter() {
+        marketPlace.setBackground(new java.awt.Color(255, 255, 255));
+        marketPlace.setPreferredSize(new java.awt.Dimension(100, 48));
+        marketPlace.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                bloodDonationMousePressed(evt);
+                marketPlaceMousePressed(evt);
             }
         });
-        bloodDonation.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        marketPlace.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-drop-of-blood-24.png"))); // NOI18N
-        bloodDonation.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
+        marketPlace.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
 
         jLabel13.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(115, 120, 128));
         jLabel13.setText("Market place");
-        bloodDonation.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        marketPlace.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\marketlogo.png")); // NOI18N
         jLabel19.setText("jLabel9");
-        bloodDonation.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
+        marketPlace.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
 
-        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\marketlogo.png")); // NOI18N
         jLabel20.setText("jLabel9");
-        bloodDonation.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
+        marketPlace.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
 
-        jLabel23.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\marketlogo.png")); // NOI18N
         jLabel23.setText("jLabel9");
-        bloodDonation.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
+        marketPlace.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
 
-        jPanel3.add(bloodDonation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 290, 60));
+        jPanel3.add(marketPlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 290, 60));
 
         bookAppointment.setBackground(new java.awt.Color(255, 255, 255));
         bookAppointment.setPreferredSize(new java.awt.Dimension(100, 48));
@@ -266,14 +259,11 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         jLabel6.setText("Find A Consultant");
         bookAppointment.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\consultantreq.png")); // NOI18N
         jLabel18.setText("jLabel9");
         bookAppointment.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, 30));
 
         jPanel3.add(bookAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 290, 60));
         jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 770, 290, -1));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\keyslogo.png")); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 130));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 288, 1080));
@@ -324,10 +314,11 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         //PandemicTest();
     }//GEN-LAST:event_testingMousePressed
 
-    private void bloodDonationMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bloodDonationMousePressed
+    private void marketPlaceMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_marketPlaceMousePressed
         // TODO add your handling code here:
         //BloodDonation();
-    }//GEN-LAST:event_bloodDonationMousePressed
+        marketPlaceRequest();
+    }//GEN-LAST:event_marketPlaceMousePressed
 
     private void medicineMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_medicineMousePressed
         // TODO add your handling code here:
@@ -347,7 +338,6 @@ public class UserAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel bloodDonation;
     private javax.swing.JPanel bookAppointment;
     private javax.swing.JPanel emergencyReport;
     private javax.swing.JPanel goBack;
@@ -381,6 +371,7 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel marketPlace;
     private javax.swing.JPanel medicine;
     private javax.swing.JPanel rightSidePanel;
     private javax.swing.JPanel testing;
@@ -391,7 +382,7 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
       emergencyReport.setBackground(new Color(255,255,255));
         medicine.setBackground(new Color(255,255,255));
-         bloodDonation.setBackground(new Color(255,255,255));
+         marketPlace.setBackground(new Color(255,255,255));
          //vaccination.setBackground(new Color(255,255,255));
         testing.setBackground(new Color(255,255,255));
         bookAppointment.setBackground(new Color(213,230,249));
@@ -437,20 +428,20 @@ public class UserAreaJPanel extends javax.swing.JPanel {
 //        layout.next(rightSidePanel);
 //    }
 //    
-//    private void BloodDonation() {
-//        emergencyReport.setBackground(new Color(255,255,255));
-//        medicine.setBackground(new Color(255,255,255));
-//        bloodDonation.setBackground(new Color(213,230,249));
-//        vaccination.setBackground(new Color(255,255,255));
-//        testing.setBackground(new Color(255,255,255));
-//        bookAppointment.setBackground(new Color(255,255,255));
-//      
-//        BloodDonations pcr = new BloodDonations(system, container, userAcc);
-//        rightSidePanel.add(pcr);
-//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-//        layout.next(rightSidePanel);
-//    
-//    }
+    private void marketPlaceRequest() {
+        emergencyReport.setBackground(new Color(255,255,255));
+        medicine.setBackground(new Color(255,255,255));
+        marketPlace.setBackground(new Color(213,230,249));
+        //vaccination.setBackground(new Color(255,255,255));
+        testing.setBackground(new Color(255,255,255));
+        bookAppointment.setBackground(new Color(255,255,255));
+      
+        MarketPlaceGiveawayJPanel pcr = new MarketPlaceGiveawayJPanel(system, container, userAcc);
+        rightSidePanel.add(pcr);
+        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
+        layout.next(rightSidePanel);
+    
+    }
 //   
 //
 //    private void displayEmergencyScreen() {

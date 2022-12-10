@@ -14,6 +14,8 @@ import Business.UserAccountManagement.UserAccountDirectory;
 import Business.WorkQueue.EmergencyRequestDirectory;
 import Business.WorkQueue.ConsultantAppointmentDirectory;
 import Business.WorkQueue.SearchApplication;
+import Business.MarketPlace.MarketPlaceDirectory;
+import Business.WorkQueue.DonateProductDirectory;
 
 /**
  *
@@ -29,6 +31,8 @@ public class SystemModel {
     private MaintenanceDirectory maintenanceDirectory;
     private EmergencyRequestDirectory emergencyRequestDirectory;
     private ConsultantAppointmentDirectory consultantAppointmentDir;
+    private MarketPlaceDirectory marketPlaceDirectory;
+    private DonateProductDirectory donateProdirectory;
     
     private BuilderDirectory builderDirectory;
     private SearchApplication checkApplication;
@@ -45,6 +49,24 @@ public class SystemModel {
         consultantDirectory = new ConsultantDirectory();
         checkApplication = new SearchApplication();
         builderDirectory = new BuilderDirectory();
+        marketPlaceDirectory = new MarketPlaceDirectory();
+        donateProdirectory = new DonateProductDirectory();
+    }
+
+    public DonateProductDirectory getDonateProdirectory() {
+        return donateProdirectory;
+    }
+
+    public void setDonateProdirectory(DonateProductDirectory donateProdirectory) {
+        this.donateProdirectory = donateProdirectory;
+    }
+
+    public MarketPlaceDirectory getMarketPlaceDirectory() {
+        return marketPlaceDirectory;
+    }
+
+    public void setMarketPlaceDirectory(MarketPlaceDirectory marketPlaceDirectory) {
+        this.marketPlaceDirectory = marketPlaceDirectory;
     }
 
     public SearchApplication getCheckApplication() {

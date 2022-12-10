@@ -66,7 +66,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         viewAppointmentButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDocAvail = new javax.swing.JTable();
+        consultantAvailTbl = new javax.swing.JTable();
         bookAppointment = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
         findDoctor = new javax.swing.JButton();
@@ -125,7 +125,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
         });
         container.add(viewAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 680, 230, 50));
 
-        tblDocAvail.setModel(new javax.swing.table.DefaultTableModel(
+        consultantAvailTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -133,7 +133,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
                 "Name", "Specialization", "Consultancy agency", "Phone Number"
             }
         ));
-        jScrollPane1.setViewportView(tblDocAvail);
+        jScrollPane1.setViewportView(consultantAvailTbl);
 
         container.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 1090, 250));
 
@@ -181,7 +181,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
 
     private void specializationComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_specializationComboActionPerformed
         // TODO add your handling code here:
-        DoctorDisplay();
+        ConsultantDisplay();
     }//GEN-LAST:event_specializationComboActionPerformed
 
     private void viewAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAppointmentButtonActionPerformed
@@ -193,7 +193,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
     private void bookAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookAppointmentActionPerformed
         // TODO add your handling code here:
 
-        bookDocAppointment();
+        bookConsultantAppointment();
     }//GEN-LAST:event_bookAppointmentActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
@@ -204,13 +204,14 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
 
     private void findDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findDoctorActionPerformed
         // TODO add your handling code here:
-        DoctorDisplay();
+        ConsultantDisplay();
     }//GEN-LAST:event_findDoctorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bookAppointment;
     private javax.swing.JButton cancel;
+    private javax.swing.JTable consultantAvailTbl;
     private javax.swing.JPanel container;
     private javax.swing.JButton findDoctor;
     private com.toedter.calendar.JDateChooser jDateChooser1;
@@ -221,7 +222,6 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> specializationCombo;
-    private javax.swing.JTable tblDocAvail;
     private javax.swing.JComboBox<String> timeCombo;
     private javax.swing.JButton viewAppointmentButton;
     // End of variables declaration//GEN-END:variables
@@ -245,18 +245,18 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
 
     }
 
-    private void DoctorDisplay() {
+    private void ConsultantDisplay() {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         {
             String specialSelect = specializationCombo.getSelectedItem().toString();
             ArrayList<Consultant> consultantList = system.getConsultantDirectory().getConsultants();
             int l = consultantList.size();
 
-            tblDocAvail.setModel(new DefaultTableModel(null, new String[]{"Name", "Hospital", "Spealization", "Phone Number"}));
+            consultantAvailTbl.setModel(new DefaultTableModel(null, new String[]{"Name", "Hospital", "Spealization", "Phone Number"}));
             for (int i = 0; i < l; i++) {
                 Consultant consultant = consultantList.get(i);
                 if (consultant.getSpecialization().matches(specialSelect)) {
-                    DefaultTableModel table = (DefaultTableModel) tblDocAvail.getModel();
+                    DefaultTableModel table = (DefaultTableModel) consultantAvailTbl.getModel();
                     String content[] = {consultant.getName(), consultant.getSpecialization(), consultant.getRentalAgency(), consultant.getPhoneNo().toString()};
                     table.addRow(content);
                 }
@@ -273,11 +273,11 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
 //        notification.sendMail(toEmail, emailSubject, emailContent);
 //    }
 
-    private void bookDocAppointment() {
+    private void bookConsultantAppointment() {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
-        DefaultTableModel model = (DefaultTableModel) tblDocAvail.getModel();
-        int selectedRow = tblDocAvail.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) consultantAvailTbl.getModel();
+        int selectedRow = consultantAvailTbl.getSelectedRow();
         if (selectedRow >= 0) {
             if (jDateChooser1.getDate() != null) {
                 int rand = 1 + (int) (Math.random() * 100);
@@ -402,13 +402,13 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
         List<ConsultantAppointment> consultantApplicationList = consultantDir.getAppointments();
         int l = consultantApplicationList.size();
 
-        tblDocAvail.setModel(new DefaultTableModel(null, new String[]{"AppID", "Name", "Date", "Time", "status"}));
+        consultantAvailTbl.setModel(new DefaultTableModel(null, new String[]{"AppID", "Name", "Date", "Time", "status"}));
         for (int i = 0; i < l; i++) {
             ConsultantAppointment consultantApplication = consultantApplicationList.get(i);
 
             if (consultantApplication.getUserId().matches(userAcc.getUsername())) {
 
-                DefaultTableModel table = (DefaultTableModel) tblDocAvail.getModel();
+                DefaultTableModel table = (DefaultTableModel) consultantAvailTbl.getModel();
                 String r1 = String.valueOf(consultantApplication.getId());
                 String r2[] = {r1, consultantApplication.getConsultantName(), consultantApplication.getDate().toString(), consultantApplication.getTime(), consultantApplication.getStatus()};
                 table.addRow(r2);
@@ -418,8 +418,8 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
 
     private void cancelAppoint() {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        DefaultTableModel table = (DefaultTableModel) tblDocAvail.getModel();
-        int selectedRow = tblDocAvail.getSelectedRow();
+        DefaultTableModel table = (DefaultTableModel) consultantAvailTbl.getModel();
+        int selectedRow = consultantAvailTbl.getSelectedRow();
         if (selectedRow >= 0) {
             int sRow = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
 
@@ -442,7 +442,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
                 }
 
             }
-            tblDocAvail.setModel(new DefaultTableModel(null, new String[]{"ID", "Doctor Name", "Hospital", "Status", "Date", "Time"}));
+            consultantAvailTbl.setModel(new DefaultTableModel(null, new String[]{"ID", "Doctor Name", "Hospital", "Status", "Date", "Time"}));
             displayAppointmentStatus();
         } else {
             JOptionPane.showMessageDialog(null, "Select an appointment to cancel!!");
