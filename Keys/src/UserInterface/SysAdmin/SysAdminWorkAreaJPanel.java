@@ -56,7 +56,7 @@ public class SysAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        pharmaButton = new javax.swing.JButton();
+        builderButton = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
@@ -68,7 +68,7 @@ public class SysAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        nonProfitButton = new javax.swing.JButton();
+        marketplaceButton = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -116,13 +116,18 @@ public class SysAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel14.setText("Place where you can manage Builder's");
         jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 280, 30));
 
-        pharmaButton.setBackground(new java.awt.Color(51, 51, 255));
-        pharmaButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
-        pharmaButton.setForeground(new java.awt.Color(255, 255, 255));
-        pharmaButton.setText("Manage");
-        pharmaButton.setBorder(null);
-        pharmaButton.setFocusPainted(false);
-        jPanel4.add(pharmaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 180, 40));
+        builderButton.setBackground(new java.awt.Color(51, 51, 255));
+        builderButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
+        builderButton.setForeground(new java.awt.Color(255, 255, 255));
+        builderButton.setText("Manage");
+        builderButton.setBorder(null);
+        builderButton.setFocusPainted(false);
+        builderButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                builderButtonActionPerformed(evt);
+            }
+        });
+        jPanel4.add(builderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 180, 40));
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/Builderenter.png"))); // NOI18N
         jLabel23.setText("jLabel23");
@@ -176,13 +181,18 @@ public class SysAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel6.setText("Place where you can manage marketplace");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 280, 30));
 
-        nonProfitButton.setBackground(new java.awt.Color(51, 51, 255));
-        nonProfitButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
-        nonProfitButton.setForeground(new java.awt.Color(255, 255, 255));
-        nonProfitButton.setText("Manage");
-        nonProfitButton.setBorder(null);
-        nonProfitButton.setFocusPainted(false);
-        jPanel2.add(nonProfitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 180, 40));
+        marketplaceButton.setBackground(new java.awt.Color(51, 51, 255));
+        marketplaceButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
+        marketplaceButton.setForeground(new java.awt.Color(255, 255, 255));
+        marketplaceButton.setText("Manage");
+        marketplaceButton.setBorder(null);
+        marketplaceButton.setFocusPainted(false);
+        marketplaceButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                marketplaceButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(marketplaceButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 180, 40));
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/Marketplace.png"))); // NOI18N
         jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 108, 74));
@@ -280,8 +290,21 @@ public class SysAdminWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(container);
     }//GEN-LAST:event_consultantButtonActionPerformed
 
+    private void marketplaceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marketplaceButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_marketplaceButtonActionPerformed
+
+    private void builderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_builderButtonActionPerformed
+        // TODO add your handling code here:
+        BuilderEnterpriseJPanel builderEnterpriseJPanel = new BuilderEnterpriseJPanel(ecosystem, container);
+        container.add(builderEnterpriseJPanel);
+        CardLayout layout = (CardLayout) container.getLayout();
+        layout.next(container);
+    }//GEN-LAST:event_builderButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton builderButton;
     private javax.swing.JButton consultantButton;
     private javax.swing.JButton emergencyButton;
     private javax.swing.JLabel exitLabel1;
@@ -314,7 +337,6 @@ public class SysAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JButton nonProfitButton;
-    private javax.swing.JButton pharmaButton;
+    private javax.swing.JButton marketplaceButton;
     // End of variables declaration//GEN-END:variables
 }

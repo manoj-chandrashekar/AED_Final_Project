@@ -14,16 +14,16 @@ public class Listings {
     private int aptNo;
     private String address;
     private String houseSpecifications;
-    private double Rent; 
+    private double rent; 
     private Boolean isAvailable;
 
-    public Listings(int aptNo, String address, String houseSpecifications, double Rent, Boolean isAvailable) {
+    public Listings(int aptNo, String address, String houseSpecifications, double rent, Boolean isAvailable) {
         id = counter;
         counter = counter + 1;
         this.aptNo = aptNo;
         this.address = address;
         this.houseSpecifications = houseSpecifications;
-        this.Rent = Rent;
+        this.rent = rent;
         this.isAvailable = isAvailable;
     }
 
@@ -52,11 +52,11 @@ public class Listings {
     }
 
     public double getRent() {
-        return Rent;
+        return rent;
     }
 
-    public void setRent(double Rent) {
-        this.Rent = Rent;
+    public void setRent(double rent) {
+        this.rent = rent;
     }
 
     public Boolean getIsAvailable() {

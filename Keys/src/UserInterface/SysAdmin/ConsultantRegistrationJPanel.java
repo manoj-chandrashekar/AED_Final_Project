@@ -298,7 +298,7 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
             String phoneNum = (phoneNumberTextField.getText());
             Long phoneNumber = Long.valueOf(phoneNum);
 
-            if (!system.getUserAccDirectory().checkIfUsernameIsUnique(userIdTextField.getText())) {
+            if (!system.getUserAccDirectory().checkIfUsernameIsUnique(userId)) {
                 JOptionPane.showMessageDialog(null, "User name already exists");
                 return;
             }
@@ -506,37 +506,37 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
 
     private boolean isValidated() {
         if (null == nameTextField.getText() || nameTextField.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please enter name.");
+            JOptionPane.showMessageDialog(this, "Please enter name.");
             return false;
         }
         if (null == rentalAgencyTextField.getText() || rentalAgencyTextField.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "please enter Rental Agency");
+            JOptionPane.showMessageDialog(this, "please enter Rental Agency");
             return false;
         }
         if (null == expertiseTextField.getText() || expertiseTextField.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "please enter expertise");
+            JOptionPane.showMessageDialog(this, "please enter expertise");
             return false;
         }
         if (null == userIdTextField.getText() || userIdTextField.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "please enter User ID");
+            JOptionPane.showMessageDialog(this, "please enter User ID");
             return false;
         }
         if (null == passwordTextField.getText() || passwordTextField.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "please enter password");
+            JOptionPane.showMessageDialog(this, "please enter password");
             return false;
         }
         if (null == phoneNumberTextField.getText() || phoneNumberTextField.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "please enter phone number");
+            JOptionPane.showMessageDialog(this, "please enter phone number");
             return false;
         }
 
         if (!phoneNumberTextField.getText().matches(PHONE_NO_REGEX)) {
-            JOptionPane.showMessageDialog(null, " 10 digit phone number");
+            JOptionPane.showMessageDialog(this, " 10 digit phone number");
             phoneNumberTextField.setText("");
             return false;
         }
         if (!passwordTextField.getText().matches(PASSWORD_REGEX)) {
-            JOptionPane.showMessageDialog(null, "Password is in incorrect Format.\nShould be minimum 8 in length "
+            JOptionPane.showMessageDialog(this, "Password is in incorrect Format.\nShould be minimum 8 in length "
                     + "with one upper case, one lower case, one digit and one special character");
             passwordTextField.setText("");
             return false;
