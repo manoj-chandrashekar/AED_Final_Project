@@ -10,6 +10,7 @@ import Business.PointOfContact.Ambulance.AmbulanceDirectory;
 import Business.PointOfContact.Fire.FireDirectory;
 import Business.PointOfContact.Maintenance.MaintenanceDirectory;
 import Business.UserAccountManagement.UserAccountDirectory;
+import Business.WorkQueue.EmergencyRequestDirectory;
 
 /**
  *
@@ -23,6 +24,7 @@ public class SystemModel {
     private AmbulanceDirectory ambulanceDirectory;
     private FireDirectory fireDirectory;
     private MaintenanceDirectory maintenanceDirectory;
+    private EmergencyRequestDirectory emergencyRequestDirectory;
 
     public SystemModel() {
         userAccDirectory = new UserAccountDirectory();
@@ -31,6 +33,7 @@ public class SystemModel {
         ambulanceDirectory = new AmbulanceDirectory();
         fireDirectory = new FireDirectory();
         maintenanceDirectory = new MaintenanceDirectory();
+        emergencyRequestDirectory = new EmergencyRequestDirectory();
     }
 
     public UserAccountDirectory getUserAccDirectory() {
@@ -79,6 +82,14 @@ public class SystemModel {
 
     public void setMaintenanceDirectory(MaintenanceDirectory maintenanceDirectory) {
         this.maintenanceDirectory = maintenanceDirectory;
+    }
+
+    public EmergencyRequestDirectory getEmergencyRequestDirectory() {
+        return emergencyRequestDirectory;
+    }
+
+    public void setEmergencyRequestDirectory(EmergencyRequestDirectory emergencyRequestDirectory) {
+        this.emergencyRequestDirectory = emergencyRequestDirectory;
     }
     
     

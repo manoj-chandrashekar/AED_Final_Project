@@ -4,18 +4,24 @@
  */
 package Business.PointOfContact.Ambulance;
 
+import Business.Roles.AmbulanceDriver;
+import Business.UserAccountManagement.UserAccount;
+
 /**
  *
  * @author nagarjunmallesh
  */
-public class Ambulance {
+public class Ambulance extends UserAccount {
     private int id;
     private int count = 0;
     private String ambulanceServiceName;
     private String driverName;
     private long contactNo;
 
-    public Ambulance(String ambulanceServiceName, String driverName, long contactNo) {
+    public Ambulance(String userId, String pwd, String ambulanceServiceName, String driverName, long contactNo) {
+        setUsername(userId);
+        setPwd(pwd);
+        setRole(new AmbulanceDriver());
         id = count;
         count = count+1;
         this.ambulanceServiceName = ambulanceServiceName;
