@@ -4,11 +4,14 @@
  */
 package Business.PointOfContact.Fire;
 
+import Business.Roles.Fire_Man;
+import Business.UserAccountManagement.UserAccount;
+
 /**
  *
  * @author nagarjunmallesh
  */
-public class Fire {
+public class Fire extends UserAccount {
     private int id;
     private int count =0;
     private String FireServiceLocation;
@@ -19,7 +22,10 @@ public class Fire {
        
     }
 
-    public Fire(String FireServiceLocation, String FireManName, long contactNo) {
+    public Fire(String userId, String pwd, String FireServiceLocation, String FireManName, long contactNo) {
+        setUsername(userId);
+        setPwd(pwd);
+        setRole(new Fire_Man());
         id = count;
         count= count + 1;
         this.FireServiceLocation = FireServiceLocation;

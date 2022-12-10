@@ -7,8 +7,11 @@ package UserInterface.Ambulance;
 import Business.EcoSystem;
 import Business.PointOfContact.Ambulance.Ambulance;
 import Business.UserAccountManagement.UserAccount;
+import Business.WorkQueue.EmergencyRequest;
+import Business.WorkQueue.EmergencyRequestDirectory;
 import java.awt.CardLayout;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -151,37 +154,37 @@ public class AmbulanceDisplay extends javax.swing.JPanel {
         {
         int rowId = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
         
-//        Req_EmergencyDir requestemergencyDir = system.getEmergencyReqDir();
-//        ArrayList<Req_Emergency> emergencies = requestemergencyDir.getEmergencyUserList();
-//        Ambulance a=(Ambulance)userAcc;
-//        int size = emergencies.size();
-//        for(int i=0;i<size;i++)
-//        {
-//            Req_Emergency emergency =  emergencies.get(i);
-//            if( rowId ==emergency.getId())
-//            {
-//                if(emergency.getStatus().matches("Closed"))
-//                {
-//                    JOptionPane.showMessageDialog(null, "Emergency Closed");
-//                }
-//                else if(emergency.getStatus().matches("False Alarm"))
-//                {
-//                    JOptionPane.showMessageDialog(null, "Emergency is a false Alaram");
-//                }
-//                else if(emergency.getResponse().matches("No Response"))
-//                {
-//                    JOptionPane.showMessageDialog(null, "respond to emergency");
-//                }
-//                else
-//                {
-//                    emergency.setStatus("False Alarm");
-//                }
-//                
-//                
-//
-//            }
-//
-//        }
+        EmergencyRequestDirectory requestemergencyDir = system.getEmergencyRequestDirectory();
+        List<EmergencyRequest> emergencies = requestemergencyDir.getEmergencyUserList();
+        Ambulance a=(Ambulance)userAcc;
+        int size = emergencies.size();
+        for(int i=0;i<size;i++)
+        {
+            EmergencyRequest emergency =  emergencies.get(i);
+            if( rowId ==emergency.getId())
+            {
+                if(emergency.getStatus().matches("Closed"))
+                {
+                    JOptionPane.showMessageDialog(null, "Emergency Closed");
+                }
+                else if(emergency.getStatus().matches("False Alarm"))
+                {
+                    JOptionPane.showMessageDialog(null, "Emergency is a false Alaram");
+                }
+                else if(emergency.getResponse().matches("No Response"))
+                {
+                    JOptionPane.showMessageDialog(null, "respond to emergency");
+                }
+                else
+                {
+                    emergency.setStatus("False Alarm");
+                }
+                
+                
+
+            }
+
+        }
         jTable1.setModel(new DefaultTableModel(null,new String[]{"ID","Name","Emergency","Location","Status","Response"}));
         populateTable();
         }
@@ -199,35 +202,35 @@ public class AmbulanceDisplay extends javax.swing.JPanel {
         {
         int s=Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
         
-//        Req_EmergencyDir requestemergencyDir=system.getEmergencyReqDir();
-//        ArrayList<Req_Emergency> emergencies = requestemergencyDir.getEmergencyUserList();
-//        int size = emergencies.size();
-//        for(int i=0;i<size;i++)
-//        {
-//            Req_Emergency emergency = emergencies.get(i);
-//            if(s==emergency.getId()/*&&emergency.getStatus().matches("Deliver Man Assigned")*/)
-//            {
-//                locationCordinate = emergency.getLocation();
-//                if(emergency.getStatus().matches("Closed"))
-//                {
-//                    JOptionPane.showMessageDialog(null, "Emergency Closed");
-//                }
-//                else if(emergency.getStatus().matches("False Alaram"))
-//                {
-//                    JOptionPane.showMessageDialog(null, "Emergency is a false Alaram");
-//                }
-//                else if(emergency.getResponse().matches("No Response"))
-//                {
-//                    JOptionPane.showMessageDialog(null, "respond to emergency");
-//                }
-//                else
-//                {
-//                    emergency.setStatus("Closed");
-//                }
-//
-//            }
-//
-//        }
+        EmergencyRequestDirectory requestemergencyDir=system.getEmergencyRequestDirectory();
+        List<EmergencyRequest> emergencies = requestemergencyDir.getEmergencyUserList();
+        int size = emergencies.size();
+        for(int i=0;i<size;i++)
+        {
+            EmergencyRequest emergency = emergencies.get(i);
+            if(s==emergency.getId()/*&&emergency.getStatus().matches("Deliver Man Assigned")*/)
+            {
+                locationCordinate = emergency.getLocation();
+                if(emergency.getStatus().matches("Closed"))
+                {
+                    JOptionPane.showMessageDialog(null, "Emergency Closed");
+                }
+                else if(emergency.getStatus().matches("False Alaram"))
+                {
+                    JOptionPane.showMessageDialog(null, "Emergency is a false Alaram");
+                }
+                else if(emergency.getResponse().matches("No Response"))
+                {
+                    JOptionPane.showMessageDialog(null, "respond to emergency");
+                }
+                else
+                {
+                    emergency.setStatus("Closed");
+                }
+
+            }
+
+        }
         jTable1.setModel(new DefaultTableModel(null,new String[]{"ID","Name","Emergency","Location","Status","Response"}));
         populateTable();
         }
@@ -245,36 +248,36 @@ public class AmbulanceDisplay extends javax.swing.JPanel {
         {       
         int s=Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
         
-//        Req_EmergencyDir requestemergencyDir=system.getEmergencyReqDir();
-//        ArrayList<Req_Emergency> emergencies = requestemergencyDir.getEmergencyUserList();
-//        int size = emergencies.size();
-//        Ambulance a=(Ambulance)userAcc;
-//        for(int i=0;i<size;i++)
-//        {
-//            Req_Emergency emergency = emergencies.get(i);
-//            if(s==emergency.getId()/*&&emergency.getStatus().matches("Deliver Man Assigned")*/)
-//            {
-//                if(emergency.getStatus().matches("Closed"))
-//                {
-//                    JOptionPane.showMessageDialog(null, "Emergency Closed");
-//                }
-//                else if(emergency.getStatus().matches("False Alaram"))
-//                {
-//                    JOptionPane.showMessageDialog(null, "Emergency is a false Alaram");
-//                }
-//                else if(emergency.getResponse().matches("No Response"))
-//                {
-//                    emergency.setResponse(a.getNameDriver()+" "+"Responded");
-//                }
-//                else
-//                {
-//                   JOptionPane.showMessageDialog(null, "Already Responded!!"); 
-//                }
-//                
-//
-//            }
-//
-//        }
+        EmergencyRequestDirectory requestemergencyDir=system.getEmergencyRequestDirectory();
+        List<EmergencyRequest> emergencies = requestemergencyDir.getEmergencyUserList();
+        int size = emergencies.size();
+        Ambulance a=(Ambulance)userAcc;
+        for(int i=0;i<size;i++)
+        {
+            EmergencyRequest emergency = emergencies.get(i);
+            if(s==emergency.getId()/*&&emergency.getStatus().matches("Deliver Man Assigned")*/)
+            {
+                if(emergency.getStatus().matches("Closed"))
+                {
+                    JOptionPane.showMessageDialog(null, "Emergency Closed");
+                }
+                else if(emergency.getStatus().matches("False Alaram"))
+                {
+                    JOptionPane.showMessageDialog(null, "Emergency is a false Alaram");
+                }
+                else if(emergency.getResponse().matches("No Response"))
+                {
+                    emergency.setResponse(a.getDriverName()+" "+"Responded");
+                }
+                else
+                {
+                   JOptionPane.showMessageDialog(null, "Already Responded!!"); 
+                }
+                
+
+            }
+
+        }
         jTable1.setModel(new DefaultTableModel(null,new String[]{"ID","Name","Emergency","Location","Status","Response"}));
         populateTable();
         }
@@ -298,19 +301,19 @@ public class AmbulanceDisplay extends javax.swing.JPanel {
         {
         int s=Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
         
-//        Req_EmergencyDir requestemergencyDir=system.getEmergencyReqDir();
-//        ArrayList<Req_Emergency> emergencies = requestemergencyDir.getEmergencyUserList();
-//        int size = emergencies.size();
-//        for(int i=0;i<size;i++)
-//        {
-//            Req_Emergency emergency = emergencies.get(i);
-//            if(s==emergency.getId()/*&&emergency.getStatus().matches("Deliver Man Assigned")*/)
-//            {
-//                locationCordinate = emergency.getLocation();
-//
-//            }
-//
-//        }
+        EmergencyRequestDirectory requestemergencyDir=system.getEmergencyRequestDirectory();
+        List<EmergencyRequest> emergencies = requestemergencyDir.getEmergencyUserList();
+        int size = emergencies.size();
+        for(int i=0;i<size;i++)
+        {
+            EmergencyRequest emergency = emergencies.get(i);
+            if(s==emergency.getId()/*&&emergency.getStatus().matches("Deliver Man Assigned")*/)
+            {
+                locationCordinate = emergency.getLocation();
+
+            }
+
+        }
         String [] parts = locationCordinate.split(",");
         String lattitude = parts[0].replaceAll("\\s","");
         String longitude = parts[1].replaceAll("\\s","");
@@ -330,28 +333,28 @@ public class AmbulanceDisplay extends javax.swing.JPanel {
     
     public void populateTable()
     {
-//        Req_EmergencyDir requestemergencyDir=system.getEmergencyReqDir();
-//        ArrayList<Req_Emergency> emergencies = requestemergencyDir.getEmergencyUserList();
-//        int size = emergencies.size();
-//        
-//        for(int i=0;i<size;i++)
-//        {
-//            
-//            Req_Emergency emergency = emergencies.get(i);
-//            System.out.println("emergency.getEmergency()  "+ emergency.getEmergency());
-//            if(emergency.getEmergency().matches("Ambulance"))
-//            {
-//            
-//                DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
-//                String s1=String.valueOf(emergency.getId());
-//                
-//                
-//                String s[]={s1,emergency.getName(),emergency.getEmergency(),emergency.getLocation(),emergency.getStatus(),emergency.getResponse()};
-//                table.addRow(s);
-//            
-//            }
-//            
-//        }
+        EmergencyRequestDirectory requestemergencyDir=system.getEmergencyRequestDirectory();
+        List<EmergencyRequest> emergencies = requestemergencyDir.getEmergencyUserList();
+        int size = emergencies.size();
+        
+        for(int i=0;i<size;i++)
+        {
+            
+            EmergencyRequest emergency = emergencies.get(i);
+            System.out.println("emergency.getEmergency()  "+ emergency.getEmergency());
+            if(emergency.getEmergency().matches("Ambulance"))
+            {
+            
+                DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
+                String s1=String.valueOf(emergency.getId());
+                
+                
+                String s[]={s1,emergency.getName(),emergency.getEmergency(),emergency.getLocation(),emergency.getStatus(),emergency.getResponse()};
+                table.addRow(s);
+            
+            }
+            
+        }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
