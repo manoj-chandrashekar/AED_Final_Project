@@ -108,7 +108,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(specializationCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 38, 235, 36));
-        jPanel2.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 210, 30));
+        jPanel2.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 210, 30));
 
         container.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 1090, 90));
 

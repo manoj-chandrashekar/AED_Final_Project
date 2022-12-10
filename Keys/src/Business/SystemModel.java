@@ -17,6 +17,7 @@ import Business.WorkQueue.SearchApplication;
 import Business.MarketPlace.MarketPlaceDirectory;
 import Business.WorkQueue.DonateProductDirectory;
 import Business.WorkQueue.ListingRequestDirectory;
+import Business.User.UserDirectory;
 
 /**
  *
@@ -38,6 +39,7 @@ public class SystemModel {
     private BuilderDirectory builderDirectory;
     private ListingRequestDirectory listingRequestDirectory;
     private SearchApplication checkApplication;
+    private UserDirectory userDirectory;
 
     public SystemModel() {
         userAccDirectory = new UserAccountDirectory();
@@ -53,6 +55,15 @@ public class SystemModel {
         marketPlaceDirectory = new MarketPlaceDirectory();
         donateProdirectory = new DonateProductDirectory();
         listingRequestDirectory = new ListingRequestDirectory();
+        userDirectory = new UserDirectory();
+    }
+
+    public UserDirectory getUserDirectory() {
+        return userDirectory;
+    }
+
+    public void setUserDirectory(UserDirectory userDirectory) {
+        this.userDirectory = userDirectory;
     }
 
     public ListingRequestDirectory getListingRequestDirectory() {
