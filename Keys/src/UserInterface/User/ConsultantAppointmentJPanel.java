@@ -33,8 +33,6 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ConsultantAppointment
      */
-    
-
     UserAccount userAcc;
     EcoSystem system;
     JPanel rightSidePanel;
