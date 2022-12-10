@@ -1,7 +1,6 @@
 # NetBeans specific #
 ../.DS_Store
 nbproject/private/
-nbproject/project.properties/
 src/Business/DatabaseUtil/
 build/
 nbbuild/
@@ -10,6 +9,7 @@ nbdist/
 nbactions.xml
 .DS_Store
 src/.DS_Store
+Databank.db4o
 
 nb-configuration.xml
 

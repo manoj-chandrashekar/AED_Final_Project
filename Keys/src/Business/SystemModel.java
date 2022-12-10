@@ -11,6 +11,8 @@ import Business.PointOfContact.Fire.FireDirectory;
 import Business.PointOfContact.Maintenance.MaintenanceDirectory;
 import Business.UserAccountManagement.UserAccountDirectory;
 import Business.WorkQueue.EmergencyRequestDirectory;
+import Business.WorkQueue.ConsultantAppointmentDirectory;
+import Business.WorkQueue.SearchApplication;
 
 /**
  *
@@ -25,6 +27,9 @@ public class SystemModel {
     private FireDirectory fireDirectory;
     private MaintenanceDirectory maintenanceDirectory;
     private EmergencyRequestDirectory emergencyRequestDirectory;
+    private ConsultantAppointmentDirectory consultantAppointmentDir;
+    private SearchApplication checkApplication;
+    
 
     public SystemModel() {
         userAccDirectory = new UserAccountDirectory();
@@ -34,7 +39,31 @@ public class SystemModel {
         fireDirectory = new FireDirectory();
         maintenanceDirectory = new MaintenanceDirectory();
         emergencyRequestDirectory = new EmergencyRequestDirectory();
+        consultantDirectory = new ConsultantDirectory();
+        checkApplication = new SearchApplication();
     }
+
+    public SearchApplication getCheckApplication() {
+        if(checkApplication == null){
+            checkApplication = new SearchApplication();
+        }
+        return checkApplication;
+    }
+
+    public void setCheckApplication(SearchApplication checkApplication) {
+        this.checkApplication = checkApplication;
+    }
+    
+    
+
+    public ConsultantAppointmentDirectory getConsultantAppointmentDir() {
+        return consultantAppointmentDir;
+    }
+
+    public void setConsultantAppointmentDir(ConsultantAppointmentDirectory consultantAppointmentDir) {
+        this.consultantAppointmentDir = consultantAppointmentDir;
+    }
+    
 
     public UserAccountDirectory getUserAccDirectory() {
         return userAccDirectory;
