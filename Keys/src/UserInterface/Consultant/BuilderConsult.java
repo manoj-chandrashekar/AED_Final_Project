@@ -10,6 +10,8 @@ import Business.EcoSystem;
 import Business.Builder.Builder;
 import Business.Builder.BuilderDirectory;
 import Business.Builder.Listings;
+import Business.Enums.AppointmentStatus;
+import static Business.Enums.ListingStatus.RESERVED;
 import Business.UserAccountManagement.UserAccount;
 import Business.WorkQueue.ConsultantAppointment;
 import Business.WorkQueue.ConsultantAppointmentDirectory;
@@ -18,6 +20,7 @@ import Business.WorkQueue.ListingRequestDirectory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -46,18 +49,7 @@ public class BuilderConsult extends javax.swing.JPanel {
         this.userAcc = userAcc;
         this.studentid = userid;
         this.appointmentId = appointmentId;
-        BuilderDirectory rd = system.getBuilderDirectory();
-        List<Builder> list = rd.getBuilders();
-        int s = list.size();
-
-        for (int i = 0; i < s; i++) {
-            Builder r = list.get(i);
-            String s1 = r.getBuilderName();
-            jComboBox1.addItem(s1);
-
-        }
-//        orderList.setModel(new DefaultTableModel(null, new String[]{"Medicine","Cost", "Quantity"}));
-//        displayOrderTable();
+        populateBuilderCombo();
     }
 
     /**
@@ -104,7 +96,7 @@ public class BuilderConsult extends javax.swing.JPanel {
 
             },
             new String [] {
-                "AptNo", "Address", "NoOfBeds", "NoOfBaths", "Rent"
+                "AptNo", "Address", "Beds", "Baths", "Rent"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -154,16 +146,13 @@ public class BuilderConsult extends javax.swing.JPanel {
 
     private void reserveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveButtonActionPerformed
         // TODO add your handling code here:
-
         raiseRequest();
 
     }//GEN-LAST:event_reserveButtonActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-//        display();
-
-
+        displayListings();
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void listingTblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listingTblMouseClicked
@@ -175,7 +164,7 @@ public class BuilderConsult extends javax.swing.JPanel {
 
     private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
         // TODO add your handling code here:
-        displayListings();
+//        displayListings();
     }//GEN-LAST:event_jComboBox1MouseClicked
 
 
@@ -190,27 +179,29 @@ public class BuilderConsult extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void raiseRequest() {
-        
-          int selectedListing = listingTbl.getSelectedRow();
-          
-          if(selectedListing < 0){
+
+        int selectedListing = listingTbl.getSelectedRow();
+
+        if (selectedListing < 0) {
             JOptionPane.showMessageDialog(this, "Please select the listing to proceed for reservation");
             return;
-          }
-          
-          DefaultTableModel model = (DefaultTableModel) listingTbl.getModel();
-          Listings listing = (Listings) model.getValueAt(selectedListing, 0);
-          
-          ListingRequest reqListing = new ListingRequest();
-          int r = 1 + (int) (Math.random() * 100);
-          reqListing.setId(r);
-          reqListing.setStudentId(studentid);
-          Consultant consultant = (Consultant) (userAcc);
-          reqListing.setConsultantName(consultant.getName());
-          reqListing.setBuilderName(jComboBox1.getSelectedItem().toString());
-          reqListing.setStatus("Reserved listing");
-          reqListing.setListings(listing);
-          JOptionPane.showMessageDialog(null, "Listing is reserved");
+        }
+
+        DefaultTableModel model = (DefaultTableModel) listingTbl.getModel();
+        Listings listing = (Listings) model.getValueAt(selectedListing, 0);
+
+        ListingRequest reqListing = new ListingRequest();
+        int r = 1 + (int) (Math.random() * 100);
+        reqListing.setId(r);
+        reqListing.setStudentId(studentid);
+        Consultant consultant = (Consultant) (userAcc);
+        reqListing.setConsultantName(consultant.getName());
+        reqListing.setBuilderName(jComboBox1.getSelectedItem().toString());
+        reqListing.setStatus(RESERVED);
+        reqListing.setListings(listing);
+        system.getListingRequestDirectory().addUserRequest(reqListing);
+        updateAppointmentStatus();
+        JOptionPane.showMessageDialog(this, "Listing is reserved");
 
     }
 
@@ -232,55 +223,58 @@ public class BuilderConsult extends javax.swing.JPanel {
 //
 //    }
 //    
-    public void updateStatus(){
-            ConsultantAppointmentDirectory cunsultantApp = system.getConsultantAppointmentDir();
-            List<ConsultantAppointment> docAppList = cunsultantApp.getAppointments();
-            System.out.println("appid   " + appointmentId);
-            int l = docAppList.size();
-
-            for (int i = 0; i < l; i++) {
-                ConsultantAppointment docList = docAppList.get(i);
-                if(appointmentId == docList.getId()){
-                    docList.setStatus("Suggested");
-                }
-            }
-    }
 
     private void displayListings() {
-        
-        BuilderDirectory builderDir = system.getBuilderDirectory();
-        List<Builder> list = builderDir.getBuilders();
-        String s = jComboBox1.getSelectedItem().toString();
 
-        int length = list.size();
-
-        for (int i = 0; i < length; i++) {
-            Builder builder = list.get(i);
-
-            if (s.matches(builder.getBuilderName())) {
-
+//        BuilderDirectory builderDir = system.getBuilderDirectory();
+//        List<Builder> list = builderDir.getBuilders();
+//        String s = jComboBox1.getSelectedItem().toString();
+//
+//        int length = list.size();
+//
+//        for (int i = 0; i < length; i++) {
+//            Builder builder = list.get(i);
+//
+//            if (s.matches(builder.getBuilderName())) {
 //                Map<String, String> abc = pharmacy.getMedicines();
-                List<Listings> listingsList = builder.getListings();
+        Builder builder = (Builder) jComboBox1.getSelectedItem();
+        List<Listings> listingsList = builder.getListings();
 
-                DefaultTableModel model = (DefaultTableModel) listingTbl.getModel();
-                model.setRowCount(0);
-                
-                for (Listings listing  : listingsList) {
-                    Object[] row = new Object[5];
-                    row[0] = listing;
-                    row[1] = listing.getAddress();
-                    row[2] = listing.getNoOfBeds();
-                    row[3] = listing.getNoOfBaths();
-                    row[4] = listing.getRent();
-                    
-                    
-                    model.addRow(row);
-                }
+        DefaultTableModel model = (DefaultTableModel) listingTbl.getModel();
+        model.setRowCount(0);
+
+        for (Listings listing : listingsList) {
+            Object[] row = new Object[5];
+            row[0] = listing;
+            row[1] = listing.getAddress();
+            row[2] = listing.getNoOfBeds();
+            row[3] = listing.getNoOfBaths();
+            row[4] = listing.getRent();
+
+            model.addRow(row);
+        }
+//            }
+//        }
+    }
+
+    private void populateBuilderCombo() {
+        DefaultComboBoxModel dm = new DefaultComboBoxModel();
+        BuilderDirectory rd = system.getBuilderDirectory();
+        List<Builder> list = rd.getBuilders();
+        for (Builder builder : list) {
+            dm.addElement(builder);
+        }
+        jComboBox1.setModel(dm);
+    }
+
+    private void updateAppointmentStatus() {
+        ConsultantAppointmentDirectory consApp = system.getConsultantAppointmentDir();
+        List<ConsultantAppointment> consultantAppointments = consApp.getAppointments();
+        for(ConsultantAppointment appointment: consultantAppointments) {
+            if(appointment.getId() == appointmentId) {
+                appointment.setStatus(AppointmentStatus.SUGGESTED);
             }
         }
     }
 
-
-
-    
 }

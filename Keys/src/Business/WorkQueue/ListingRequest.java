@@ -5,6 +5,7 @@
 package Business.WorkQueue;
 
 import Business.Builder.Listings;
+import Business.Enums.ListingStatus;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +18,7 @@ public class ListingRequest {
     String builderName;
     int id;
     String studentId;
-    String status;
+    ListingStatus status;
     Listings listing;
     String consultantName;
 
@@ -45,11 +46,11 @@ public class ListingRequest {
         this.studentId = studentId;
     }
 
-    public String getStatus() {
+    public ListingStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(ListingStatus status) {
         this.status = status;
     }
 

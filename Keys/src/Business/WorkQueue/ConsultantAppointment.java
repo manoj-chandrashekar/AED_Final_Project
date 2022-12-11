@@ -4,6 +4,7 @@
  */
 package Business.WorkQueue;
 
+import Business.Enums.AppointmentStatus;
 import java.util.Date;
 
 /**
@@ -19,7 +20,7 @@ public class ConsultantAppointment {
     String userId;
     String time;
     Date date;
-    String status;
+    AppointmentStatus status;
 
     public int getId() {
         return id;
@@ -69,11 +70,11 @@ public class ConsultantAppointment {
         this.date = date;
     }
 
-    public String getStatus() {
+    public AppointmentStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(AppointmentStatus status) {
         this.status = status;
     }
 

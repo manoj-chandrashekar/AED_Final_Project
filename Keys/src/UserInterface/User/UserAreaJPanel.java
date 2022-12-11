@@ -32,15 +32,15 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     private EcoSystem system;
     private JPanel container;
     //MapCoordinates locationPoint;
-  private DB4OUtil dB4OUtil = DB4OUtil.getInstance();    
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     Timer timer;
-    
+
     private void Time() {
         ActionListener actionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Date date= new Date();
-                DateFormat timeFormat =  new SimpleDateFormat("HH:mm a");
+                Date date = new Date();
+                DateFormat timeFormat = new SimpleDateFormat("HH:mm a");
                 String time = timeFormat.format(date);
                 timeLabel.setText(time);
             }
@@ -49,19 +49,19 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         timer.setInitialDelay(0);
         timer.start();
     }
-    
-   
-    public UserAreaJPanel(  JPanel userProcessContainer, UserAccount userAcc,EcoSystem system) {
+
+    public UserAreaJPanel(JPanel userProcessContainer, UserAccount userAcc, EcoSystem system) {
         initComponents();
         this.system = system;
         this.container = userProcessContainer;
         this.userAcc = userAcc;
         Time();
     }
- 
- public void displayRequestTable(){
-        
+
+    public void displayRequestTable() {
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -264,6 +264,8 @@ public class UserAreaJPanel extends javax.swing.JPanel {
 
         jPanel3.add(bookAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 290, 60));
         jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 770, 290, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/keyslogo.png"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 130));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 288, 1080));
@@ -300,12 +302,12 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) container.getLayout();
         layout.previous(container);
         dB4OUtil.storeSystem(system);
-         //DB4OUtil.dB4OUtil.storeSystem(system);
+        //DB4OUtil.dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_goBackMousePressed
 
     private void bookAppointmentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookAppointmentMousePressed
         // TODO add your handling code here:
-        
+
         bookAppointment();
     }//GEN-LAST:event_bookAppointmentMousePressed
 
@@ -331,8 +333,6 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
 
         //displayEmergencyScreen();
-        
-        
 
     }//GEN-LAST:event_emergencyReportMousePressed
 
@@ -379,22 +379,20 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void bookAppointment() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-      emergencyReport.setBackground(new Color(255,255,255));
-        builder.setBackground(new Color(255,255,255));
-         marketPlace.setBackground(new Color(255,255,255));
-         //vaccination.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(255,255,255));
-        bookAppointment.setBackground(new Color(213,230,249));
+
+        emergencyReport.setBackground(new Color(255, 255, 255));
+        builder.setBackground(new Color(255, 255, 255));
+        marketPlace.setBackground(new Color(255, 255, 255));
+        //vaccination.setBackground(new Color(255,255,255));
+        testing.setBackground(new Color(255, 255, 255));
+        bookAppointment.setBackground(new Color(213, 230, 249));
         //255,255,255 PandemicTestCentreJPanel
         //BloodDonations pcr=new BloodDonations (system, container);
-        ConsultantAppointmentJPanel pr=new ConsultantAppointmentJPanel (system, container,userAcc);
-
-        //rightSidePanel.add(pr);
+        ConsultantAppointmentJPanel pr = new ConsultantAppointmentJPanel(system, container, userAcc);
+        rightSidePanel.add(pr);
         CardLayout layout = (CardLayout) rightSidePanel.getLayout();
         layout.next(rightSidePanel);
-    
-    
+
     }
 //
 //    private void vaccinationStatus() {
@@ -428,19 +426,20 @@ public class UserAreaJPanel extends javax.swing.JPanel {
 //        layout.next(rightSidePanel);
 //    }
 //    
+
     private void marketPlaceRequest() {
-        emergencyReport.setBackground(new Color(255,255,255));
-        builder.setBackground(new Color(255,255,255));
-        marketPlace.setBackground(new Color(213,230,249));
+        emergencyReport.setBackground(new Color(255, 255, 255));
+        builder.setBackground(new Color(255, 255, 255));
+        marketPlace.setBackground(new Color(213, 230, 249));
         //vaccination.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(255,255,255));
-        bookAppointment.setBackground(new Color(255,255,255));
-      
+        testing.setBackground(new Color(255, 255, 255));
+        bookAppointment.setBackground(new Color(255, 255, 255));
+
         MarketPlaceGiveawayJPanel pcr = new MarketPlaceGiveawayJPanel(system, container, userAcc);
         rightSidePanel.add(pcr);
         CardLayout layout = (CardLayout) rightSidePanel.getLayout();
         layout.next(rightSidePanel);
-    
+
     }
 //   
 //
@@ -462,21 +461,21 @@ public class UserAreaJPanel extends javax.swing.JPanel {
 //    
 //    }
 //
+
     private void BuilderResponse() {
-       // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        emergencyReport.setBackground(new Color(255,255,255));
-        builder.setBackground(new Color(213,230,249));
-        marketPlace.setBackground(new Color(255,255,255));
+        // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        emergencyReport.setBackground(new Color(255, 255, 255));
+        builder.setBackground(new Color(213, 230, 249));
+        marketPlace.setBackground(new Color(255, 255, 255));
         //vaccination.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(255,255,255));
-        bookAppointment.setBackground(new Color(255,255,255));
+        testing.setBackground(new Color(255, 255, 255));
+        bookAppointment.setBackground(new Color(255, 255, 255));
 
         //BuilderResponseJPanel pcr = new BuilderResponseJPanel(container, system, userAcc);
         BuilderResponseJPanel pcr = new BuilderResponseJPanel(rightSidePanel, system, userAcc);
         rightSidePanel.add(pcr);
         CardLayout layout = (CardLayout) rightSidePanel.getLayout();
         layout.next(rightSidePanel);
-    
-    
+
     }
 }

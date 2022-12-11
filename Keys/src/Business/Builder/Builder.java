@@ -82,6 +82,12 @@ public class Builder extends UserAccount {
         this.listings = listings;
     }
 
+    @Override
+    public String toString() {
+        return builderName;
+    }
+
+    
     
 }
 

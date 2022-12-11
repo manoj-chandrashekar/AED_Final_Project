@@ -6,7 +6,9 @@ package UserInterface.Consultant;
 
 import Business.Consultant.Consultant;
 import Business.EcoSystem;
+import Business.Enums.AppointmentStatus;
 import Business.UserAccountManagement.UserAccount;
+import Business.Utils.DateFormatter;
 import Business.WorkQueue.ConsultantAppointment;
 import Business.WorkQueue.ConsultantAppointmentDirectory;
 import Business.WorkQueue.SearchApplication;
@@ -109,7 +111,7 @@ public class ManageAppointment extends javax.swing.JPanel {
         prescribe.setBackground(new java.awt.Color(51, 51, 255));
         prescribe.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         prescribe.setForeground(new java.awt.Color(255, 255, 255));
-        prescribe.setText("Suggestions");
+        prescribe.setText("Suggest Houses");
         prescribe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 prescribeActionPerformed(evt);
@@ -147,7 +149,7 @@ public class ManageAppointment extends javax.swing.JPanel {
 
     private void prescribeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prescribeActionPerformed
         // TODO add your handling code here:
-        prescribeMed();
+        suggestHouses();
     }//GEN-LAST:event_prescribeActionPerformed
 
 
@@ -162,7 +164,7 @@ public class ManageAppointment extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void displayTable() {
-        // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
         ConsultantAppointmentDirectory consultationDir = system.getConsultantAppointmentDir();
         List<ConsultantAppointment> dAppList = consultationDir.getAppointments();
         int l = dAppList.size();
@@ -172,22 +174,20 @@ public class ManageAppointment extends javax.swing.JPanel {
             if (consultantApp.getConsultantName().matches(consultant.getName())) {
 
                 DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
-                String s1 = String.valueOf(consultantApp.getId());
+                int s1 = consultantApp.getId();
 
-                String s2[] = {s1, consultantApp.getUserName(), consultantApp.getStatus(), consultantApp.getDate().toString(), consultantApp.getTime()};
+                Object s2[] = {s1, consultantApp.getUserName(), consultantApp.getStatus(), DateFormatter.getDateString(consultantApp.getDate()), consultantApp.getTime()};
                 table.addRow(s2);
             }
-
         }
-
     }
 
     private void consultation() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
         DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
         int selectedRow = jTable1.getSelectedRow();
         if (selectedRow >= 0) {
-            int sRow = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
+            int sRow = (int) table.getValueAt(selectedRow, 0);
             ConsultantAppointmentDirectory dAppList = system.getConsultantAppointmentDir();
             List<ConsultantAppointment> appList = dAppList.getAppointments();
             int l = appList.size();
@@ -195,30 +195,28 @@ public class ManageAppointment extends javax.swing.JPanel {
             for (int i = 0; i < l; i++) {
                 ConsultantAppointment consultantApp = appList.get(i);
                 if (sRow == consultantApp.getId()/*&&o.getStatus().matches("Deliver Man Assigned")*/) {
-                    if (consultantApp.getStatus().matches("Consultation Booked")) {
-                        consultantApp.setStatus("Consultation Done");
-                        JOptionPane.showMessageDialog(null, "Processed!!");
+                    if (consultantApp.getStatus() == AppointmentStatus.APPOINTMENT_BOOKED) {
+                        consultantApp.setStatus(AppointmentStatus.CONSULTATION_DONE);
+                        JOptionPane.showMessageDialog(this, "Processed! Please make a note of student's housing requirement");
                     } else {
-                        JOptionPane.showMessageDialog(null, "Wrong move!!");
-
+                        JOptionPane.showMessageDialog(this, "Wrong move! Meeting done/cancelled");
                     }
                 }
             }
             jTable1.setModel(new DefaultTableModel(null, new String[]{"ID", "Name", "Status", "Date", "Time"}));
             displayTable();
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Row!!");
+            JOptionPane.showMessageDialog(this, "Please select a row!!");
         }
 
     }
 
     private void cancelAppoint() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
         DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
         int selectedRow = jTable1.getSelectedRow();
         if (selectedRow >= 0) {
-            int sRow = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
-            //System.out.println("id" + s);
+            int sRow = (int) table.getValueAt(selectedRow, 0);
             ConsultantAppointmentDirectory dApp = system.getConsultantAppointmentDir();
             List<ConsultantAppointment> appList = dApp.getAppointments();
 
@@ -227,12 +225,12 @@ public class ManageAppointment extends javax.swing.JPanel {
             for (int i = 0; i < l; i++) {
                 ConsultantAppointment consultantApplication = appList.get(i);
                 if (sRow == consultantApplication.getId()/*&&o.getStatus().matches("Deliver Man Assigned")*/) {
-                    if (consultantApplication.getStatus().matches("Appointment Booked")) {
-                        consultantApplication.setStatus("Cancelled");
-                        Verify(consultantApplication.getConsultantName(), consultantApplication.getDate(), consultantApplication.getTime());
-                        JOptionPane.showMessageDialog(null, "Appointment Cancelled");
+                    if (consultantApplication.getStatus() == AppointmentStatus.APPOINTMENT_BOOKED) {
+                        consultantApplication.setStatus(AppointmentStatus.CANCELLED);
+                        removeConsultantBooking(consultantApplication.getConsultantName(), consultantApplication.getDate(), consultantApplication.getTime());
+                        JOptionPane.showMessageDialog(this, "Appointment Cancelled");
                     } else {
-                        JOptionPane.showMessageDialog(null, "Invalid request! please contact the sysadmin.");
+                        JOptionPane.showMessageDialog(null, "Invalid request! Please contact the system admin.");
 
                     }
                 }
@@ -240,38 +238,36 @@ public class ManageAppointment extends javax.swing.JPanel {
             jTable1.setModel(new DefaultTableModel(null, new String[]{"ID", "Name", "Status", "Date", "Time"}));
             displayTable();
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Row!!");
+            JOptionPane.showMessageDialog(null, "Please select a row!!");
         }
 
     }
 
-    private void Verify(String name, Date app, String date) {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        boolean rand = false;
+    private void removeConsultantBooking(String name, Date date, String time) {
+        
         SearchApplication check = system.getCheckApplication();
         Map<String, List<String>> appList = check.getSearchByName();
         for (Map.Entry mapElement : appList.entrySet()) {
             if (mapElement.getKey().toString().matches(name)) {
                 List<String> docList = (List) mapElement.getValue();
-                String s1 = docList.get(0);
-                String s2 = docList.get(1);
-                if (s1.matches(app.toString())) {
-                    if (s2.matches(date)) {
+                String appDate = docList.get(0);
+                String appTime = docList.get(1);
+                if (appDate.matches(DateFormatter.getDateString(date))) {
+                    if (appTime.matches(time)) {
                         appList.remove(name);
                     }
                 }
             }
-
         }
 
     }
 
-    private void prescribeMed() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private void suggestHouses() {
+        
         DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
         int selectedRow = jTable1.getSelectedRow();
         if (selectedRow >= 0) {
-            int sRow = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
+            int sRow = (int) table.getValueAt(selectedRow, 0);
 
             ConsultantAppointmentDirectory consultantApp = system.getConsultantAppointmentDir();
             List<ConsultantAppointment> consultantAppList = consultantApp.getAppointments();
@@ -281,7 +277,7 @@ public class ManageAppointment extends javax.swing.JPanel {
             for (int i = 0; i < l; i++) {
                 ConsultantAppointment docList = consultantAppList.get(i);
                 if (sRow == docList.getId()/*&&o.getStatus().matches("Deliver Man Assigned")*/) {
-                    if (docList.getStatus().matches("Consultation Done")) {
+                    if (docList.getStatus() == AppointmentStatus.CONSULTATION_DONE) {
 
                         BuilderConsult builder = new BuilderConsult(container, system, userAcc, docList.getUserId(), sRow);
 
@@ -290,14 +286,14 @@ public class ManageAppointment extends javax.swing.JPanel {
                         layout.next(container);
 
                     } else {
-                        JOptionPane.showMessageDialog(null, "Wrong Move!!");
+                        JOptionPane.showMessageDialog(this, "Wrong Move! Meeting Done/Cancelled");
                     }
                 }
             }
             jTable1.setModel(new DefaultTableModel(null, new String[]{"ID", "Name", "Status", "Date", "Time"}));
             displayTable();
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Row!!");
+            JOptionPane.showMessageDialog(this, "Please select a row!!");
         }
 
     }
