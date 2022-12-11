@@ -23,7 +23,7 @@ import javax.swing.Timer;
  *
  * @author Sanjay Bhaskar Kashyap
  */
-public class marketPlaceView extends javax.swing.JPanel {
+public class MarketPlaceView extends javax.swing.JPanel {
 
     /**
      * Creates new form marketPlaceView
@@ -50,7 +50,7 @@ public class marketPlaceView extends javax.swing.JPanel {
         timer.start();
     }
 
-    public marketPlaceView(JPanel userProcessContainer, UserAccount userAcc, EcoSystem ecosystem) {
+    public MarketPlaceView(JPanel userProcessContainer, UserAccount userAcc, EcoSystem ecosystem) {
         initComponents();
         this.system = ecosystem;
         this.container = userProcessContainer;
@@ -69,22 +69,16 @@ public class marketPlaceView extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         goBack = new javax.swing.JPanel();
-        jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         manageStock = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        docRequest = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        conRequest = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         appointments = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -104,11 +98,6 @@ public class marketPlaceView extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1040, 190, 30));
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
-
         goBack.setBackground(new java.awt.Color(255, 255, 255));
         goBack.setPreferredSize(new java.awt.Dimension(100, 48));
         goBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -118,15 +107,12 @@ public class marketPlaceView extends javax.swing.JPanel {
         });
         goBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-logout-24.png"))); // NOI18N
-        goBack.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
-
         jLabel52.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(115, 120, 128));
         jLabel52.setText("Return");
         goBack.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\exit.png")); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/exit.png"))); // NOI18N
         goBack.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 28, 28));
 
         jPanel3.add(goBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 780, 290, 60));
@@ -140,41 +126,35 @@ public class marketPlaceView extends javax.swing.JPanel {
         });
         manageStock.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-drop-of-blood-24.png"))); // NOI18N
-        manageStock.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
-
         jLabel9.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(115, 120, 128));
         jLabel9.setText("Manage Stock");
         manageStock.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\stock.png")); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/stock.png"))); // NOI18N
         manageStock.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 28, 28));
 
-        jPanel3.add(manageStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 290, 60));
+        jPanel3.add(manageStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 290, 60));
 
-        docRequest.setBackground(new java.awt.Color(255, 255, 255));
-        docRequest.setPreferredSize(new java.awt.Dimension(100, 48));
-        docRequest.addMouseListener(new java.awt.event.MouseAdapter() {
+        conRequest.setBackground(new java.awt.Color(255, 255, 255));
+        conRequest.setPreferredSize(new java.awt.Dimension(100, 48));
+        conRequest.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                docRequestMousePressed(evt);
+                conRequestMousePressed(evt);
             }
         });
-        docRequest.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-medical-doctor-24.png"))); // NOI18N
-        docRequest.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
+        conRequest.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(115, 120, 128));
         jLabel7.setText("Consultant Request");
-        docRequest.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        conRequest.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\consultantreq.png")); // NOI18N
-        docRequest.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 28, 28));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/consultantreq.png"))); // NOI18N
+        conRequest.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 28, 28));
         jLabel11.getAccessibleContext().setAccessibleDescription("");
 
-        jPanel3.add(docRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 290, 60));
+        jPanel3.add(conRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 290, 60));
 
         appointments.setBackground(new java.awt.Color(255, 255, 255));
         appointments.setPreferredSize(new java.awt.Dimension(100, 48));
@@ -185,9 +165,6 @@ public class marketPlaceView extends javax.swing.JPanel {
         });
         appointments.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-delivery-24.png"))); // NOI18N
-        appointments.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
-
         jLabel6.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(115, 120, 128));
         jLabel6.setText("Manage Appointment");
@@ -196,11 +173,11 @@ public class marketPlaceView extends javax.swing.JPanel {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/MarketPlace/manageappointment.png"))); // NOI18N
         appointments.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 28, 34));
 
-        jPanel3.add(appointments, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 290, 60));
+        jPanel3.add(appointments, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 290, 60));
         jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 770, 290, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/MarketPlace/keys1.png"))); // NOI18N
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 90));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/keyslogo.png"))); // NOI18N
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 130));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -276,10 +253,10 @@ public class marketPlaceView extends javax.swing.JPanel {
         manageApp();
     }//GEN-LAST:event_appointmentsMousePressed
 
-    private void docRequestMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_docRequestMousePressed
+    private void conRequestMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_conRequestMousePressed
         // TODO add your handling code here:
         docReqShow();
-    }//GEN-LAST:event_docRequestMousePressed
+    }//GEN-LAST:event_conRequestMousePressed
 
     private void manageStockMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageStockMousePressed
         // TODO add your handling code here:
@@ -289,7 +266,7 @@ public class marketPlaceView extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel appointments;
-    private javax.swing.JPanel docRequest;
+    private javax.swing.JPanel conRequest;
     private javax.swing.JPanel goBack;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -297,19 +274,13 @@ public class marketPlaceView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel manageStock;
@@ -319,7 +290,7 @@ public class marketPlaceView extends javax.swing.JPanel {
 
     private void manageApp() {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        docRequest.setBackground(new Color(255, 255, 255));
+        conRequest.setBackground(new Color(255, 255, 255));
         manageStock.setBackground(new Color(255, 255, 255));
         appointments.setBackground(new Color(213, 230, 249));
 
@@ -336,7 +307,7 @@ public class marketPlaceView extends javax.swing.JPanel {
 
         appointments.setBackground(new Color(255, 255, 255));
         manageStock.setBackground(new Color(255, 255, 255));
-        docRequest.setBackground(new Color(213, 230, 249));
+        conRequest.setBackground(new Color(213, 230, 249));
 
         ConsultantRequest docReq = new ConsultantRequest(container, system, userAcc);
 
@@ -350,7 +321,7 @@ public class marketPlaceView extends javax.swing.JPanel {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
         appointments.setBackground(new Color(255, 255, 255));
-        docRequest.setBackground(new Color(255, 255, 255));
+        conRequest.setBackground(new Color(255, 255, 255));
         manageStock.setBackground(new Color(213, 230, 249));
 
         MarketStock bloodStock = new MarketStock(container, system, userAcc);

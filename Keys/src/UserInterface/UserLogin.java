@@ -4,16 +4,41 @@
  */
 package UserInterface;
 
-
+import Business.Builder.Builder;
+import Business.Builder.BuilderDirectory;
 import Business.Consultant.Consultant;
 import Business.Consultant.ConsultantDirectory;
 import Business.EcoSystem;
+import Business.MarketPlace.MarketPlace;
+import Business.MarketPlace.MarketPlaceDirectory;
+import Business.PointOfContact.Ambulance.Ambulance;
+import Business.PointOfContact.Ambulance.AmbulanceDirectory;
+import Business.PointOfContact.Fire.Fire;
+import Business.PointOfContact.Fire.FireDirectory;
+import Business.PointOfContact.Maintenance.Maintenance;
+import Business.PointOfContact.Maintenance.MaintenanceDirectory;
+import Business.Roles.Admin_Marketplace;
+import Business.Roles.AmbulanceDriver;
+import Business.Roles.BuilderAdmin;
 import Business.Roles.ConsultantRole;
+import Business.Roles.Fire_Man;
+import Business.Roles.MaintenanceMan;
 import Business.Roles.Roles;
 import Business.Roles.System_Admin;
+import Business.Roles.UserRole;
+import Business.User.User;
+import Business.User.UserDirectory;
 import Business.UserAccountManagement.UserAccount;
+import UserInterface.Ambulance.AmbulanceView;
+import UserInterface.Builder.BuilderEnterpriseJFrame;
+import UserInterface.Consultant.ConsultantViewJPanel;
+import UserInterface.Fire.FireViewJPanel;
+import UserInterface.Maintenance.MaintenanceMain;
+import UserInterface.MarketPlace.MarketPlaceView;
+import UserInterface.User.UserAreaJPanel;
 import java.awt.CardLayout;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -143,18 +168,18 @@ public class UserLogin extends javax.swing.JPanel {
         } else {
             userNameTextField.setText("");
             passwordTextField.setText("");
-            
+
             Roles userRole = userAccount.getRole();
-            
+
             if (userRole instanceof System_Admin) {
                 showSystemAdminWorkAreaJPanel(new System_Admin());
             } else if (userRole instanceof ConsultantRole) {
                 ConsultantDirectory consultantDirectory = ecoSystem.getConsultantDirectory();
-                ArrayList<Consultant> consultants = consultantDirectory.getConsultants();
+                List<Consultant> consultants = consultantDirectory.getConsultants();
                 int count = 0;
-                
-                for(Consultant consultant: consultants) {
-                    if(userAccount.getUsername().matches(consultant.getUsername())) {
+
+                for (Consultant consultant : consultants) {
+                    if (userAccount.getUsername().matches(consultant.getUsername())) {
                         viewConsultantScreen();
                         count++;
                     }
@@ -162,13 +187,77 @@ public class UserLogin extends javax.swing.JPanel {
                 if (count == 0) {
                     JOptionPane.showMessageDialog(this, "Invalid credentials");
                 }
+            } else if (userRole instanceof UserRole) {
+                UserDirectory userDirectory = ecoSystem.getUserDirectory();
+                List<User> users = userDirectory.getUsers();
+
+                for (User user : users) {
+                    if (userAccount.getUsername().matches(user.getUsername())) {
+                        viewUserScreen();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Invalid credentials");
+                    }
+                }
+            } else if (userRole instanceof BuilderAdmin) {
+                BuilderDirectory builderDirectory = ecoSystem.getBuilderDirectory();
+                List<Builder> builders = builderDirectory.getBuilders();
+                for (Builder builder : builders) {
+                    if (userAccount.getUsername().matches(builder.getUsername())) {
+                        viewBuilderScreen();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Invalid credentials");
+                    }
+                }
+            } else if (userRole instanceof Admin_Marketplace) {
+                MarketPlaceDirectory directory = ecoSystem.getMarketPlaceDirectory();
+                List<MarketPlace> marketPlaces = directory.getMarketPlaces();
+                for (MarketPlace marketPlace : marketPlaces) {
+                    if (userAccount.getUsername().matches(marketPlace.getUsername())) {
+                        viewMarketplaceScreen();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Invalid credentials");
+                    }
+                }
+            } else if (userRole instanceof Fire_Man) {
+                FireDirectory directory = ecoSystem.getFireDirectory();
+                List<Fire> fires = directory.getFireDirectory();
+                for (Fire fire : fires) {
+                    if (userAccount.getUsername().matches(fire.getUsername())) {
+                        viewFiremanScreen();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Invalid credentials");
+                    }
+                }
+            } else if (userRole instanceof AmbulanceDriver) {
+                AmbulanceDirectory directory = ecoSystem.getAmbulanceDirectory();
+                List<Ambulance> ambulances = directory.getAmbulanceDirectory();
+                for (Ambulance ambulance : ambulances) {
+                    if (userAccount.getUsername().matches(ambulance.getUsername())) {
+                        viewAmbulanceScreen();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Invalid credentials");
+                    }
+                }
+            } else if (userRole instanceof MaintenanceMan) {
+                MaintenanceDirectory directory = ecoSystem.getMaintenanceDirectory();
+                List<Maintenance> maintenances = directory.getMaintenanceList();
+                for (Maintenance maintenance : maintenances) {
+                    if (userAccount.getUsername().matches(maintenance.getUsername())) {
+                        viewMaintenanceScreen();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Invalid credentials");
+                    }
+                }
             }
         }
     }
 
     private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_signUpButtonActionPerformed
         // TODO add your handling code here:
-
+        UserRegister register = new UserRegister(workArea, ecoSystem);
+        workArea.add("UserRegister", register);
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -192,10 +281,54 @@ public class UserLogin extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) workArea.getLayout();
         layout.next(workArea);
     }
-
-    private void viewConsultantScreen() {
-        
+    
+    private void viewUserScreen() {
+        UserAreaJPanel userAreaJPanel = new UserAreaJPanel(workArea, userAccount, ecoSystem);
+        workArea.add(userAreaJPanel);
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
     }
 
-    
+    private void viewConsultantScreen() {
+        ConsultantViewJPanel consultantViewJPanel = new ConsultantViewJPanel(workArea, userAccount, ecoSystem);
+        workArea.add(consultantViewJPanel);
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
+    }
+
+    private void viewBuilderScreen() {
+        BuilderEnterpriseJFrame frame = new BuilderEnterpriseJFrame(workArea, userAccount, ecoSystem);
+        workArea.add(frame);
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
+    }
+
+    private void viewMarketplaceScreen() {
+        MarketPlaceView marketPlaceView = new MarketPlaceView(workArea, userAccount, ecoSystem);
+        workArea.add(marketPlaceView);
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
+    }
+
+    private void viewFiremanScreen() {
+        FireViewJPanel fireViewJPanel = new FireViewJPanel(workArea, userAccount, ecoSystem);
+        workArea.add(fireViewJPanel);
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
+    }
+
+    private void viewAmbulanceScreen() {
+        AmbulanceView ambulanceView = new AmbulanceView(workArea, userAccount, ecoSystem);
+        workArea.add(ambulanceView);
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
+    }
+
+    private void viewMaintenanceScreen() {
+        MaintenanceMain maintenanceMain = new MaintenanceMain(workArea, userAccount, ecoSystem);
+        workArea.add(maintenanceMain);
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
+    }
+
 }
