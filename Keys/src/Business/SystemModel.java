@@ -7,6 +7,7 @@ package Business;
 import Business.Builder.BuilderDirectory;
 import Business.Builder.ListingsDirectory;
 import Business.Consultant.ConsultantDirectory;
+import Business.HouseDevelopmentBoard.QuestionnaireDirectory;
 import Business.PointOfContact.Ambulance.AmbulanceDirectory;
 import Business.PointOfContact.Fire.FireDirectory;
 import Business.PointOfContact.Maintenance.MaintenanceDirectory;
@@ -37,7 +38,7 @@ public class SystemModel {
     private ConsultantAppointmentDirectory consultantAppointmentDir;
     private MarketPlaceDirectory marketPlaceDirectory;
     private DonateProductDirectory donateProdirectory;
-
+    private QuestionnaireDirectory questionnaireDirectory;
     private BuilderDirectory builderDirectory;
     private ListingRequestDirectory listingRequestDirectory;
     private SearchApplication checkApplication;
@@ -60,7 +61,22 @@ public class SystemModel {
         listingRequestDirectory = new ListingRequestDirectory();
         userDirectory = new UserDirectory();
         requestMarketPlaceDirectory = new RequestMarketPlaceDirectory();
+        questionnaireDirectory = new QuestionnaireDirectory();
     }
+
+    public QuestionnaireDirectory getQuestionnaireDirectory() {
+        if(questionnaireDirectory == null){
+            questionnaireDirectory = new QuestionnaireDirectory();
+
+        }
+        return questionnaireDirectory;
+    }
+
+    public void setQuestionnaireDirectory(QuestionnaireDirectory questionnaireDirectory) {
+        this.questionnaireDirectory = questionnaireDirectory;
+    }
+    
+    
 
     public RequestMarketPlaceDirectory getRequestMarketPlaceDirectory() {
         if(requestMarketPlaceDirectory == null){

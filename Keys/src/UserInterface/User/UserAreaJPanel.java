@@ -287,7 +287,7 @@ public class UserAreaJPanel extends javax.swing.JPanel {
 
     private void testingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_testingMousePressed
         // TODO add your handling code here:
-        //PandemicTest();
+        housingQuestionnaire();
     }//GEN-LAST:event_testingMousePressed
 
     private void marketPlaceMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_marketPlaceMousePressed
@@ -377,20 +377,20 @@ public class UserAreaJPanel extends javax.swing.JPanel {
 //        layout.next(rightSidePanel);
 //    }
 //
-//    private void PandemicTest() {
-//        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//        emergencyReport.setBackground(new Color(255,255,255));
-//        medicine.setBackground(new Color(255,255,255));
-//         bloodDonation.setBackground(new Color(255,255,255));
-//         vaccination.setBackground(new Color(255,255,255));
-//        bookAppointment.setBackground(new Color(255,255,255));
-//        testing.setBackground(new Color(213,230,249));
-//        //255,255,255 PandemicTestCentreJPanel
-//        TestRegistration pcr=new TestRegistration (system, rightSidePanel,userAcc);
-//        rightSidePanel.add(pcr);
-//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-//        layout.next(rightSidePanel);
-//    }
+    private void housingQuestionnaire() {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        emergencyReport.setBackground(new Color(255,255,255));
+        builder.setBackground(new Color(255,255,255));
+         marketPlace.setBackground(new Color(255,255,255));
+         //vaccination.setBackground(new Color(255,255,255));
+        bookAppointment.setBackground(new Color(255,255,255));
+        testing.setBackground(new Color(213,230,249));
+        //255,255,255 HousingQuestionnaire
+        HousingQuestionnaire questionnaire=new HousingQuestionnaire (system, rightSidePanel,userAcc);
+        rightSidePanel.add(questionnaire);
+        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
+        layout.next(rightSidePanel);
+    }
 //    
 
     private void marketPlaceRequest() {
