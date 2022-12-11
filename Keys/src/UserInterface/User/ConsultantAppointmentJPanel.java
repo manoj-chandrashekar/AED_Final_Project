@@ -233,7 +233,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
 
         List<Consultant> consultant = system.getConsultantDirectory().getConsultants();
         int l = consultant.size();
-        List<String> specialization = new ArrayList<String>();
+        List<String> specialization = new ArrayList<>();
         for (int i = 0; i < l; i++) {
             Consultant d1 = consultant.get(i);
             if (!specialization.contains(d1.getSpecialization())) {
