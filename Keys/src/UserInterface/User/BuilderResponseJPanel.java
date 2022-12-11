@@ -57,12 +57,6 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listingsTbl = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextAccomodation = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtCost = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         collectOrder = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
 
@@ -98,31 +92,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(listingsTbl);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 970, 190));
-
-        jTextAccomodation.setColumns(20);
-        jTextAccomodation.setRows(5);
-        jTextAccomodation.setPreferredSize(new java.awt.Dimension(200, 100));
-        jScrollPane2.setViewportView(jTextAccomodation);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 440, 140));
-
-        txtCost.setColumns(20);
-        txtCost.setRows(5);
-        txtCost.setPreferredSize(new java.awt.Dimension(200, 100));
-        jScrollPane3.setViewportView(txtCost);
-
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, 440, 150));
-
-        jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel2.setText("Total Cost :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 340, 180, -1));
-
-        jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setText("List of Accomodations :");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 270, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 970, 400));
 
         collectOrder.setBackground(new java.awt.Color(51, 51, 255));
         collectOrder.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -222,15 +192,9 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
     private javax.swing.JButton cancelButton;
     private javax.swing.JButton collectOrder;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextAccomodation;
     private javax.swing.JTable listingsTbl;
-    private javax.swing.JTextArea txtCost;
     // End of variables declaration//GEN-END:variables
 
     private void displayTable() {
