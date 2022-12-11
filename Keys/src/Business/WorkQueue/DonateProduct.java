@@ -21,7 +21,27 @@ public class DonateProduct {
     Date appoinmentDate;
     String firstName;
     String lastName;
+    String productType;
+    String specifics;
 
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
+    }
+
+    public String getSpecifics() {
+        return specifics;
+    }
+
+    public void setSpecifics(String specifics) {
+        this.specifics = specifics;
+    }
+
+    
+    
     public int getId() {
         return id;
     }
