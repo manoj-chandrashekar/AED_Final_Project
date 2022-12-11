@@ -33,8 +33,8 @@ public class Notification {
 //    }
 //    
     public Notification(){
-        this.fromEmail="manuc2012@gmail.com";
-        this.password="rxdgvxkohesxzimc";
+        this.fromEmail="noreply.keyshousing@gmail.com";
+        this.password="Neugrad2022";
     }
     
     public void sendMail(String toEmail, String subject, String emailMessage){
