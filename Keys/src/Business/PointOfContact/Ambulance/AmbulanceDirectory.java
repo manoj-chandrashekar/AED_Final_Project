@@ -24,6 +24,14 @@ public class AmbulanceDirectory {
         this.ambulanceDirectory = ambulanceDirectory;
     }
     
+    public void addAmbulance(Ambulance ambulance){
+        ambulanceDirectory.add(ambulance);
+    }
+    
+    public void removeAmbulance(Ambulance ambulance){
+        ambulanceDirectory.remove(ambulance);
+    }
+    
     
     
 }

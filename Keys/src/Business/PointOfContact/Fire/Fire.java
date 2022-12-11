@@ -13,7 +13,7 @@ import Business.UserAccountManagement.UserAccount;
  */
 public class Fire extends UserAccount {
     private int id;
-    private int count =0;
+    private static int count =0;
     private String FireServiceLocation;
     private String FireManName;
     private long contactNo;

@@ -14,28 +14,28 @@ import Business.UserAccountManagement.UserAccount;
  */
 public class Maintenance extends UserAccount {
      private int id;
-    private int count =0;
-    private String maintenanceCompany;
+    private static int count =0;
+    private String maintenanceLocation;
     private String maintenanceName;
     private long contactNo;
 
-    public Maintenance(String userId, String pwd, String maintenanceCompany, String maintenanceName, long contactNo) {
+    public Maintenance(String userId, String pwd, String maintenanceLocation, String maintenanceName, long contactNo) {
         setUsername(userId);
         setPwd(pwd);
         setRole(new MaintenanceMan());
         id =count;
         count = count+1;
-        this.maintenanceCompany = maintenanceCompany;
+        this.maintenanceLocation = maintenanceLocation;
         this.maintenanceName = maintenanceName;
         this.contactNo = contactNo;
     }
 
-    public String getMaintenanceCompany() {
-        return maintenanceCompany;
+    public String getMaintenanceLocation() {
+        return maintenanceLocation;
     }
 
-    public void setMaintenanceCompany(String maintenanceCompany) {
-        this.maintenanceCompany = maintenanceCompany;
+    public void setMaintenanceLocation(String maintenanceLocation) {
+        this.maintenanceLocation = maintenanceLocation;
     }
 
     public String getMaintenanceName() {
