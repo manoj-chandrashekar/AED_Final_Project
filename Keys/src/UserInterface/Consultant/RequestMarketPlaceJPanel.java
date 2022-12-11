@@ -42,11 +42,11 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
         Consultant consultant = (Consultant) (userAcc);
         firstNameTxt.setText(consultant.getName());
 
-        List<MarketPlace> marketPlaceLists = marketPlaceDir.getMarketPlaceList();
+        List<MarketPlace> marketPlaceLists = marketPlaceDir.getMarketPlaces();
         int l = marketPlaceLists.size();
         for (int i = 0; i < l; i++) {
             MarketPlace marketPlace = marketPlaceLists.get(i);
-            marketPlaceList.addItem(marketPlace.getUserNames());
+            marketPlaceList.addItem(marketPlace.getStoreName());
 
         }
     }

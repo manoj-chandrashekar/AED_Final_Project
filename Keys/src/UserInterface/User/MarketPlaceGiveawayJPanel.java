@@ -190,11 +190,11 @@ public class MarketPlaceGiveawayJPanel extends javax.swing.JPanel {
 
     public void setDonationCenterList() {
         MarketPlaceDirectory mp = system.getMarketPlaceDirectory();
-        List<MarketPlace> storeList = mp.getMarketPlaceList();
+        List<MarketPlace> storeList = mp.getMarketPlaces();
         int l = storeList.size();
         for (int i = 0; i < l; i++) {
             MarketPlace blood = storeList.get(i);
-            storeBox.addItem(blood.getUserNames());
+            storeBox.addItem(blood.getStoreName());
         }
 
     }

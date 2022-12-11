@@ -42,7 +42,6 @@ public class SystemModel {
     private ListingRequestDirectory listingRequestDirectory;
     private SearchApplication checkApplication;
     private UserDirectory userDirectory;
-    private MarketPlaceDirectory marketPlaceDirectory;
     
 
     public SystemModel() {
@@ -212,18 +211,5 @@ public class SystemModel {
     public void setBuilderDirectory(BuilderDirectory builderDirectory) {
         this.builderDirectory = builderDirectory;
     }
-
-    public MarketPlaceDirectory getMarketPlaceDirectory() {
-        if(marketPlaceDirectory == null) {
-            marketPlaceDirectory = new MarketPlaceDirectory();
-        }
-        return marketPlaceDirectory;
-    }
-
-    public void setMarketPlaceDirectory(MarketPlaceDirectory marketPlaceDirectory) {
-        this.marketPlaceDirectory = marketPlaceDirectory;
-    }
-    
-    
     
 }
