@@ -21,7 +21,7 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Sanjay
+ * @author Sanjay Bhaskar Kashyap
  */
 public class marketPlaceView extends javax.swing.JPanel {
 

@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author shrikrishnajoisa
+ * @author Sanjay Bhaskar Kashyap
  */
 public class MaintenanceDisplay extends javax.swing.JPanel {
 
