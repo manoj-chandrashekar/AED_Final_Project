@@ -157,6 +157,11 @@ public class SysAdminWorkAreaJPanel extends javax.swing.JPanel {
         emergencyButton.setText("Manage");
         emergencyButton.setBorder(null);
         emergencyButton.setFocusPainted(false);
+        emergencyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emergencyButtonActionPerformed(evt);
+            }
+        });
         jPanel6.add(emergencyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 180, 40));
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/POC.png"))); // NOI18N
@@ -305,6 +310,14 @@ public class SysAdminWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) container.getLayout();
         layout.next(container);
     }//GEN-LAST:event_builderButtonActionPerformed
+
+    private void emergencyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emergencyButtonActionPerformed
+        // TODO add your handling code here:
+        POCEnterpriseJPanel pOCEnterpriseJPanel = new POCEnterpriseJPanel(ecosystem, container);
+        container.add(pOCEnterpriseJPanel);
+        CardLayout layout = (CardLayout) container.getLayout();
+        layout.next(container);
+    }//GEN-LAST:event_emergencyButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -6,6 +6,7 @@ package Business.Roles;
 
 import Business.EcoSystem;
 import Business.UserAccountManagement.UserAccount;
+import UserInterface.Ambulance.AmbulanceView;
 import UserInterface.User.UserAreaJPanel;
 import javax.swing.JPanel;
 
@@ -15,6 +16,6 @@ import javax.swing.JPanel;
  */
 public class AmbulanceDriver extends Roles{
      public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        return new UserAreaJPanel(userProcessContainer, account, business);
+        return new AmbulanceView(userProcessContainer, account, business);
     }
 }

@@ -77,29 +77,21 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         goBack = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         emergencyReport = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         builder = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         testing = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         marketPlace = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         bookAppointment = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -135,14 +127,12 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         });
         goBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-logout-24.png"))); // NOI18N
-        goBack.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
-
         jLabel22.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(115, 120, 128));
         jLabel22.setText("Sign Out");
         goBack.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/exit.png"))); // NOI18N
         jLabel9.setText("jLabel9");
         goBack.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, -1));
 
@@ -157,14 +147,12 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         });
         emergencyReport.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-ambulance-24 (1).png"))); // NOI18N
-        emergencyReport.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
-
         jLabel17.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(115, 120, 128));
         jLabel17.setText("Point of contact");
         emergencyReport.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/poclogo.png"))); // NOI18N
         jLabel27.setText("jLabel9");
         emergencyReport.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, -1));
 
@@ -179,14 +167,12 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         });
         builder.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-supplement-bottle-24.png"))); // NOI18N
-        builder.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
-
         jLabel15.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(115, 120, 128));
         jLabel15.setText("View available options");
         builder.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/optionslog.png"))); // NOI18N
         jLabel25.setText("jLabel9");
         builder.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, -1));
 
@@ -201,14 +187,12 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         });
         testing.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-pcr-test-24.png"))); // NOI18N
-        testing.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
-
         jLabel11.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(115, 120, 128));
         jLabel11.setText("Survey");
         testing.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 150, -1));
 
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/managelisting30.png"))); // NOI18N
         jLabel24.setText("jLabel9");
         testing.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, -1));
 
@@ -223,20 +207,12 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         });
         marketPlace.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-drop-of-blood-24.png"))); // NOI18N
-        marketPlace.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
-
         jLabel13.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(115, 120, 128));
         jLabel13.setText("Market place");
         marketPlace.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel19.setText("jLabel9");
-        marketPlace.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
-
-        jLabel20.setText("jLabel9");
-        marketPlace.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
-
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/marketlogo.png"))); // NOI18N
         jLabel23.setText("jLabel9");
         marketPlace.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
 
@@ -251,14 +227,12 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         });
         bookAppointment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-planner-24.png"))); // NOI18N
-        bookAppointment.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
-
         jLabel6.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(115, 120, 128));
         jLabel6.setText("Find A Consultant");
         bookAppointment.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/consultantreq.png"))); // NOI18N
         jLabel18.setText("jLabel9");
         bookAppointment.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, 30));
 
@@ -345,17 +319,10 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -364,7 +331,6 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

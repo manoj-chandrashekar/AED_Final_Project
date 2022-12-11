@@ -22,7 +22,7 @@ import javax.swing.Timer;
  *
  * @author Nagarjun Mallesh
  */
-public class ConsultantView extends javax.swing.JPanel {
+public class ConsultantViewJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form DoctorView
@@ -49,7 +49,7 @@ public class ConsultantView extends javax.swing.JPanel {
         timer.start();
     }
 
-    public ConsultantView(JPanel userProcessContainer, UserAccount userAcc, EcoSystem ecosystem) {
+    public ConsultantViewJPanel(JPanel userProcessContainer, UserAccount userAcc, EcoSystem ecosystem) {
         initComponents();
         this.system = ecosystem;
         this.container = userProcessContainer;
@@ -118,6 +118,8 @@ public class ConsultantView extends javax.swing.JPanel {
         jLabel32.setForeground(new java.awt.Color(115, 120, 128));
         jLabel32.setText("Return");
         goBack.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/exit.png"))); // NOI18N
         goBack.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
 
         Appointments.add(goBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 780, 290, 60));
@@ -135,6 +137,8 @@ public class ConsultantView extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(115, 120, 128));
         jLabel7.setText("Manage Appointments");
         appointments.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/managelisting30.png"))); // NOI18N
         appointments.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         Appointments.add(appointments, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 290, 60));
@@ -152,10 +156,14 @@ public class ConsultantView extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(115, 120, 128));
         jLabel6.setText("Request Marketplace");
         requestMarketPlace.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 200, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/marketlogo.png"))); // NOI18N
         requestMarketPlace.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
 
         Appointments.add(requestMarketPlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 290, 60));
         Appointments.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 770, 290, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/keyslogo.png"))); // NOI18N
         Appointments.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 130));
 
         jPanel3.add(Appointments, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 288, 1080));

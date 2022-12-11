@@ -6,6 +6,7 @@ package Business.Roles;
 
 import Business.EcoSystem;
 import Business.UserAccountManagement.UserAccount;
+import UserInterface.Maintenance.MaintenanceMain;
 import UserInterface.User.UserAreaJPanel;
 import javax.swing.JPanel;
 
@@ -15,7 +16,7 @@ import javax.swing.JPanel;
  */
 public class MaintenanceMan extends Roles {
         public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        return new UserAreaJPanel(userProcessContainer, account, business);
+        return new MaintenanceMain(userProcessContainer, account, business);
     }
     
 }

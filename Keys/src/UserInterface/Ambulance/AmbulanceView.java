@@ -94,8 +94,6 @@ public class AmbulanceView extends javax.swing.JPanel {
         jLabel20 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         ambulancePanel = new javax.swing.JPanel();
@@ -202,14 +200,9 @@ public class AmbulanceView extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1040, 190, 30));
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
         jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 770, 290, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\keyslogo.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/keyslogo.png"))); // NOI18N
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 130));
 
         ambulancePanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -221,7 +214,7 @@ public class AmbulanceView extends javax.swing.JPanel {
         });
         ambulancePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\ambul.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/ambul.png"))); // NOI18N
         ambulancePanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
 
         jLabel6.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
@@ -240,7 +233,7 @@ public class AmbulanceView extends javax.swing.JPanel {
         });
         goBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\exit.png")); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/exit.png"))); // NOI18N
         goBack.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
 
         jLabel22.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
@@ -346,7 +339,6 @@ public class AmbulanceView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -355,7 +347,6 @@ public class AmbulanceView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;

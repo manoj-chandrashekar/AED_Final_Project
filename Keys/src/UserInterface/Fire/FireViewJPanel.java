@@ -23,7 +23,7 @@ import javax.swing.Timer;
  *
  * @author Sanjay Bhaskar Kashyap
  */
-public class FireView extends javax.swing.JPanel {
+public class FireViewJPanel extends javax.swing.JPanel {
     
     
     private UserAccount userAcc;
@@ -52,7 +52,7 @@ public class FireView extends javax.swing.JPanel {
      * @param userAcc
      * @param ecosystem
      */
-    public FireView(JPanel userProcessContainer, UserAccount userAcc,EcoSystem ecosystem) {
+    public FireViewJPanel(JPanel userProcessContainer, UserAccount userAcc,EcoSystem ecosystem) {
         initComponents();
         this.system = ecosystem;
         this.container = userProcessContainer;
@@ -74,14 +74,11 @@ public class FireView extends javax.swing.JPanel {
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jSeparator5 = new javax.swing.JSeparator();
-        jLabel13 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         fireDepartmentPanel = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         goBack = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -107,10 +104,9 @@ public class FireView extends javax.swing.JPanel {
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel9.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1020, -1, -1));
-        jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo/safe together-logos_transparent copy.png"))); // NOI18N
-        jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 90));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/keyslogo.png"))); // NOI18N
+        jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 130));
 
         fireDepartmentPanel.setBackground(new java.awt.Color(255, 255, 255));
         fireDepartmentPanel.setPreferredSize(new java.awt.Dimension(100, 48));
@@ -121,15 +117,12 @@ public class FireView extends javax.swing.JPanel {
         });
         fireDepartmentPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-medical-expenses-insurance-24.png"))); // NOI18N
-        fireDepartmentPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
-
         jLabel9.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(115, 120, 128));
         jLabel9.setText("Fire Department");
         fireDepartmentPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\fire.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/fire.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         fireDepartmentPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, 30));
 
@@ -144,25 +137,19 @@ public class FireView extends javax.swing.JPanel {
         });
         goBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/icons8-logout-24.png"))); // NOI18N
-        goBack.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, -1));
-
         jLabel22.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(115, 120, 128));
         jLabel22.setText("Return");
         goBack.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\exit.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/exit.png"))); // NOI18N
         jLabel11.setText("jLabel9");
         goBack.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, -1));
 
         jPanel9.add(goBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 780, 290, 60));
         jPanel9.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 770, 290, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\keyslogo.png")); // NOI18N
         jPanel9.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 130));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\exit.png")); // NOI18N
         jLabel10.setText("jLabel9");
         jPanel9.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, -1));
 
@@ -265,14 +252,11 @@ public class FireView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
