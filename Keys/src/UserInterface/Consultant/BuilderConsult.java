@@ -9,6 +9,7 @@ import Business.Consultant.Consultant;
 import Business.EcoSystem;
 import Business.Builder.Builder;
 import Business.Builder.BuilderDirectory;
+import Business.Builder.Listings;
 import Business.UserAccountManagement.UserAccount;
 import Business.WorkQueue.ConsultantAppointment;
 import Business.WorkQueue.ConsultantAppointmentDirectory;
@@ -28,12 +29,12 @@ import javax.swing.table.DefaultTableModel;
 public class BuilderConsult extends javax.swing.JPanel {
 
     /**
-     * Creates new form PharmacyDoctor
+     * Creates new form BuilderConsultJPanel
      */
     private final JPanel container;
     private final EcoSystem system;
     private final UserAccount userAcc;
-    private final String patientid;
+    private final String studentid;
     private final int appointmentId;
 
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
@@ -43,7 +44,7 @@ public class BuilderConsult extends javax.swing.JPanel {
         this.container = container;
         this.system = system;
         this.userAcc = userAcc;
-        this.patientid = userid;
+        this.studentid = userid;
         this.appointmentId = appointmentId;
         BuilderDirectory rd = system.getBuilderDirectory();
         List<Builder> list = rd.getBuilders();
@@ -69,12 +70,10 @@ public class BuilderConsult extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        placeButton = new javax.swing.JButton();
+        reserveButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        orderList = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        medList = new javax.swing.JTable();
+        listingTbl = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
 
@@ -85,65 +84,45 @@ public class BuilderConsult extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(1160, 750));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        placeButton.setBackground(new java.awt.Color(51, 51, 255));
-        placeButton.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
-        placeButton.setForeground(new java.awt.Color(255, 255, 255));
-        placeButton.setText("Place");
-        placeButton.addActionListener(new java.awt.event.ActionListener() {
+        reserveButton.setBackground(new java.awt.Color(51, 51, 255));
+        reserveButton.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
+        reserveButton.setForeground(new java.awt.Color(255, 255, 255));
+        reserveButton.setText("Reserve");
+        reserveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                placeButtonActionPerformed(evt);
+                reserveButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(placeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 590, 180, 50));
+        jPanel1.add(reserveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 590, 180, 50));
 
         jLabel1.setFont(new java.awt.Font("SF Pro Display", 1, 24)); // NOI18N
         jLabel1.setText("Builder Consultant Contact");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 31, 380, -1));
 
-        orderList.setModel(new javax.swing.table.DefaultTableModel(
+        listingTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Name", "Cost", "Quantity"
+                "AptNo", "Address", "NoOfBeds", "NoOfBaths", "Rent"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, true, true, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(orderList);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 853, 170));
-
-        medList.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Name", "Cost"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        medList.addMouseListener(new java.awt.event.MouseAdapter() {
+        listingTbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                medListMouseClicked(evt);
+                listingTblMouseClicked(evt);
             }
         });
-        jScrollPane3.setViewportView(medList);
+        jScrollPane3.setViewportView(listingTbl);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 853, 170));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 853, 360));
 
         jLabel2.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         jLabel2.setText("Builder");
@@ -173,12 +152,12 @@ public class BuilderConsult extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void placeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeButtonActionPerformed
+    private void reserveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveButtonActionPerformed
         // TODO add your handling code here:
 
         raiseRequest();
 
-    }//GEN-LAST:event_placeButtonActionPerformed
+    }//GEN-LAST:event_reserveButtonActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -187,16 +166,16 @@ public class BuilderConsult extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void medListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_medListMouseClicked
+    private void listingTblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listingTblMouseClicked
         // TODO add your handling code here:
-        getQuantity();
+        //getQuantity();
 
 
-    }//GEN-LAST:event_medListMouseClicked
+    }//GEN-LAST:event_listingTblMouseClicked
 
     private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
         // TODO add your handling code here:
-        // displayMedicines();
+        displayListings();
     }//GEN-LAST:event_jComboBox1MouseClicked
 
 
@@ -205,73 +184,54 @@ public class BuilderConsult extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable medList;
-    private javax.swing.JTable orderList;
-    private javax.swing.JButton placeButton;
+    private javax.swing.JTable listingTbl;
+    private javax.swing.JButton reserveButton;
     // End of variables declaration//GEN-END:variables
 
     private void raiseRequest() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        DefaultTableModel table = (DefaultTableModel) orderList.getModel();
-        if (table.getRowCount() != 0) {
-            ListingRequest reqListing = new ListingRequest();
-            int r = 1 + (int) (Math.random() * 100);
-            reqListing.setId(r);
-            reqListing.setStudentId(patientid);
-            Consultant consultant = (Consultant) (userAcc);
-            reqListing.setConsultantName(consultant.getName());
-            reqListing.setBuilderName(jComboBox1.getSelectedItem().toString());
-            reqListing.setStatus("Order Placed");
-
-            Map<String, String> listing = reqListing.getListingOrderList();
-            Map<String, String> price = reqListing.getListingCostList();
-            int a = table.getRowCount();
-            for (int i = 0; i < a; i++) {
-                String s1 = table.getValueAt(i, 0).toString();
-                //System.out.println("this is one"+one);
-                String s2 = table.getValueAt(i, 1).toString();
-                //System.out.println("this is a1"+a1);
-                String s3 = table.getValueAt(i, 2).toString();
-                //System.out.println("this is two"+two);
-                listing.put(s1, s3);
-                int a1 = Integer.parseInt(s2);
-                int a2 = Integer.parseInt(s3);
-                int a3 = a1 * a2;
-                price.put(s1, String.valueOf(a3));
-
-            }
-            ListingRequestDirectory mdir = system.getListingRequestDirectory();
-            List<ListingRequest> orderList1 = mdir.getListingRequirement();
-            orderList1.add(reqListing);
-            updateStatus();
-//            dB4OUtil.storeSystem(system);
-            JOptionPane.showMessageDialog(null, "Order placed");
-        } else {
-            JOptionPane.showMessageDialog(null, "Cart is empty!!");
-        }
-
-    }
-
-    private void getQuantity() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        DefaultTableModel table = (DefaultTableModel) medList.getModel();
-        int sRow = medList.getSelectedRow();
-
-        String s1 = table.getValueAt(sRow, 0).toString();
-        String s2 = table.getValueAt(sRow, 1).toString();
-        String response;
-        do {
-            response = JOptionPane.showInputDialog("Please provide unit numbers available");
-        } while (!response.matches("^[0-9][0-9]?"));
-
-        DefaultTableModel t2 = (DefaultTableModel) orderList.getModel();
-        t2.addRow(new Object[]{s1, s2, response});
         
+          int selectedListing = listingTbl.getSelectedRow();
+          
+          if(selectedListing < 0){
+            JOptionPane.showMessageDialog(this, "Please select the listing to proceed for reservation");
+            return;
+          }
+          
+          DefaultTableModel model = (DefaultTableModel) listingTbl.getModel();
+          Listings listing = (Listings) model.getValueAt(selectedListing, 0);
+          
+          ListingRequest reqListing = new ListingRequest();
+          int r = 1 + (int) (Math.random() * 100);
+          reqListing.setId(r);
+          reqListing.setStudentId(studentid);
+          Consultant consultant = (Consultant) (userAcc);
+          reqListing.setConsultantName(consultant.getName());
+          reqListing.setBuilderName(jComboBox1.getSelectedItem().toString());
+          reqListing.setStatus("Reserved listing");
+          reqListing.setListings(listing);
+          JOptionPane.showMessageDialog(null, "Listing is reserved");
 
     }
-    
+
+//    private void getQuantity() {
+//        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//        DefaultTableModel table = (DefaultTableModel) listingTbl.getModel();
+//        int sRow = listingTbl.getSelectedRow();
+//
+//        String s1 = table.getValueAt(sRow, 0).toString();
+//        String s2 = table.getValueAt(sRow, 1).toString();
+//        String response;
+//        do {
+//            response = JOptionPane.showInputDialog("Please provide unit numbers available");
+//        } while (!response.matches("^[0-9][0-9]?"));
+//
+//        DefaultTableModel t2 = (DefaultTableModel) orderList.getModel();
+//        t2.addRow(new Object[]{s1, s2, response});
+//        
+//
+//    }
+//    
     public void updateStatus(){
             ConsultantAppointmentDirectory cunsultantApp = system.getConsultantAppointmentDir();
             List<ConsultantAppointment> docAppList = cunsultantApp.getAppointments();
@@ -286,61 +246,41 @@ public class BuilderConsult extends javax.swing.JPanel {
             }
     }
 
-    private void displayMedicines() {
-//        // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//        medList.setModel(new DefaultTableModel(null, new String[]{"Name", "Cost"}));
-//        orderList.setModel(new DefaultTableModel(null, new String[]{"Name", "Cost", "Quantity"}));
-//        PharmaDirectory pharmaDir = system.getPharmaDir();
-//        ArrayList<Pharma> list = pharmaDir.getPharmaArrayList();
-//        String s = jComboBox1.getSelectedItem().toString();
-//
-//        int l = list.size();
-//
-//        for (int i = 0; i < l; i++) {
-//            Pharma pharmacy = list.get(i);
-//
-//            if (s.matches(pharmacy.getPharmaName())) {
-//
+    private void displayListings() {
+        
+        BuilderDirectory builderDir = system.getBuilderDirectory();
+        List<Builder> list = builderDir.getBuilders();
+        String s = jComboBox1.getSelectedItem().toString();
+
+        int length = list.size();
+
+        for (int i = 0; i < length; i++) {
+            Builder builder = list.get(i);
+
+            if (s.matches(builder.getBuilderName())) {
+
 //                Map<String, String> abc = pharmacy.getMedicines();
-//
-//                DefaultTableModel model = (DefaultTableModel) medList.getModel();
-//                for (String key : abc.keySet()) {
-//
-//                    String s1[] = {key, abc.get(key)};
-//                    model.addRow(s1);
-//                }
-//            }
-//        }
-//        displayOrderTable();
+                List<Listings> listingsList = builder.getListings();
 
+                DefaultTableModel model = (DefaultTableModel) listingTbl.getModel();
+                model.setRowCount(0);
+                
+                for (Listings listing  : listingsList) {
+                    Object[] row = new Object[5];
+                    row[0] = listing;
+                    row[1] = listing.getAddress();
+                    row[2] = listing.getNoOfBeds();
+                    row[3] = listing.getNoOfBaths();
+                    row[4] = listing.getRent();
+                    
+                    
+                    model.addRow(row);
+                }
+            }
+        }
     }
 
-//    private void displayTable() {
-//        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//
-//    }
 
-    private void displayOrderTable() {
-//        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//        Req_MedicineDir medDir = system.getMedicineReqDir();
-//        ArrayList<Req_Medicine> orders = medDir.getMedReqDir();
-//        int size = orders.size();
-//        for(int i=0; i<size;i++){
-//            Req_Medicine order = orders.get(i);
-//            if(order.getPatientId().matches(patientid)){
-//                 Map<String,String> orderMap= order.getMedOrderlist();
-//                 Map<String, String> costMap = order.getMedCostlist();
-//                 for (String key: orderMap.keySet()) {
-//                    DefaultTableModel t2 = (DefaultTableModel) orderList.getModel();
-//                    t2.addRow(new Object[]{key, costMap.get(key), orderMap.get(key)});
-////                    t2.addRow(new Object[]{order.ge});
-////                    jTextMedicine.append("Item "+ count+ " : "+key+" Quantity : "+orderMap.get(key)+"\n");
-////                    count++;
-//
-//                }
-//            }
-//        }
+
     
-    
-    }
 }

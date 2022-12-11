@@ -4,7 +4,9 @@
  */
 package Business.WorkQueue;
 
+import Business.Builder.Listings;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,8 +18,7 @@ public class ListingRequest {
     int id;
     String studentId;
     String status;
-    Map<String, String> listingOrderList = new HashMap<String, String>();
-    Map<String, String> listingCostList = new HashMap<String, String>();
+    Listings listing;
     String consultantName;
 
     public String getBuilderName() {
@@ -52,20 +53,12 @@ public class ListingRequest {
         this.status = status;
     }
 
-    public Map<String, String> getListingOrderList() {
-        return listingOrderList;
+    public Listings getListings() {
+        return listing;
     }
 
-    public void setListingOrderList(Map<String, String> listingOrderList) {
-        this.listingOrderList = listingOrderList;
-    }
-
-    public Map<String, String> getListingCostList() {
-        return listingCostList;
-    }
-
-    public void setListingCostList(Map<String, String> listingCostList) {
-        this.listingCostList = listingCostList;
+    public void setListings(Listings listing) {
+        this.listing = listing;
     }
 
     public String getConsultantName() {
@@ -74,6 +67,11 @@ public class ListingRequest {
 
     public void setConsultantName(String consultantName) {
         this.consultantName = consultantName;
+    }
+    
+     @Override
+    public String toString(){
+        return String.valueOf(id);
     }
     
     

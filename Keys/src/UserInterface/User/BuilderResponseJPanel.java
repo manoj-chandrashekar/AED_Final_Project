@@ -56,7 +56,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        ListingsTbl = new javax.swing.JTable();
+        listingsTbl = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAccomodation = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -83,29 +83,29 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
             }
         });
 
-        ListingsTbl.setModel(new javax.swing.table.DefaultTableModel(
+        listingsTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Consultant Name", "Builder", "Status"
+                "ID", "AptNo", "Address", "NoOfBeds", "NoOfBaths", "Rent", "Builder", "Status"
             }
         ));
-        ListingsTbl.addMouseListener(new java.awt.event.MouseAdapter() {
+        listingsTbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ListingsTblMouseClicked(evt);
+                listingsTblMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(ListingsTbl);
+        jScrollPane1.setViewportView(listingsTbl);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, 540));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 970, 190));
 
         jTextAccomodation.setColumns(20);
         jTextAccomodation.setRows(5);
         jTextAccomodation.setPreferredSize(new java.awt.Dimension(200, 100));
         jScrollPane2.setViewportView(jTextAccomodation);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 440, 140));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 440, 140));
 
         txtCost.setColumns(20);
         txtCost.setRows(5);
@@ -122,7 +122,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("List of Accomodations :");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 270, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 270, -1));
 
         collectOrder.setBackground(new java.awt.Color(51, 51, 255));
         collectOrder.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -161,43 +161,43 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ListingsTblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListingsTblMouseClicked
+    private void listingsTblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listingsTblMouseClicked
         // TODO add your handling code here:
-        txtCost.setText("");
-        jTextAccomodation.setText("");
-
-        DefaultTableModel table = (DefaultTableModel) ListingsTbl.getModel();
-        int selectedRow=ListingsTbl.getSelectedRow();
-        int sRow=Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
-      
-        ListingRequestDirectory medDir= system.getListingRequestDirectory();
-        List<ListingRequest> listorder=medDir.getListingRequirement();
-        int l=listorder.size();
-        for(int i=0;i<l;i++)
-        {
-            ListingRequest medReq=listorder.get(i);
-            if(sRow==medReq.getId())
-            {
-                Map<String,String> orderMap=medReq.getListingOrderList();
-                int count =1;
-                for (String key: orderMap.keySet()) {
-                    jTextAccomodation.append("Item "+ count+ " : "+key+" Quantity : "+orderMap.get(key)+"\n");
-                    count++;
-
-                }
-                Map<String,String> orderMap2=medReq.getListingOrderList();
-                int n=0;
-                for (String key: orderMap2.keySet()) {
-                    
-                    n=n+(Integer.parseInt(orderMap2.get(key)));
-                    
-
-                }
-                txtCost.append(String.valueOf(n));
-
-            }
-        }
-    }//GEN-LAST:event_ListingsTblMouseClicked
+//        txtCost.setText("");
+//        jTextAccomodation.setText("");
+//
+//        DefaultTableModel table = (DefaultTableModel) ListingsTbl.getModel();
+//        int selectedRow=ListingsTbl.getSelectedRow();
+//        int sRow=Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
+//      
+//        ListingRequestDirectory medDir= system.getListingRequestDirectory();
+//        List<ListingRequest> listorder=medDir.getListingRequirement();
+//        int l=listorder.size();
+//        for(int i=0;i<l;i++)
+//        {
+//            ListingRequest medReq=listorder.get(i);
+//            if(sRow==medReq.getId())
+//            {
+//                Map<String,String> orderMap=medReq.getListingOrderList();
+//                int count =1;
+//                for (String key: orderMap.keySet()) {
+//                    jTextAccomodation.append("Item "+ count+ " : "+key+" Quantity : "+orderMap.get(key)+"\n");
+//                    count++;
+//
+//                }
+//                Map<String,String> orderMap2=medReq.getListingOrderList();
+//                int n=0;
+//                for (String key: orderMap2.keySet()) {
+//                    
+//                    n=n+(Integer.parseInt(orderMap2.get(key)));
+//                    
+//
+//                }
+//                txtCost.append(String.valueOf(n));
+//
+//            }
+//        }
+    }//GEN-LAST:event_listingsTblMouseClicked
 
     private void jScrollPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseClicked
         // TODO add your handling code here:
@@ -206,7 +206,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
 
     private void collectOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_collectOrderActionPerformed
         // TODO add your handling code here:
-        orderCollection();
+        confirmListing();
 
     }//GEN-LAST:event_collectOrderActionPerformed
 
@@ -219,7 +219,6 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable ListingsTbl;
     private javax.swing.JButton cancelButton;
     private javax.swing.JButton collectOrder;
     private javax.swing.JLabel jLabel1;
@@ -230,6 +229,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextAccomodation;
+    private javax.swing.JTable listingsTbl;
     private javax.swing.JTextArea txtCost;
     // End of variables declaration//GEN-END:variables
 
@@ -238,19 +238,25 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
     
         ListingRequestDirectory listingDirectory=system.getListingRequestDirectory();
         List<ListingRequest> order=listingDirectory.getListingRequirement();
-        int l=order.size();
+        int length=order.size();
         User r=(User)userAcc;
-        for(int i=0;i<l;i++)
+        for(int i=0;i<length;i++)
         {
-            ListingRequest reqMed=order.get(i);
-            if(reqMed.getStudentId().matches(r.getUserId()))
+            ListingRequest listingRequest=order.get(i);
+            if(listingRequest.getStudentId().matches(r.getUserId()))
             {
-                DefaultTableModel table = (DefaultTableModel) ListingsTbl.getModel();
-                String s1=String.valueOf(reqMed.getId());
-                
-                
-                String s[]={s1,reqMed.getConsultantName(),reqMed.getBuilderName(),reqMed.getStatus()};
-                table.addRow(s);
+                DefaultTableModel table = (DefaultTableModel) listingsTbl.getModel();
+                Object[] row = new Object[8];
+                row[0] = listingRequest;
+                row[1] = listingRequest.getListings().getAptNo();
+                row[2] = listingRequest.getListings().getAddress();
+                row[3] = listingRequest.getListings().getNoOfBeds();
+                row[4] = listingRequest.getListings().getNoOfBaths();
+                row[5] = listingRequest.getListings().getRent();
+                row[6] = listingRequest.getBuilderName();
+                row[7] = listingRequest.getStatus();
+                //String s[]={s1,reqMed.getConsultantName(),reqMed.getBuilderName(),reqMed.getStatus()};
+                table.addRow(row);
             
             
             }
@@ -259,45 +265,21 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
     
     }
 
-    private void orderCollection() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-   DefaultTableModel  t2 = (DefaultTableModel) ListingsTbl.getModel();
-        int selectedRow=ListingsTbl.getSelectedRow();
-        if(selectedRow>=0)
-        {
-        int s=Integer.parseInt(t2.getValueAt(selectedRow, 0).toString());
-        System.out.println("id"+s);
-        ListingRequestDirectory dire=system.getListingRequestDirectory();
-        List<ListingRequest> order=dire.getListingRequirement();
-        int u=order.size();
+    private void confirmListing() {
+        int selectedListing = listingsTbl.getSelectedRow();
+        if(selectedListing < 0 ) {
+            JOptionPane.showMessageDialog(this, "Please select the Listing to confirm");
+            return;
+        }
         
-        for(int i=0;i<u;i++)
-        {
-            ListingRequest o=order.get(i);
-            if(s==o.getId()/*&&o.getStatus().matches("Deliver Man Assigned")*/)
-            {
-                if(o.getStatus().matches("Ready for pickup"))
-                {
-                    o.setStatus("Order Recieved");
-                    JOptionPane.showMessageDialog(null,"Order Received, Successfully.");  
-                }
-                else
-                {
-                 JOptionPane.showMessageDialog(null,"Wrong Move!!");  
-
-                }
-            }
+        DefaultTableModel model = (DefaultTableModel) listingsTbl.getModel();
+        ListingRequest request = (ListingRequest) model.getValueAt(selectedListing, 0);
+        if(request.getStatus() == "Approved"){
+            request.setStatus("Ready for occupancy");
+            JOptionPane.showMessageDialog(this,"Listing selected is reserved for future process");
+        }else{
+            JOptionPane.showMessageDialog(this,"Selected Listing is not available");
         }
-           ListingsTbl.setModel(new DefaultTableModel(null,new String[]{"ID","Doctor Name","Pharmacy","Status"}));
-        displayTable();
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"Select a Row!!");  
-        }
-    
-    
-    
     }
     
 //    public void sendmail(String subject, String content) {
@@ -309,46 +291,62 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
 //    }
 
     private void cancelOrder() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-   
-    DefaultTableModel  t2 = (DefaultTableModel) ListingsTbl.getModel();
-        int selectedRow=ListingsTbl.getSelectedRow();
-        if(selectedRow>=0)
-        {
-        int s=Integer.parseInt(t2.getValueAt(selectedRow, 0).toString());
-        System.out.println("id"+s);
-            ListingRequestDirectory dire=system.getListingRequestDirectory();
-        List<ListingRequest> order=dire.getListingRequirement();
-        
-        int u=order.size();
-        
-        for(int i=0;i<u;i++)
-        {
-            ListingRequest o=order.get(i);
-            if(s==o.getId()/*&&o.getStatus().matches("Deliver Man Assigned")*/)
-            {
-                if(!o.getStatus().matches("Order Recieved"))
-                {
-                o.setStatus("Cancelled");
-                String subject = "Request Cancelled";
-                String content = "Medicine request was cancelled.";
-                //sendmail(subject, content);
-                }
-                else
-                {
-                 JOptionPane.showMessageDialog(null,"Wrong Move!!");  
-
-                }
-                
+      int selectedListing = listingsTbl.getSelectedRow();
+        if(selectedListing>= 0 ) {
+            DefaultTableModel model = (DefaultTableModel) listingsTbl.getModel();
+            ListingRequest request = (ListingRequest) model.getValueAt(selectedListing, 0);
+            if(request.getStatus() == "Reserved Listing"){
+                JOptionPane.showMessageDialog(this,"Listing declined");
+            }else{
+                JOptionPane.showMessageDialog(this,"Selected Listing is not available");
             }
+            listingsTbl.setModel(new DefaultTableModel());
+            displayTable();
+        }else{
+            JOptionPane.showMessageDialog(this, "Please select the Listing to confirm");
+            return;
         }
-           ListingsTbl.setModel(new DefaultTableModel(null,new String[]{"ID","Doctor Name","Pharmacy","Status"}));
-        displayTable();
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"Select a Row!!");  
-        }
-    
     }
+        
+   
+//    DefaultTableModel  t2 = (DefaultTableModel) listingsTbl.getModel();
+//        int selectedRow=listingsTbl.getSelectedRow();
+//        if(selectedRow>=0)
+//        {
+//        int s=Integer.parseInt(t2.getValueAt(selectedRow, 0).toString());
+//        System.out.println("id"+s);
+//            ListingRequestDirectory dire=system.getListingRequestDirectory();
+//        List<ListingRequest> order=dire.getListingRequirement();
+//        
+//        int u=order.size();
+//        
+//        for(int i=0;i<u;i++)
+//        {
+//            ListingRequest o=order.get(i);
+//            if(s==o.getId()/*&&o.getStatus().matches("Deliver Man Assigned")*/)
+//            {
+//                if(!o.getStatus().matches("Order Recieved"))
+//                {
+//                o.setStatus("Cancelled");
+//                String subject = "Request Cancelled";
+//                String content = "Medicine request was cancelled.";
+//                //sendmail(subject, content);
+//                }
+//                else
+//                {
+//                 JOptionPane.showMessageDialog(null,"Wrong Move!!");  
+//
+//                }
+//                
+//            }
+//        }
+//           listingsTbl.setModel(new DefaultTableModel(null,new String[]{"ID","Doctor Name","Pharmacy","Status"}));
+//        displayTable();
+//        }
+//        else
+//        {
+//            JOptionPane.showMessageDialog(null,"Select a Row!!");  
+//        }
+//    
+//    }
 }
