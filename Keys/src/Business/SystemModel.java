@@ -63,6 +63,9 @@ public class SystemModel {
     }
 
     public RequestMarketPlaceDirectory getRequestMarketPlaceDirectory() {
+        if(requestMarketPlaceDirectory == null){
+            requestMarketPlaceDirectory = new RequestMarketPlaceDirectory();
+        }
         return requestMarketPlaceDirectory;
     }
 
@@ -71,6 +74,9 @@ public class SystemModel {
     }
 
     public UserDirectory getUserDirectory() {
+        if(userDirectory == null){
+            userDirectory = new UserDirectory();
+        }
         return userDirectory;
     }
 
@@ -79,6 +85,9 @@ public class SystemModel {
     }
 
     public ListingRequestDirectory getListingRequestDirectory() {
+        if(listingRequestDirectory == null){
+            listingRequestDirectory = new ListingRequestDirectory();
+        }
         return listingRequestDirectory;
     }
 
@@ -87,6 +96,9 @@ public class SystemModel {
     }
 
     public DonateProductDirectory getDonateProdirectory() {
+        if(donateProdirectory == null){
+            donateProdirectory = new DonateProductDirectory();
+        }
         return donateProdirectory;
     }
 
@@ -95,6 +107,9 @@ public class SystemModel {
     }
 
     public MarketPlaceDirectory getMarketPlaceDirectory() {
+        if(marketPlaceDirectory == null){
+            marketPlaceDirectory = new MarketPlaceDirectory();
+        }
         return marketPlaceDirectory;
     }
 
