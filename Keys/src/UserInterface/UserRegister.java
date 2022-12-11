@@ -7,6 +7,7 @@ package UserInterface;
 import Business.DatabaseUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.User.User;
+import static UserInterface.SysAdmin.BuilderRegistrationJPanel.EMAIL_REGEX;
 import Utility.Notification;
 //import Utility.Notification;
 import java.awt.CardLayout;
@@ -83,7 +84,6 @@ public class UserRegister extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\aram.jpg")); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 1080));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -129,6 +129,11 @@ public class UserRegister extends javax.swing.JPanel {
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 403, -1, -1));
 
         emailTextField.setBackground(new java.awt.Color(248, 248, 249));
+        emailTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTextFieldActionPerformed(evt);
+            }
+        });
         jPanel2.add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 438, 271, 48));
 
         jLabel9.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
@@ -218,20 +223,19 @@ public class UserRegister extends javax.swing.JPanel {
                 phoneTextField.setText("");
                 return;
             }
-            if(!emailTextField.getText().matches("^[a-zA-Z0-9]+@[a-z]*.com"))
-            {
+            if (!EMAIL_REGEX.matcher(emailTextField.getText()).matches()) {
                 JOptionPane.showMessageDialog(null, "Please enter valid email address!!");
                 emailTextField.setText("");
                 return;
             }
             
-            if(!passwordTextField.getText().matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"))
-            {
-                 JOptionPane.showMessageDialog(null, "Password is in incorrect \nFormat. Should be minimum 8 in length "
-                    + "with one upper case, one lower case, one digit and one special character");
-                passwordTextField.setText("");
-                return;
-            }
+//            if(!passwordTextField.getText().matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"))
+//            {
+//                 JOptionPane.showMessageDialog(null, "Password is in incorrect \nFormat. Should be minimum 8 in length "
+//                    + "with one upper case, one lower case, one digit and one special character");
+//                passwordTextField.setText("");
+//                return;
+//            }
             
             User customer = new User(firstNameTextField.getText(),lastNameTextField.getText(), emailTextField.getText(),phoneTextField.getText(),userNameTextField.getText(),passwordTextField.getText(), locationTextField.getText());
             ecosystem.getUserDirectory().addUser(customer);
@@ -252,6 +256,10 @@ public class UserRegister extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Username " + userNameTextField.getText() + " already exists !!!, Please try a new one");
          }
     }//GEN-LAST:event_signUpButtonActionPerformed
+
+    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
