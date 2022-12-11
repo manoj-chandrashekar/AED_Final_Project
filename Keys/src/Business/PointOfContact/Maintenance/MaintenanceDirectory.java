@@ -5,24 +5,33 @@
 package Business.PointOfContact.Maintenance;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author nagarjunmallesh
  */
 public class MaintenanceDirectory {
-    ArrayList<Maintenance> maintenanceDirectory = new ArrayList<>();
+    List<Maintenance> maintenanceList = new ArrayList<>();
 
     public MaintenanceDirectory() {
     }
     
 
-    public ArrayList<Maintenance> getMaintenanceDirectory() {
-        return maintenanceDirectory;
+    public List<Maintenance> getMaintenanceList() {
+        return maintenanceList;
     }
 
-    public void setMaintenanceDirectory(ArrayList<Maintenance> maintenanceDirectory) {
-        this.maintenanceDirectory = maintenanceDirectory;
+    public void setMaintenanceList(List<Maintenance> maintenanceList) {
+        this.maintenanceList = maintenanceList;
+    }
+    
+    public void addNewMaintenance(Maintenance maintenance) {
+        maintenanceList.add(maintenance);
+    }
+    
+    public void removeMaintenance(Maintenance maintenance) {
+        maintenanceList.remove(maintenance);
     }
     
     

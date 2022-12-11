@@ -5,6 +5,7 @@
 package Business.PointOfContact.Fire;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -12,17 +13,25 @@ import java.util.ArrayList;
  */
 public class FireDirectory {
     
-    ArrayList<Fire> fireDirectory = new ArrayList<>();
+    List<Fire> fireList = new ArrayList<>();
 
     public FireDirectory() {
     }
 
-    public ArrayList<Fire> getFireDirectory() {
-        return fireDirectory;
+    public List<Fire> getFireDirectory() {
+        return fireList;
     }
 
-    public void setFireDirectory(ArrayList<Fire> fireDirectory) {
-        this.fireDirectory = fireDirectory;
+    public void setFireDirectory(List<Fire> fireList) {
+        this.fireList = fireList;
+    }
+    
+    public void addFire(Fire item) {
+        fireList.add(item);
+    }
+    
+    public void removeFire(Fire item) {
+        fireList.remove(item);
     }
     
     
