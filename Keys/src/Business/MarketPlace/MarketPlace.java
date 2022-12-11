@@ -14,30 +14,32 @@ import java.util.Map;
  * @author Sanjay Bhaskar Kashyap
  */
 public class MarketPlace extends UserAccount {
-     Map<String, Integer> marketMap = new HashMap<String, Integer>();
-     String userId;
-    String password; 
-    String storeName;
-    String storeLocation;
-   
-       
-    public MarketPlace(String storeName, String storeLocation, String userId, String password) {
-       setUsername(userId);
+
+    Map<String, Integer> marketMap = new HashMap<String, Integer>();
+    private String userId;
+    private String password;
+    private String storeName;
+    private String storeLocation;
+    private Long phoneNo;
+
+    public MarketPlace(String storeName, String storeLocation, String userId, String password, Long phoneNo) {
+        setUsername(userId);
         setPwd(password);
         setRole(new Admin_Marketplace());
         this.storeName = storeName;
         this.storeLocation = storeLocation;
         this.userId = userId;
         this.password = password;
+        this.phoneNo = phoneNo;
     }
-    
+
     // Generate the getter and setter method the variables
-    public String getUserNames() {
+    public String getStoreName() {
         return storeName;
     }
 
-    public void setUserNames(String userName) {
-        this.storeName = userName;
+    public void setStoreName(String name) {
+        this.storeName = name;
     }
 
     public String getStoreLocation() {
@@ -72,5 +74,12 @@ public class MarketPlace extends UserAccount {
         this.marketMap = marketMap;
     }
 
+    public Long getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(Long phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
 }
-  

@@ -292,6 +292,10 @@ public class SysAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void marketplaceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marketplaceButtonActionPerformed
         // TODO add your handling code here:
+        MarketplaceEnterpriseJPanel marketplaceEnterpriseJPanel = new MarketplaceEnterpriseJPanel(ecosystem, container);
+        container.add(marketplaceEnterpriseJPanel);
+        CardLayout layout = (CardLayout) container.getLayout();
+        layout.next(container);
     }//GEN-LAST:event_marketplaceButtonActionPerformed
 
     private void builderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_builderButtonActionPerformed

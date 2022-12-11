@@ -42,6 +42,8 @@ public class SystemModel {
     private ListingRequestDirectory listingRequestDirectory;
     private SearchApplication checkApplication;
     private UserDirectory userDirectory;
+    private MarketPlaceDirectory marketPlaceDirectory;
+    
 
     public SystemModel() {
         userAccDirectory = new UserAccountDirectory();
@@ -113,6 +115,9 @@ public class SystemModel {
     }
 
     public ConsultantAppointmentDirectory getConsultantAppointmentDir() {
+        if(consultantAppointmentDir == null) {
+            consultantAppointmentDir = new ConsultantAppointmentDirectory();
+        }
         return consultantAppointmentDir;
     }
 
@@ -121,6 +126,9 @@ public class SystemModel {
     }
 
     public UserAccountDirectory getUserAccDirectory() {
+        if(userAccDirectory == null) {
+            userAccDirectory = new UserAccountDirectory();
+        }
         return userAccDirectory;
     }
 
@@ -129,6 +137,9 @@ public class SystemModel {
     }
 
     public ListingsDirectory getListingsDirectory() {
+        if(listingsDirectory == null) {
+            listingsDirectory = new ListingsDirectory();
+        }
         return listingsDirectory;
     }
 
@@ -137,6 +148,9 @@ public class SystemModel {
     }
 
     public ConsultantDirectory getConsultantDirectory() {
+        if(consultantDirectory == null) {
+            consultantDirectory = new ConsultantDirectory();
+        }
         return consultantDirectory;
     }
 
@@ -145,6 +159,9 @@ public class SystemModel {
     }
 
     public AmbulanceDirectory getAmbulanceDirectory() {
+        if(ambulanceDirectory == null) {
+            ambulanceDirectory = new AmbulanceDirectory();
+        }
         return ambulanceDirectory;
     }
 
@@ -153,6 +170,9 @@ public class SystemModel {
     }
 
     public FireDirectory getFireDirectory() {
+        if(fireDirectory == null) {
+            fireDirectory = new FireDirectory();
+        }
         return fireDirectory;
     }
 
@@ -161,6 +181,9 @@ public class SystemModel {
     }
 
     public MaintenanceDirectory getMaintenanceDirectory() {
+        if(maintenanceDirectory == null) {
+            maintenanceDirectory = new MaintenanceDirectory();
+        }
         return maintenanceDirectory;
     }
 
@@ -169,6 +192,9 @@ public class SystemModel {
     }
 
     public EmergencyRequestDirectory getEmergencyRequestDirectory() {
+        if(emergencyRequestDirectory == null) {
+            emergencyRequestDirectory = new EmergencyRequestDirectory();
+        }
         return emergencyRequestDirectory;
     }
 
@@ -187,4 +213,17 @@ public class SystemModel {
         this.builderDirectory = builderDirectory;
     }
 
+    public MarketPlaceDirectory getMarketPlaceDirectory() {
+        if(marketPlaceDirectory == null) {
+            marketPlaceDirectory = new MarketPlaceDirectory();
+        }
+        return marketPlaceDirectory;
+    }
+
+    public void setMarketPlaceDirectory(MarketPlaceDirectory marketPlaceDirectory) {
+        this.marketPlaceDirectory = marketPlaceDirectory;
+    }
+    
+    
+    
 }

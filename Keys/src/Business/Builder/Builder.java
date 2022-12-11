@@ -6,8 +6,8 @@ package Business.Builder;
 
 import Business.Roles.BuilderAdmin;
 import Business.UserAccountManagement.UserAccount;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -20,7 +20,7 @@ public class Builder extends UserAccount {
     private String builderEmail;
     private String builderUserID;
     private String builderPassword;
-    public Map<String, String> listings = new HashMap<>();
+    private List<Listings> listings;
 
     public Builder(String builderName, String builderLocation, String builderEmail, String builderUserID, String builderPassword) {
         setUsername(builderUserID);
@@ -31,6 +31,7 @@ public class Builder extends UserAccount {
         this.builderEmail = builderEmail;
         this.builderUserID = builderUserID;
         this.builderPassword = builderPassword;
+        this.listings = new ArrayList<>();
     }
 
     public String getBuilderName() {
@@ -73,14 +74,14 @@ public class Builder extends UserAccount {
         this.builderPassword = builderPassword;
     }
 
-    public Map<String, String> getListings() {
+    public List<Listings> getListings() {
         return listings;
     }
 
-    public void setListings(Map<String, String> listings) {
+    public void setListings(List<Listings> listings) {
         this.listings = listings;
     }
-    
+
     
 }
 

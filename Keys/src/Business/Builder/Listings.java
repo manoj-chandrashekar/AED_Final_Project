@@ -10,18 +10,22 @@ package Business.Builder;
  */
 public class Listings {
     private int id;
-    private int counter = 0;
+    private static int counter = 0;
     private int aptNo;
     private String address;
+    private int noOfBeds;
+    private int noOfBaths;
     private String houseSpecifications;
     private double rent; 
-    private Boolean isAvailable;
+    private boolean isAvailable;
 
-    public Listings(int aptNo, String address, String houseSpecifications, double rent, Boolean isAvailable) {
+    public Listings(int aptNo, String address, int noOfBeds, int noOfBaths, String houseSpecifications, double rent, boolean isAvailable) {
         id = counter;
         counter = counter + 1;
         this.aptNo = aptNo;
         this.address = address;
+        this.noOfBeds = noOfBeds;
+        this.noOfBaths = noOfBaths;
         this.houseSpecifications = houseSpecifications;
         this.rent = rent;
         this.isAvailable = isAvailable;
@@ -59,15 +63,34 @@ public class Listings {
         this.rent = rent;
     }
 
-    public Boolean getIsAvailable() {
+    public boolean isAvailable() {
         return isAvailable;
     }
 
-    public void setIsAvailable(Boolean isAvailable) {
+    public void setAvailable(boolean isAvailable) {
         this.isAvailable = isAvailable;
     }
-    
-    
+
+    public int getNoOfBeds() {
+        return noOfBeds;
+    }
+
+    public void setNoOfBeds(int noOfBeds) {
+        this.noOfBeds = noOfBeds;
+    }
+
+    public int getNoOfBaths() {
+        return noOfBaths;
+    }
+
+    public void setNoOfBaths(int noOfBaths) {
+        this.noOfBaths = noOfBaths;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(aptNo);
+    }
     
     
     
