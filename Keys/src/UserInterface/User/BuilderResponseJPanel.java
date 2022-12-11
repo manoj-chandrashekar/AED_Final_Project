@@ -5,6 +5,7 @@
 package UserInterface.User;
 
 import Business.EcoSystem;
+import Business.Enums.ListingStatus;
 
 import Business.UserAccountManagement.UserAccount;
 import Business.WorkQueue.ListingRequest;
@@ -18,7 +19,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-
 /**
  *
  * @author Nagarjun Mallesh
@@ -29,20 +29,21 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
     JPanel rightSidePanel;
     /**
      * Creates new form BloodDonations
+     *
      * @param system
      * @param rightSidePanel
      */
 
     UserAccount userAcc;
-    public BuilderResponseJPanel(JPanel rightSidePanel,EcoSystem system,UserAccount userAcc) {
+
+    public BuilderResponseJPanel(JPanel rightSidePanel, EcoSystem system, UserAccount userAcc) {
         initComponents();
-         this.rightSidePanel=rightSidePanel;
-        this.system=system;
-        this.userAcc=userAcc;
-      displayTable();
+        this.rightSidePanel = rightSidePanel;
+        this.system = system;
+        this.userAcc = userAcc;
+        displayTable();
 
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,7 +58,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listingsTbl = new javax.swing.JTable();
-        collectOrder = new javax.swing.JButton();
+        confirmMoveIn = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(250, 249, 251));
@@ -71,18 +72,12 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
         jLabel1.setText("Listing Details");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 31, -1, -1));
 
-        jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jScrollPane1MouseClicked(evt);
-            }
-        });
-
         listingsTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "AptNo", "Address", "NoOfBeds", "NoOfBaths", "Rent", "Builder", "Status"
+                "ID", "AptNo", "Address", "Beds", "Baths", "Rent", "Builder", "Status"
             }
         ));
         listingsTbl.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -92,18 +87,18 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(listingsTbl);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 970, 400));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 1110, 400));
 
-        collectOrder.setBackground(new java.awt.Color(51, 51, 255));
-        collectOrder.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
-        collectOrder.setForeground(new java.awt.Color(255, 255, 255));
-        collectOrder.setText("Acccept");
-        collectOrder.addActionListener(new java.awt.event.ActionListener() {
+        confirmMoveIn.setBackground(new java.awt.Color(51, 51, 255));
+        confirmMoveIn.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
+        confirmMoveIn.setForeground(new java.awt.Color(255, 255, 255));
+        confirmMoveIn.setText("Confirm Move-In");
+        confirmMoveIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                collectOrderActionPerformed(evt);
+                confirmMoveInActionPerformed(evt);
             }
         });
-        jPanel1.add(collectOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 630, 210, 39));
+        jPanel1.add(confirmMoveIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 630, 210, 39));
 
         cancelButton.setBackground(new java.awt.Color(255, 55, 95));
         cancelButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
@@ -169,16 +164,11 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
 //        }
     }//GEN-LAST:event_listingsTblMouseClicked
 
-    private void jScrollPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jScrollPane1MouseClicked
-
-    private void collectOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_collectOrderActionPerformed
+    private void confirmMoveInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmMoveInActionPerformed
         // TODO add your handling code here:
         confirmListing();
 
-    }//GEN-LAST:event_collectOrderActionPerformed
+    }//GEN-LAST:event_confirmMoveInActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         // TODO add your handling code here:
@@ -190,7 +180,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
-    private javax.swing.JButton collectOrder;
+    private javax.swing.JButton confirmMoveIn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -198,17 +188,14 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void displayTable() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
-        ListingRequestDirectory listingDirectory=system.getListingRequestDirectory();
-        List<ListingRequest> order=listingDirectory.getListingRequirement();
-        int length=order.size();
-        User r=(User)userAcc;
-        for(int i=0;i<length;i++)
-        {
-            ListingRequest listingRequest=order.get(i);
-            if(listingRequest.getStudentId().matches(r.getUserId()))
-            {
+        
+        ListingRequestDirectory listingDirectory = system.getListingRequestDirectory();
+        List<ListingRequest> order = listingDirectory.getListingRequirement();
+        int length = order.size();
+        User r = (User) userAcc;
+        for (int i = 0; i < length; i++) {
+            ListingRequest listingRequest = order.get(i);
+            if (listingRequest.getStudentId().matches(r.getUserId())) {
                 DefaultTableModel table = (DefaultTableModel) listingsTbl.getModel();
                 Object[] row = new Object[8];
                 row[0] = listingRequest;
@@ -221,31 +208,28 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
                 row[7] = listingRequest.getStatus();
                 //String s[]={s1,reqMed.getConsultantName(),reqMed.getBuilderName(),reqMed.getStatus()};
                 table.addRow(row);
-            
-            
             }
         }
-    
-    
+
     }
 
     private void confirmListing() {
         int selectedListing = listingsTbl.getSelectedRow();
-        if(selectedListing < 0 ) {
+        if (selectedListing < 0) {
             JOptionPane.showMessageDialog(this, "Please select the Listing to confirm");
             return;
         }
-        
+
         DefaultTableModel model = (DefaultTableModel) listingsTbl.getModel();
         ListingRequest request = (ListingRequest) model.getValueAt(selectedListing, 0);
-        if(request.getStatus() == "Approved"){
-            request.setStatus("Ready for occupancy");
-            JOptionPane.showMessageDialog(this,"Listing selected is reserved for future process");
-        }else{
-            JOptionPane.showMessageDialog(this,"Selected Listing is not available");
+        if (request.getStatus() == ListingStatus.READY_TO_MOVE_IN) {
+            request.setStatus(ListingStatus.LEASED);
+            JOptionPane.showMessageDialog(this, "Congrats! House leased successfully.");
+        } else {
+            JOptionPane.showMessageDialog(this, "Not yet available to lease. Process pending approval.");
         }
     }
-    
+
 //    public void sendmail(String subject, String content) {
 //        Notification notification = new Notification();
 //        String toEmail = "aedproject22@gmail.com";
@@ -253,64 +237,21 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
 //        String emailContent = content;
 //        notification.sendMail(toEmail, emailSubject, emailContent);
 //    }
-
     private void cancelOrder() {
-      int selectedListing = listingsTbl.getSelectedRow();
-        if(selectedListing>= 0 ) {
+        int selectedListing = listingsTbl.getSelectedRow();
+        if (selectedListing >= 0) {
             DefaultTableModel model = (DefaultTableModel) listingsTbl.getModel();
             ListingRequest request = (ListingRequest) model.getValueAt(selectedListing, 0);
-            if(request.getStatus() == "Reserved Listing"){
-                JOptionPane.showMessageDialog(this,"Listing declined");
-            }else{
-                JOptionPane.showMessageDialog(this,"Selected Listing is not available");
+            if (request.getStatus() == ListingStatus.RESERVED) {
+                request.setStatus(ListingStatus.CANCELLED);
+                JOptionPane.showMessageDialog(this, "Listing declined");
+            } else {
+                JOptionPane.showMessageDialog(this, "Wrong move! Cannot cancel now.");
             }
-            listingsTbl.setModel(new DefaultTableModel());
             displayTable();
-        }else{
-            JOptionPane.showMessageDialog(this, "Please select the Listing to confirm");
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a row");
             return;
         }
     }
-        
-   
-//    DefaultTableModel  t2 = (DefaultTableModel) listingsTbl.getModel();
-//        int selectedRow=listingsTbl.getSelectedRow();
-//        if(selectedRow>=0)
-//        {
-//        int s=Integer.parseInt(t2.getValueAt(selectedRow, 0).toString());
-//        System.out.println("id"+s);
-//            ListingRequestDirectory dire=system.getListingRequestDirectory();
-//        List<ListingRequest> order=dire.getListingRequirement();
-//        
-//        int u=order.size();
-//        
-//        for(int i=0;i<u;i++)
-//        {
-//            ListingRequest o=order.get(i);
-//            if(s==o.getId()/*&&o.getStatus().matches("Deliver Man Assigned")*/)
-//            {
-//                if(!o.getStatus().matches("Order Recieved"))
-//                {
-//                o.setStatus("Cancelled");
-//                String subject = "Request Cancelled";
-//                String content = "Medicine request was cancelled.";
-//                //sendmail(subject, content);
-//                }
-//                else
-//                {
-//                 JOptionPane.showMessageDialog(null,"Wrong Move!!");  
-//
-//                }
-//                
-//            }
-//        }
-//           listingsTbl.setModel(new DefaultTableModel(null,new String[]{"ID","Doctor Name","Pharmacy","Status"}));
-//        displayTable();
-//        }
-//        else
-//        {
-//            JOptionPane.showMessageDialog(null,"Select a Row!!");  
-//        }
-//    
-//    }
 }

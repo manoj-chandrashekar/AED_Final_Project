@@ -4,8 +4,12 @@
  */
 package UserInterface.Builder;
 
+import Business.Builder.Builder;
+import Business.Builder.Listings;
 import Business.EcoSystem;
+import Business.Enums.ListingStatus;
 import Business.UserAccountManagement.UserAccount;
+import Business.Utils.DateFormatter;
 import Business.WorkQueue.ListingRequest;
 import Business.WorkQueue.ListingRequestDirectory;
 import java.util.ArrayList;
@@ -48,17 +52,11 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listingsTable = new javax.swing.JTable();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        costTextArea = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        listingTextArea = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
+        requestsTable = new javax.swing.JTable();
         updateStatus = new javax.swing.JButton();
         resetButton = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        listingTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(250, 249, 251));
         setPreferredSize(new java.awt.Dimension(1160, 750));
@@ -69,7 +67,7 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        listingsTable.setModel(new javax.swing.table.DefaultTableModel(
+        requestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -77,12 +75,12 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
                 "ID", "Student Name", "Consultant name", "Order Status"
             }
         ));
-        listingsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        requestsTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                listingsTableMouseClicked(evt);
+                requestsTableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(listingsTable);
+        jScrollPane1.setViewportView(requestsTable);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -98,68 +96,6 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 780, 310));
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-
-        costTextArea.setColumns(20);
-        costTextArea.setRows(5);
-        costTextArea.setBorder(null);
-        jScrollPane3.setViewportView(costTextArea);
-
-        jLabel2.setFont(new java.awt.Font("SF Pro Text", 1, 24)); // NOI18N
-        jLabel2.setText("Cost");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, 360, 190));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        listingTextArea.setColumns(20);
-        listingTextArea.setRows(5);
-        listingTextArea.setBorder(null);
-        jScrollPane2.setViewportView(listingTextArea);
-
-        jLabel1.setFont(new java.awt.Font("SF Pro Text", 1, 24)); // NOI18N
-        jLabel1.setText("Listing");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 360, 190));
 
         updateStatus.setBackground(new java.awt.Color(51, 51, 255));
         updateStatus.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -185,6 +121,24 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(resetButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 660, 180, 39));
 
+        listingTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "AptNo", "Address", "Beds", "Baths", "Rent"
+            }
+        ));
+        listingTable.setEnabled(false);
+        listingTable.setFocusable(false);
+        listingTable.setRowSelectionAllowed(false);
+        jScrollPane4.setViewportView(listingTable);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 990, 90));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -199,101 +153,88 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
 
     private void updateStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStatusActionPerformed
         // TODO add your handling code here:
-        UpdateStatus();
+        updateStatus();
     }//GEN-LAST:event_updateStatusActionPerformed
 
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
         // TODO add your handling code here:
-       resetOrder();
+        resetOrder();
     }//GEN-LAST:event_resetButtonActionPerformed
 
-    private void listingsTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listingsTableMouseClicked
+    private void requestsTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_requestsTableMouseClicked
         // TODO add your handling code here:
 
         displayRequest();
-    }//GEN-LAST:event_listingsTableMouseClicked
+    }//GEN-LAST:event_requestsTableMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea costTextArea;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea listingTextArea;
-    private javax.swing.JTable listingsTable;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTable listingTable;
+    private javax.swing.JTable requestsTable;
     private javax.swing.JButton resetButton;
     private javax.swing.JButton updateStatus;
     // End of variables declaration//GEN-END:variables
 
     private void displayTable() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
-        // System.out.print("im inside display table "+system);
-//        Req_MedicineDir reMedDir = system.getMedicineReqDir();
-//        ArrayList<Req_Medicine> medorderList = reMedDir.getMedReqDir();
-//
-//        int l = medorderList.size();
-//        Pharma ph = (Pharma) userAcc;
-//        for (int i = 0; i < l; i++) {
-//            Req_Medicine medReq = medorderList.get(i);
-//            if (ph.getPharmaName().matches(medReq.getPharmaName())) {
-//                DefaultTableModel table = (DefaultTableModel) listingsTable.getModel();
-//                String r1 = String.valueOf(medReq.getId());
-//
-//                String r2[] = {r1, medReq.getPatientId(), medReq.getDoctorName(), medReq.getStatus()};
-//                table.addRow(r2);
-//
-//            }
-//        }
+        ListingRequestDirectory directory = system.getListingRequestDirectory();
+        List<ListingRequest> listingRequests = directory.getListingRequirement();
+
+        int l = listingRequests.size();
+        Builder builder = (Builder) userAcc;
+        for (int i = 0; i < l; i++) {
+            ListingRequest request = listingRequests.get(i);
+            if (builder.getBuilderName().matches(request.getBuilderName())) {
+                DefaultTableModel table = (DefaultTableModel) requestsTable.getModel();
+                int r1 = request.getId();
+
+                Object r2[] = {r1, request.getStudentId(), request.getConsultantName(), request.getStatus()};
+                table.addRow(r2);
+            }
+        }
 
     }
 
-    private void UpdateStatus() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        DefaultTableModel table = (DefaultTableModel) listingsTable.getModel();
-        int selectedRow = listingsTable.getSelectedRow();
-        if (selectedRow >= 0) {
-            int sRow = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
+    private void updateStatus() {
 
-//            Req_MedicineDir medReqDir = system.getMedicineReqDir();
-//            ArrayList<Req_Medicine> medOrderList = medReqDir.getMedReqDir();
-//
-//            int l = medOrderList.size();
-//
-//            for (int i = 0; i < l; i++) {
-//                Req_Medicine medReq = medOrderList.get(i);
-//                if (sRow == medReq.getId()) {
-//                    if (medReq.getStatus().matches("Order Placed")) {
-//                        medReq.setStatus("Ready for pickup");
-//                    } else {
-//                        JOptionPane.showMessageDialog(null, "Order Cancelled");
-//
-//                    }
-//                }
-//            }
+        DefaultTableModel table = (DefaultTableModel) requestsTable.getModel();
+        int selectedRow = requestsTable.getSelectedRow();
+        if (selectedRow >= 0) {
+            int sRow = (int) table.getValueAt(selectedRow, 0);
+
+            ListingRequestDirectory directory = system.getListingRequestDirectory();
+            List<ListingRequest> requests = directory.getListingRequirement();
+
+            int l = requests.size();
+
+            for (int i = 0; i < l; i++) {
+                ListingRequest listingReq = requests.get(i);
+                if (sRow == listingReq.getId()) {
+                    if (listingReq.getStatus() == ListingStatus.RESERVED) {
+                        listingReq.setStatus(ListingStatus.READY_TO_MOVE_IN);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Wrong move!");
+
+                    }
+                }
+            }
 //            listingsTable.setModel(new DefaultTableModel(null, new String[]{"ID", "Patient Name", "Doctor Name", "Status"}));
             displayTable();
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Row!!");
+            JOptionPane.showMessageDialog(this, "Please select a row!!");
         }
 
     }
 
     private void displayRequest() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
-        costTextArea.setText("");
-        listingTextArea.setText("");
-
-        DefaultTableModel table = (DefaultTableModel) listingsTable.getModel();
-        int selectedRow = listingsTable.getSelectedRow();
-        int sRow = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
+        DefaultTableModel table = (DefaultTableModel) requestsTable.getModel();
+        int selectedRow = requestsTable.getSelectedRow();
+        int sRow = (int) table.getValueAt(selectedRow, 0);
 
         ListingRequestDirectory directory = system.getListingRequestDirectory();
         List<ListingRequest> listings = directory.getListingRequirement();
@@ -302,21 +243,9 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
         for (int i = 0; i < listSize; i++) {
             ListingRequest listingRequest = listings.get(i);
             if (sRow == listingRequest.getId()) {
-                Map<String, String> f = listingRequest.getListingOrderList();
-                int count = 1;
-                for (String key : f.keySet()) {
-                    listingTextArea.append("Item " + count + " : " + key + " Quantity : " + f.get(key) + "\n");
-                    count++;
-
-                }
-//                Map<String, String> medCostmap = medReq.getMedCostlist();
-//                int num = 0;
-//                for (String key : medCostmap.keySet()) {
-//
-//                    num = num + (Integer.parseInt(medCostmap.get(key)));
-//
-//                }
-//                costTextArea.append(String.valueOf(num));
+                displayListingTable(listingRequest.getListings());
+            } else {
+                JOptionPane.showMessageDialog(this, "Wrong move!");
 
             }
         }
@@ -325,34 +254,40 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
 
     private void resetOrder() {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-  
-     DefaultTableModel table = (DefaultTableModel) listingsTable.getModel();
-        int selectedRow = listingsTable.getSelectedRow();
+
+        DefaultTableModel table = (DefaultTableModel) requestsTable.getModel();
+        int selectedRow = requestsTable.getSelectedRow();
         if (selectedRow >= 0) {
             int sRow = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
 
-//            Req_MedicineDir medReqDir = system.getMedicineReqDir();
-//            ArrayList<Req_Medicine> medorderList = medReqDir.getMedReqDir();
-//
-//            int l = medorderList.size();
-//
-//            for (int i = 0; i < l; i++) {
-//                Req_Medicine medreq = medorderList.get(i);
-//                if (sRow == medreq.getId()) {
-//                    if (medreq.getStatus().matches("Ready for pickup")) {
-//                        medreq.setStatus("Order Placed");
-//                    } else {
-//                        JOptionPane.showMessageDialog(null, "Order Cancelled");
-//
-//                    }
-//                }
-//            }
-            listingsTable.setModel(new DefaultTableModel(null, new String[]{"ID", "Patient Name", "Doctor Name", "Status"}));
+            ListingRequestDirectory directory = system.getListingRequestDirectory();
+            List<ListingRequest> listings = directory.getListingRequirement();
+
+            int listSize = listings.size();
+            for (int i = 0; i < listSize; i++) {
+                ListingRequest listingRequest = listings.get(i);
+                if (sRow == listingRequest.getId()) {
+                    if (listingRequest.getStatus() == ListingStatus.READY_TO_MOVE_IN) {
+                        listingRequest.setStatus(ListingStatus.RESERVED);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Wrong move!");
+                    }
+                }
+            }
+            
+//            requestsTable.setModel(new DefaultTableModel(null, new String[]{"ID", "Patient Name", "Doctor Name", "Status"}));
             displayTable();
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Row!!");
+            JOptionPane.showMessageDialog(this, "Select a Row!!");
         }
-    
-    
+
+    }
+
+    private void displayListingTable(Listings listing) {
+        DefaultTableModel model = (DefaultTableModel) listingTable.getModel();
+        model.setRowCount(0);
+
+        Object row[] = {listing, listing.getAddress(), listing.getNoOfBeds(), listing.getNoOfBaths(), listing.getRent()};
+        model.addRow(row);
     }
 }

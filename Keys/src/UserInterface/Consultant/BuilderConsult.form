@@ -101,8 +101,8 @@
                   <Table columnCount="5" rowCount="0">
                     <Column editable="false" title="AptNo" type="java.lang.Object"/>
                     <Column editable="true" title="Address" type="java.lang.Object"/>
-                    <Column editable="true" title="NoOfBeds" type="java.lang.Object"/>
-                    <Column editable="true" title="NoOfBaths" type="java.lang.Object"/>
+                    <Column editable="true" title="Beds" type="java.lang.Object"/>
+                    <Column editable="true" title="Baths" type="java.lang.Object"/>
                     <Column editable="false" title="Rent" type="java.lang.Object"/>
                   </Table>
                 </Property>
