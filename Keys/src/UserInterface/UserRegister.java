@@ -238,7 +238,7 @@ public class UserRegister extends javax.swing.JPanel {
 //            }
             
             User customer = new User(firstNameTextField.getText(),lastNameTextField.getText(), emailTextField.getText(),phoneTextField.getText(),userNameTextField.getText(),passwordTextField.getText(), locationTextField.getText());
-            ecosystem.getUserDirectory().addUser(customer);
+            ecosystem.getUserAccDirectory().addAccount(customer);
             ecosystem.getUserDirectory().addUser(customer);
             sendmail();
             userNameTextField.setText("");

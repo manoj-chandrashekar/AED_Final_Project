@@ -18,8 +18,8 @@ import java.nio.file.Paths;
  * @author Manoj Chandrasekaran
  */
 public class DB4OUtil {
-    private static final String FILENAME = Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data
-                                                                                                  // store
+
+    private static final String FILENAME = Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data store
     private static DB4OUtil dB4OUtil;
 
     public synchronized static DB4OUtil getInstance() {
@@ -66,18 +66,15 @@ public class DB4OUtil {
     public EcoSystem retrieveSystem() {
         ObjectContainer conn = createConnection();
 
-        // ObjectSet<EcoSystem> systems = conn.query(EcoSystem.class); // Change to the
-        // object you want to save
+        ObjectSet<EcoSystem> systems = conn.query(EcoSystem.class); // Change to the object you want to save
         EcoSystem system;
         system = SystemConfig.configureSystem();
-        // if (systems.size() == 0){
-        // system = SystemConfig.configureSystem(); // If there's no System in the
-        // record, create a new one
-        // }
-        // else{
-        // system = systems.get(systems.size() - 1);
-        // }
-        // conn.close();
+        if (systems.size() == 0) {
+            system = SystemConfig.configureSystem();  // If there's no System in the record, create a new one
+        } else {
+            system = systems.get(systems.size() - 1);
+        }
+        conn.close();
         return system;
     }
 }
