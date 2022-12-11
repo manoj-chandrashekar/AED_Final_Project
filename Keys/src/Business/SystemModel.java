@@ -18,6 +18,7 @@ import Business.MarketPlace.MarketPlaceDirectory;
 import Business.WorkQueue.DonateProductDirectory;
 import Business.WorkQueue.ListingRequestDirectory;
 import Business.User.UserDirectory;
+import Business.WorkQueue.RequestMarketPlaceDirectory;
 
 /**
  *
@@ -31,6 +32,7 @@ public class SystemModel {
     private AmbulanceDirectory ambulanceDirectory;
     private FireDirectory fireDirectory;
     private MaintenanceDirectory maintenanceDirectory;
+    private RequestMarketPlaceDirectory requestMarketPlaceDirectory;
     private EmergencyRequestDirectory emergencyRequestDirectory;
     private ConsultantAppointmentDirectory consultantAppointmentDir;
     private MarketPlaceDirectory marketPlaceDirectory;
@@ -56,6 +58,15 @@ public class SystemModel {
         donateProdirectory = new DonateProductDirectory();
         listingRequestDirectory = new ListingRequestDirectory();
         userDirectory = new UserDirectory();
+        requestMarketPlaceDirectory = new RequestMarketPlaceDirectory();
+    }
+
+    public RequestMarketPlaceDirectory getRequestMarketPlaceDirectory() {
+        return requestMarketPlaceDirectory;
+    }
+
+    public void setRequestMarketPlaceDirectory(RequestMarketPlaceDirectory requestMarketPlaceDirectory) {
+        this.requestMarketPlaceDirectory = requestMarketPlaceDirectory;
     }
 
     public UserDirectory getUserDirectory() {
