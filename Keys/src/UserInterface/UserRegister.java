@@ -7,6 +7,7 @@ package UserInterface;
 import Business.DatabaseUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.User.User;
+import Utility.Notification;
 //import Utility.Notification;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -31,14 +32,14 @@ public class UserRegister extends javax.swing.JPanel {
         this.setSize(1920, 1080);
         
     }
-//    public  void sendmail()
-//    {   
-//        Notification notification = new Notification();
-//        String toEmail = emailTextField.getText();
-//        String emailSubject = "User Account Created!!";
-//        String emailContent = "Welcome to SafeTogether"; 
-//        notification.sendMail(toEmail, emailSubject, emailContent);
-//    }
+    public  void sendmail()
+    {
+        Notification notification = new Notification();
+        String toEmail = emailTextField.getText();
+        String emailSubject = "User Account Created!!";
+        String emailContent = "Welcome to Keys"; 
+        notification.sendMail(toEmail, emailSubject, emailContent);
+    }
 //
 //    public void sendSMS() {
 //        Notification notification = new Notification();
@@ -235,8 +236,7 @@ public class UserRegister extends javax.swing.JPanel {
             User customer = new User(firstNameTextField.getText(),lastNameTextField.getText(), emailTextField.getText(),phoneTextField.getText(),userNameTextField.getText(),passwordTextField.getText(), locationTextField.getText());
             ecosystem.getUserDirectory().addUser(customer);
             ecosystem.getUserDirectory().addUser(customer);
-//            sendmail();
-//            sendSMS(); // costly keep it commented 
+            sendmail();
             userNameTextField.setText("");
             emailTextField.setText("");
             firstNameTextField.setText("");
