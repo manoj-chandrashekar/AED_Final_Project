@@ -9,26 +9,32 @@ import java.util.List;
 
 /**
  *
- * @author nagarjunmallesh
+ * @author Manoj Chandrasekaran
  */
 public class MarketPlaceDirectory {
     
-    List<MarketPlace> marketPlaceList = new ArrayList<MarketPlace>();
+    private List<MarketPlace> marketPlaces = new ArrayList<>();
 
-    public List<MarketPlace> getMarketPlaceList() {
-        return marketPlaceList;
+    
+    public List<MarketPlace> getMarketPlaces() {
+        return marketPlaces;
     }
 
-    public void setMarketPlaceList(List<MarketPlace> marketPlaceList) {
-        this.marketPlaceList = marketPlaceList;
+    public void setMarketPlaces(List<MarketPlace> marketPlaces) {
+        this.marketPlaces = marketPlaces;
     }
     
-    public void addMarketPlace(MarketPlace store){
-        marketPlaceList.add(store);
+    // Add item to the market place list
+    public void addMarketPlace(MarketPlace item) {
+        marketPlaces.add(item);
     }
     
-    public void removeMarketPlace(MarketPlace store){
-        marketPlaceList.remove(store);
+    // removing the market plcae from the market place list to save storage
+    public void removeMarketPlace(MarketPlace item) {
+        marketPlaces.remove(item);
     }
+
+    
+    
     
 }

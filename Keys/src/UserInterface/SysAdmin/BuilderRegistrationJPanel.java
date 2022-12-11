@@ -354,6 +354,7 @@ public class BuilderRegistrationJPanel extends javax.swing.JPanel {
                 }
                 displayTable();
                 anotherLoad();
+                clearFields();
             } else {
                 JOptionPane.showMessageDialog(this, "Please select a row to update");
             }
