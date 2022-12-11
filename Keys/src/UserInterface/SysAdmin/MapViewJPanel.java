@@ -37,9 +37,9 @@ public class MapViewJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         locationPoint = new MapCoordinates();
+        System.setProperty("jxbrowser.license.key", "1BNDHFSC1G4RKF66MXSFQUJZQC9KTLMJEEZO8NM7JWZ14SNFSS1G8ESI87RB21OFY18A9S");
         EngineOptions options
                 = EngineOptions.newBuilder(HARDWARE_ACCELERATED).licenseKey("1BNDHFSC1G4RKF66MXSFQUJZQC9KTLMJEEZO8NM7JWZ14SNFSS1G8ESI87RB21OFY18A9S").build();
-        System.setProperty("jxbrowser.license.key", "1BNDHFSC1G4RKF66MXSFQUJZQC9KTLMJEEZO8NM7JWZ14SNFSS1G8ESI87RB21OFY18A9S");
         Engine engine = Engine.newInstance(options);
         browser = engine.newBrowser();
         BrowserView view = BrowserView.newInstance(browser);
