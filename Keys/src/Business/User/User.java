@@ -19,6 +19,10 @@ public class User extends UserAccount {
     private String userId;
     private String password;
     private String location;
+    
+    public User(){
+        
+    }
 
     public User(String firstName, String lastName, String email, String phoneNumber, String userId, String password, String location) {
         setUsername(userId);
