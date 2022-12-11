@@ -18,7 +18,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-
+/**
+ *
+ * @author Sanjay Bhaskar Kashyap
+ */
 public class BuilderEnterpriseJFrame extends javax.swing.JPanel {
 
     /**

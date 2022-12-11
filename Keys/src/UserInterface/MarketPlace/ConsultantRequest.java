@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author shrikrishnajoisa
+ * @author Sanjay Bhaskar Kashyap
  */
 public class ConsultantRequest extends javax.swing.JPanel {
 

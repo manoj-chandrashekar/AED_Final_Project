@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author shrikrishnajoisa
+ * @author Sanjay Bhaskar Kashyap
  */
 public class MarketStock extends javax.swing.JPanel {
 
