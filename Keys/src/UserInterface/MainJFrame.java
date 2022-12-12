@@ -156,7 +156,7 @@ public class MainJFrame extends javax.swing.JFrame {
         ecoSystem.getAmbulanceDirectory().addAmbulance(ambulance);
         
         Maintenance maintenance = new Maintenance("main", "main", "Boston", "Rise", 85555L);
-        ecoSystem.getUserAccDirectory().addAccount(ambulance);
+        ecoSystem.getUserAccDirectory().addAccount(maintenance);
         ecoSystem.getMaintenanceDirectory().addNewMaintenance(maintenance);
     }
 }

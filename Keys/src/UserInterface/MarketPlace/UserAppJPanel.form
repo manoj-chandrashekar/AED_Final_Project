@@ -128,7 +128,7 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="collectBlood">
+            <Component class="javax.swing.JButton" name="collectProduct">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="33" red="33" type="rgb"/>
@@ -145,7 +145,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="collectBloodActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="collectProductActionPerformed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -241,7 +241,7 @@
             <Component class="javax.swing.JComboBox" name="productType">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="7">
+                  <StringArray count="8">
                     <StringItem index="0" value="Chair"/>
                     <StringItem index="1" value="Table"/>
                     <StringItem index="2" value="Bed"/>
@@ -249,6 +249,7 @@
                     <StringItem index="4" value="Cookware"/>
                     <StringItem index="5" value="Heater"/>
                     <StringItem index="6" value="Bike"/>
+                    <StringItem index="7" value="Monitor"/>
                   </StringArray>
                 </Property>
               </Properties>

@@ -6,11 +6,13 @@ package UserInterface.MarketPlace;
 
 import Business.MarketPlace.MarketPlace;
 import Business.EcoSystem;
+import Business.MarketPlace.MarketPlaceDirectory;
 import Business.UserAccountManagement.UserAccount;
 import Business.WorkQueue.DonateProduct;
 import Business.WorkQueue.DonateProductDirectory;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -51,7 +53,7 @@ public class UserAppJPanel extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         tblAppDetails = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
-        collectBlood = new javax.swing.JButton();
+        collectProduct = new javax.swing.JButton();
         cancelApp = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -103,17 +105,17 @@ public class UserAppJPanel extends javax.swing.JPanel {
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        collectBlood.setBackground(new java.awt.Color(51, 51, 255));
-        collectBlood.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
-        collectBlood.setForeground(new java.awt.Color(255, 255, 255));
-        collectBlood.setText("Collect Product");
-        collectBlood.setBorder(null);
-        collectBlood.addActionListener(new java.awt.event.ActionListener() {
+        collectProduct.setBackground(new java.awt.Color(51, 51, 255));
+        collectProduct.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
+        collectProduct.setForeground(new java.awt.Color(255, 255, 255));
+        collectProduct.setText("Collect Product");
+        collectProduct.setBorder(null);
+        collectProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                collectBloodActionPerformed(evt);
+                collectProductActionPerformed(evt);
             }
         });
-        jPanel9.add(collectBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 200, 39));
+        jPanel9.add(collectProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 200, 39));
 
         cancelApp.setBackground(new java.awt.Color(255, 55, 95));
         cancelApp.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
@@ -149,7 +151,7 @@ public class UserAppJPanel extends javax.swing.JPanel {
         jLabel8.setText("Specifics");
         jPanel9.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 220, -1));
 
-        productType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chair", "Table", "Bed", "Organizer", "Cookware", "Heater", "Bike" }));
+        productType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chair", "Table", "Bed", "Organizer", "Cookware", "Heater", "Bike", "Monitor" }));
         productType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 productTypeActionPerformed(evt);
@@ -176,10 +178,10 @@ public class UserAppJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_tblAppDetailsMouseClicked
 
-    private void collectBloodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_collectBloodActionPerformed
+    private void collectProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_collectProductActionPerformed
         // TODO add your handling code here:
-        collectBlood();
-    }//GEN-LAST:event_collectBloodActionPerformed
+        collectProduct();
+    }//GEN-LAST:event_collectProductActionPerformed
 
     private void cancelAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelAppActionPerformed
         // TODO add your handling code here:
@@ -205,7 +207,7 @@ public class UserAppJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelApp;
-    private javax.swing.JButton collectBlood;
+    private javax.swing.JButton collectProduct;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
@@ -245,7 +247,7 @@ public class UserAppJPanel extends javax.swing.JPanel {
 
     }
 
-    private void collectBlood() {
+    private void collectProduct() {
         // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         if (specificsTxt.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter all the value!!");
@@ -264,18 +266,18 @@ public class UserAppJPanel extends javax.swing.JPanel {
                     if (sRow == productDonate.getId()/*&&o.getStatus().matches("Deliver Man Assigned")*/) {
                         if (productDonate.getStatus().matches("Appoinment Booked")) {
                             productDonate.setStatus("Product Collected");
-                            productDonate.setProductType(productType.getSelectedItem().toString());
+                            productDonate.setProductType(productType.getSelectedItem().toString() + "s");
                             productDonate.setSpecifics(specificsTxt.getText());
                             JOptionPane.showMessageDialog(null, "Successfully added product donation details!!");
                             specificsTxt.setText(" ");
-                            
+                            updateStock(productDonate);
 
                         } else {
                             JOptionPane.showMessageDialog(null, "Incorrect Action!!");
                         }
                     }
                 }
-                tblAppDetails.setModel(new DefaultTableModel(null, new String[]{"ID", "Name", "Status", "Date", "Time"}));
+//                tblAppDetails.setModel(new DefaultTableModel(null, new String[]{"ID", "Name", "Status", "Date", "Time"}));
                 displayTable();
             } else {
                 JOptionPane.showMessageDialog(null, "Please Select a Row!!");
@@ -292,7 +294,7 @@ public class UserAppJPanel extends javax.swing.JPanel {
         if (selectedRow >= 0) {
             int sRow = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
 
-            DonateProductDirectory donateProduct= system.getDonateProdirectory();
+            DonateProductDirectory donateProduct = system.getDonateProdirectory();
             List<DonateProduct> donateList = donateProduct.getDonors();
             int l = donateList.size();
             MarketPlace bw = (MarketPlace) (userAcc);
@@ -313,5 +315,19 @@ public class UserAppJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please Select a Row!!");
         }
 
+    }
+
+    private void updateStock(DonateProduct productDonate) {
+        MarketPlace marketplace = (MarketPlace) userAcc;
+        Map<String, Integer> marketMap = marketplace.getMarketMap();
+        for (Map.Entry<String, Integer> set : marketMap.entrySet()) {
+
+            if (set.getKey().equals(productDonate.getProductType())) {
+                int newProduct = set.getValue();
+                int total = newProduct + 1;
+                set.setValue(total);
+
+            }
+        }
     }
 }

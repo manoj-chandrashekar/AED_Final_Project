@@ -219,9 +219,7 @@ public class UserLogin extends javax.swing.JPanel {
                 for (MarketPlace marketPlace : marketPlaces) {
                     if (userAccount.getUsername().matches(marketPlace.getUsername())) {
                         viewMarketplaceScreen();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Invalid credentials");
-                    }
+                    } 
                 }
             } else if (userRole instanceof Fire_Man) {
                 FireDirectory directory = ecoSystem.getFireDirectory();

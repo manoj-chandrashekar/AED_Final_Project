@@ -108,11 +108,6 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable3MouseClicked(evt);
-            }
-        });
         jScrollPane3.setViewportView(jTable3);
 
         jPanel8.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 630));
@@ -180,19 +175,9 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
         });
         units.add(unit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 420, 40));
 
-        marketPlaceList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                marketPlaceListActionPerformed(evt);
-            }
-        });
         units.add(marketPlaceList, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 420, 40));
 
         productList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chair", "Table", "Bed", "Heater", "Cookware", "Bike", "Monitor", "Organizer" }));
-        productList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                productListActionPerformed(evt);
-            }
-        });
         units.add(productList, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 420, 40));
 
         jLabel9.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
@@ -214,10 +199,6 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTable3MouseClicked
-
     private void requestButtonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestButtonButtonActionPerformed
         // TODO add your handling code here:
         addProductRequest();
@@ -230,10 +211,6 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
 
         deleteProductRequest();
     }//GEN-LAST:event_cancelActionPerformed
-
-    private void marketPlaceListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marketPlaceListActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_marketPlaceListActionPerformed
 
     private void unitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unitActionPerformed
         // TODO add your handling code here:
@@ -249,10 +226,6 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
             unit.setEditable(true);
         }
     }//GEN-LAST:event_unitKeyPressed
-
-    private void productListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productListActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_productListActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -281,10 +254,11 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
             RequestMarketPlaceDirectory requestMarketPlace = system.getRequestMarketPlaceDirectory();
             List<RequestMarketPlace> reqMarketList = requestMarketPlace.getProductRequestList();
             int l = reqMarketList.size();
+            DefaultTableModel table = (DefaultTableModel) jTable3.getModel();
+            table.setRowCount(0);
             for (int i = 0; i < l; i++) {
                 RequestMarketPlace reqMarketPlace = reqMarketList.get(i);
                 if (userAcc.getUsername().matches(reqMarketPlace.getConsultantId())) {
-                    DefaultTableModel table = (DefaultTableModel) jTable3.getModel();
                     String s1 = String.valueOf(reqMarketPlace.getId());
                     String s[] = {s1, reqMarketPlace.getMarketPlaceName(), reqMarketPlace.getStatus(), reqMarketPlace.getProductType(), Integer.toString(reqMarketPlace.getUnits())};
                     table.addRow(s);
@@ -307,9 +281,18 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
         int z = 1 + (int) (Math.random() * 100);
         reqMarket.setId(z);
         reqMarket.setFirstName(firstNameTxt.getText());
-        reqMarket.setProductType(marketPlaceList.getSelectedItem().toString());
+        reqMarket.setProductType(productList.getSelectedItem().toString()+"s");
         reqMarket.setMarketPlaceName(marketPlaceList.getSelectedItem().toString());
-        reqMarket.setUnits(Integer.parseInt(unit.getText()));
+        try {
+            if(Integer.parseInt(unit.getText()) <= 0 ) {
+                JOptionPane.showMessageDialog(null, "Please enter a number greater than 0");
+                return;
+            }
+            reqMarket.setUnits(Integer.parseInt(unit.getText()));
+        } catch(NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Please enter a number for units");
+            return;
+        }
         reqMarket.setStatus("In Progress");
         RequestMarketPlaceDirectory reqMarketDir = system.getRequestMarketPlaceDirectory();
         Consultant consultant = (Consultant) (userAcc);

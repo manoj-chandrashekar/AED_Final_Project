@@ -56,7 +56,6 @@ public class MaintenanceDisplay extends javax.swing.JPanel {
         respondButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        falseAlarmButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(250, 249, 251));
         setPreferredSize(new java.awt.Dimension(1160, 750));
@@ -124,18 +123,6 @@ public class MaintenanceDisplay extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 1460, -1));
-
-        falseAlarmButton.setBackground(new java.awt.Color(255, 55, 95));
-        falseAlarmButton.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
-        falseAlarmButton.setForeground(new java.awt.Color(255, 255, 255));
-        falseAlarmButton.setText("False Alarm");
-        falseAlarmButton.setBorder(null);
-        falseAlarmButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                falseAlarmButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(falseAlarmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 590, 180, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -285,10 +272,6 @@ public class MaintenanceDisplay extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_respondButtonActionPerformed
 
-    private void falseAlarmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_falseAlarmButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_falseAlarmButtonActionPerformed
-
     
     
     public void populate_table()
@@ -300,7 +283,7 @@ public class MaintenanceDisplay extends javax.swing.JPanel {
         for(int i=0;i<size;i++)
         {
             EmergencyRequest emergency = reqEmergencyList.get(i);
-            if(emergency.getEmergency().matches("Police"))
+            if(emergency.getEmergency().matches("Maintenance"))
             {
             
                 DefaultTableModel table2 = (DefaultTableModel) jTable1.getModel();
@@ -317,7 +300,6 @@ public class MaintenanceDisplay extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton closeCaseButton;
-    private javax.swing.JButton falseAlarmButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -4,7 +4,7 @@
  */
 package UserInterface.MarketPlace;
 
-    import Business.MarketPlace.MarketPlace;
+import Business.MarketPlace.MarketPlace;
 import Business.EcoSystem;
 import Business.UserAccountManagement.UserAccount;
 import Business.WorkQueue.RequestMarketPlace;
@@ -142,14 +142,15 @@ public class ConsultantRequest extends javax.swing.JPanel {
         RequestMarketPlaceDirectory reqBlood = system.getRequestMarketPlaceDirectory();
         List<RequestMarketPlace> listReq = reqBlood.getProductRequestList();
         int s = listReq.size();
+        DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
+        table.setRowCount(0);
 
         for (int i = 0; i < s; i++) {
             RequestMarketPlace productReq = listReq.get(i);
             MarketPlace mp = (MarketPlace) (userAcc);
 
             if (productReq.getMarketPlaceName().matches(mp.getStoreName())) {
-                DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
-                table.setRowCount(0);
+
                 String s1 = String.valueOf(productReq.getId());
                 String s2[] = {s1, productReq.getFirstName(), productReq.getStatus(), productReq.getProductType(), Integer.toString(productReq.getUnits())};
                 table.addRow(s2);
@@ -164,24 +165,22 @@ public class ConsultantRequest extends javax.swing.JPanel {
         int sRow = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
 
         RequestMarketPlaceDirectory prodDirectory = system.getRequestMarketPlaceDirectory();
-        List<RequestMarketPlace> listBlood = prodDirectory.getProductRequestList();
+        List<RequestMarketPlace> list = prodDirectory.getProductRequestList();
 
-        int l = listBlood.size();
+        int l = list.size();
         boolean r = false;
         MarketPlace mp = (MarketPlace) (userAcc);
         for (int i = 0; i < l; i++) {
-            RequestMarketPlace reqBlood = listBlood.get(i);
-            if (sRow == reqBlood.getId()) {
+            RequestMarketPlace reqProduct = list.get(i);
+            if (sRow == reqProduct.getId()) {
 
-                String type = reqBlood.getProductType();
-                int num = reqBlood.getUnits();
-
+                String type = reqProduct.getProductType();
+                int num = reqProduct.getUnits();
                 Map<String, Integer> inventory = mp.getMarketMap();
                 for (Map.Entry<String, Integer> set : inventory.entrySet()) {
-
+                    System.out.println("Key from inventory: " + set.getKey());
                     if (set.getKey().equals(type)) {
-                        if (set.getValue() > num) {
-
+                        if (set.getValue() >= num) {
                             r = true;
                             break;
                         }
@@ -192,14 +191,14 @@ public class ConsultantRequest extends javax.swing.JPanel {
         return r;
     }
 
-    public void app() {
-        RequestMarketPlaceDirectory reqBlood = system.getRequestMarketPlaceDirectory();
-        List<RequestMarketPlace> ol = reqBlood.getProductRequestList();
-
-        int l = ol.size();
+    public void app(RequestMarketPlace productRequest) {
+//        RequestMarketPlaceDirectory req = system.getRequestMarketPlaceDirectory();
+//        List<RequestMarketPlace> ol = req.getProductRequestList();
+//
+//        int l = ol.size();
         MarketPlace mp = (MarketPlace) (userAcc);
-        for (int i = 0; i < l; i++) {
-            RequestMarketPlace productRequest = ol.get(i);
+//        for (int i = 0; i < l; i++) {
+//            RequestMarketPlace productRequest = ol.get(i);
             String type = productRequest.getProductType();
             int unit = productRequest.getUnits();
 
@@ -213,7 +212,7 @@ public class ConsultantRequest extends javax.swing.JPanel {
 
                 }
             }
-        }
+//        }
     }
 
     private void AcceptReq() {
@@ -236,9 +235,10 @@ public class ConsultantRequest extends javax.swing.JPanel {
                         if (r == false) {
                             req.setStatus("Cancelled");
                             JOptionPane.showMessageDialog(null, "Inadequate Inventory");
-
+                            displayTable();
+                            return;
                         } else {
-                            app();
+                            app(req);
                             req.setStatus("Approved");
                             JOptionPane.showMessageDialog(null, "Request Approved!!");
 

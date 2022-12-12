@@ -416,6 +416,7 @@ public class HousingQuestionnaire extends javax.swing.JPanel {
         String expectedAmenities = ammenityComboBox.getSelectedItem().toString();
         String convenienceStore = storeComboBox.getSelectedItem().toString();
         
+        System.out.println("rent "+expectedRent);
         JOptionPane.showMessageDialog(this, "Thank you for taking the survey");
         Questionnaire questionnaire = new Questionnaire(admittedUniversity, housing, distance, expectedNoOfBeds, expectedNoOfBaths, expectedRoomMates, expectedRent, publicTransport, expectedAmenities, convenienceStore);
         system.getQuestionnaireDirectory().addQuestionnaire(questionnaire);

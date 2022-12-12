@@ -132,10 +132,10 @@ public class Statistics extends javax.swing.JPanel {
                     rangeBeyondFourThousand += 1;
                 }
             }
-            rangeWithinThousand = (rangeWithinThousand == 0 ? rangeWithinThousand+1 : rangeWithinThousand) * 100000;
-            rangeWithinTwoThousand = (rangeWithinTwoThousand == 0 ? rangeWithinTwoThousand+1 : rangeWithinTwoThousand) * 100000;
-            rangeWithinFourThousand = (rangeWithinFourThousand == 0 ? rangeWithinFourThousand+1 : rangeWithinFourThousand) * 100000;
-            rangeBeyondFourThousand = (rangeBeyondFourThousand == 0 ? rangeBeyondFourThousand+1 : rangeBeyondFourThousand) * 100000;
+            rangeWithinThousand = (rangeWithinThousand + 1) * 100000;
+            rangeWithinTwoThousand = (rangeWithinTwoThousand + 1) * 100000;
+            rangeWithinFourThousand = (rangeWithinFourThousand + 1) * 100000;
+            rangeBeyondFourThousand = (rangeBeyondFourThousand + 1) * 100000;
             
             DefaultPieDataset pieDataset = new DefaultPieDataset();
             pieDataset.setValue("Rent Range $500-$1000", rangeWithinThousand);

@@ -95,7 +95,7 @@ public class EmergencyReport extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+                "ID", "Type", "Location", "Status", "Response"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -160,7 +160,7 @@ public class EmergencyReport extends javax.swing.JPanel {
         jLabel9.setText("Emergency");
         jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 220, -1));
 
-        emergencyBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medical", "Fire", "Maintenace" }));
+        emergencyBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ambulance", "Fire", "Maintenance" }));
         jPanel7.add(emergencyBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 420, 40));
 
         locationInputField.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N

@@ -232,13 +232,13 @@ public class UserRegister extends javax.swing.JPanel {
                 return;
             }
             
-//            if(!passwordTextField.getText().matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"))
-//            {
-//                 JOptionPane.showMessageDialog(null, "Password is in incorrect \nFormat. Should be minimum 8 in length "
-//                    + "with one upper case, one lower case, one digit and one special character");
-//                passwordTextField.setText("");
-//                return;
-//            }
+            if(!passwordTextField.getText().matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"))
+            {
+                 JOptionPane.showMessageDialog(null, "Password is in incorrect \nFormat. Should be minimum 8 in length "
+                    + "with one upper case, one lower case, one digit and one special character");
+                passwordTextField.setText("");
+                return;
+            }
             
             User customer = new User(firstNameTextField.getText(),lastNameTextField.getText(), emailTextField.getText(),phoneTextField.getText(),userNameTextField.getText(),passwordTextField.getText(), locationTextField.getText());
             ecosystem.getUserAccDirectory().addAccount(customer);
