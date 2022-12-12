@@ -33,7 +33,7 @@ public class MarketStock extends javax.swing.JPanel {
         this.system = system;
         this.container = userProcessContainer;
         this.userAcc = userAcc;
-
+        populateStock();
     }
 
     /**
@@ -50,20 +50,20 @@ public class MarketStock extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtAp = new javax.swing.JTextField();
+        txtTable = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtBp = new javax.swing.JTextField();
+        txtBeds = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txtbm = new javax.swing.JTextField();
+        txtMonitor = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtABp = new javax.swing.JTextField();
+        txtHEater = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtAm = new javax.swing.JTextField();
+        txtChair = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtOm = new javax.swing.JTextField();
+        txtOrg = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txtOp = new javax.swing.JTextField();
-        txtABm = new javax.swing.JTextField();
+        txtCookware = new javax.swing.JTextField();
+        txtBike = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         btnAdd = new javax.swing.JButton();
 
@@ -93,104 +93,104 @@ public class MarketStock extends javax.swing.JPanel {
         jLabel4.setText("Tables");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 240, -1));
 
-        txtAp.setBackground(new java.awt.Color(248, 248, 249));
-        txtAp.addActionListener(new java.awt.event.ActionListener() {
+        txtTable.setBackground(new java.awt.Color(248, 248, 249));
+        txtTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApActionPerformed(evt);
+                txtTableActionPerformed(evt);
             }
         });
-        txtAp.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtTable.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtApKeyPressed(evt);
+                txtTableKeyPressed(evt);
             }
         });
-        jPanel2.add(txtAp, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 271, 48));
+        jPanel2.add(txtTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 271, 48));
 
         jLabel5.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(73, 84, 90));
         jLabel5.setText("Beds");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 240, -1));
 
-        txtBp.setBackground(new java.awt.Color(248, 248, 249));
-        txtBp.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtBeds.setBackground(new java.awt.Color(248, 248, 249));
+        txtBeds.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBpKeyPressed(evt);
+                txtBedsKeyPressed(evt);
             }
         });
-        jPanel2.add(txtBp, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 271, 48));
+        jPanel2.add(txtBeds, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 271, 48));
 
         jLabel6.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(73, 84, 90));
         jLabel6.setText("Monitors");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 230, -1));
 
-        txtbm.setBackground(new java.awt.Color(248, 248, 249));
-        txtbm.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtMonitor.setBackground(new java.awt.Color(248, 248, 249));
+        txtMonitor.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtbmKeyPressed(evt);
+                txtMonitorKeyPressed(evt);
             }
         });
-        jPanel2.add(txtbm, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 271, 48));
+        jPanel2.add(txtMonitor, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 271, 48));
 
         jLabel7.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(73, 84, 90));
         jLabel7.setText("Heaters");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 250, -1));
 
-        txtABp.setBackground(new java.awt.Color(248, 248, 249));
-        txtABp.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtHEater.setBackground(new java.awt.Color(248, 248, 249));
+        txtHEater.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtABpKeyPressed(evt);
+                txtHEaterKeyPressed(evt);
             }
         });
-        jPanel2.add(txtABp, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 271, 48));
+        jPanel2.add(txtHEater, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 271, 48));
 
         jLabel9.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(73, 84, 90));
         jLabel9.setText("Chairs");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 230, -1));
 
-        txtAm.setBackground(new java.awt.Color(248, 248, 249));
-        txtAm.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtChair.setBackground(new java.awt.Color(248, 248, 249));
+        txtChair.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtAmKeyPressed(evt);
+                txtChairKeyPressed(evt);
             }
         });
-        jPanel2.add(txtAm, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 271, 48));
+        jPanel2.add(txtChair, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 271, 48));
 
         jLabel8.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(73, 84, 90));
         jLabel8.setText("Organizers");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 240, -1));
 
-        txtOm.setBackground(new java.awt.Color(248, 248, 249));
-        txtOm.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtOrg.setBackground(new java.awt.Color(248, 248, 249));
+        txtOrg.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtOmKeyPressed(evt);
+                txtOrgKeyPressed(evt);
             }
         });
-        jPanel2.add(txtOm, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 271, 48));
+        jPanel2.add(txtOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 271, 48));
 
         jLabel10.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(73, 84, 90));
         jLabel10.setText("Cookware");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 240, -1));
 
-        txtOp.setBackground(new java.awt.Color(248, 248, 249));
-        txtOp.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtCookware.setBackground(new java.awt.Color(248, 248, 249));
+        txtCookware.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtOpKeyPressed(evt);
+                txtCookwareKeyPressed(evt);
             }
         });
-        jPanel2.add(txtOp, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 271, 48));
+        jPanel2.add(txtCookware, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 271, 48));
 
-        txtABm.setBackground(new java.awt.Color(248, 248, 249));
-        txtABm.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtBike.setBackground(new java.awt.Color(248, 248, 249));
+        txtBike.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtABmKeyPressed(evt);
+                txtBikeKeyPressed(evt);
             }
         });
-        jPanel2.add(txtABm, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, 271, 48));
+        jPanel2.add(txtBike, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, 271, 48));
 
         jLabel11.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(73, 84, 90));
@@ -204,7 +204,7 @@ public class MarketStock extends javax.swing.JPanel {
         btnAdd.setBackground(new java.awt.Color(51, 51, 255));
         btnAdd.setFont(new java.awt.Font("SF Pro Text", 1, 18)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(255, 255, 255));
-        btnAdd.setText("Add Stock");
+        btnAdd.setText("Update Stock");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
@@ -216,101 +216,101 @@ public class MarketStock extends javax.swing.JPanel {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         updateStock();
-        JOptionPane.showMessageDialog(null, "stock updated!!");
+        
     }//GEN-LAST:event_btnAddActionPerformed
 
-    private void txtApActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApActionPerformed
+    private void txtTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTableActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_txtApActionPerformed
+    }//GEN-LAST:event_txtTableActionPerformed
 
-    private void txtApKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApKeyPressed
-        // TODO add your handling code here:
-        char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            txtAp.setEditable(false);
-            JOptionPane.showMessageDialog(null, "enter number");
-        } else {
-            txtAp.setEditable(true);
-        }
-    }//GEN-LAST:event_txtApKeyPressed
-
-    private void txtAmKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAmKeyPressed
+    private void txtTableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTableKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            txtAm.setEditable(false);
+            txtTable.setEditable(false);
             JOptionPane.showMessageDialog(null, "enter number");
         } else {
-            txtAm.setEditable(true);
+            txtTable.setEditable(true);
         }
-    }//GEN-LAST:event_txtAmKeyPressed
+    }//GEN-LAST:event_txtTableKeyPressed
 
-    private void txtBpKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBpKeyPressed
+    private void txtChairKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtChairKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            txtBp.setEditable(false);
+            txtChair.setEditable(false);
             JOptionPane.showMessageDialog(null, "enter number");
         } else {
-            txtBp.setEditable(true);
+            txtChair.setEditable(true);
         }
-    }//GEN-LAST:event_txtBpKeyPressed
+    }//GEN-LAST:event_txtChairKeyPressed
 
-    private void txtbmKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbmKeyPressed
+    private void txtBedsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBedsKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            txtbm.setEditable(false);
+            txtBeds.setEditable(false);
             JOptionPane.showMessageDialog(null, "enter number");
         } else {
-            txtbm.setEditable(true);
+            txtBeds.setEditable(true);
         }
-    }//GEN-LAST:event_txtbmKeyPressed
+    }//GEN-LAST:event_txtBedsKeyPressed
 
-    private void txtOpKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOpKeyPressed
+    private void txtMonitorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMonitorKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            txtOp.setEditable(false);
+            txtMonitor.setEditable(false);
             JOptionPane.showMessageDialog(null, "enter number");
         } else {
-            txtOp.setEditable(true);
+            txtMonitor.setEditable(true);
         }
-    }//GEN-LAST:event_txtOpKeyPressed
+    }//GEN-LAST:event_txtMonitorKeyPressed
 
-    private void txtOmKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOmKeyPressed
+    private void txtCookwareKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCookwareKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            txtOm.setEditable(false);
+            txtCookware.setEditable(false);
             JOptionPane.showMessageDialog(null, "enter number");
         } else {
-            txtOm.setEditable(true);
+            txtCookware.setEditable(true);
         }
-    }//GEN-LAST:event_txtOmKeyPressed
+    }//GEN-LAST:event_txtCookwareKeyPressed
 
-    private void txtABpKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtABpKeyPressed
+    private void txtOrgKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOrgKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            txtBp.setEditable(false);
+            txtOrg.setEditable(false);
             JOptionPane.showMessageDialog(null, "enter number");
         } else {
-            txtBp.setEditable(true);
+            txtOrg.setEditable(true);
         }
-    }//GEN-LAST:event_txtABpKeyPressed
+    }//GEN-LAST:event_txtOrgKeyPressed
 
-    private void txtABmKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtABmKeyPressed
+    private void txtHEaterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHEaterKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            txtABm.setEditable(false);
+            txtBeds.setEditable(false);
             JOptionPane.showMessageDialog(null, "enter number");
         } else {
-            txtABm.setEditable(true);
+            txtBeds.setEditable(true);
         }
-    }//GEN-LAST:event_txtABmKeyPressed
+    }//GEN-LAST:event_txtHEaterKeyPressed
+
+    private void txtBikeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBikeKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            txtBike.setEditable(false);
+            JOptionPane.showMessageDialog(null, "enter number");
+        } else {
+            txtBike.setEditable(true);
+        }
+    }//GEN-LAST:event_txtBikeKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -327,19 +327,19 @@ public class MarketStock extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtABm;
-    private javax.swing.JTextField txtABp;
-    private javax.swing.JTextField txtAm;
-    private javax.swing.JTextField txtAp;
-    private javax.swing.JTextField txtBp;
-    private javax.swing.JTextField txtOm;
-    private javax.swing.JTextField txtOp;
-    private javax.swing.JTextField txtbm;
+    private javax.swing.JTextField txtBeds;
+    private javax.swing.JTextField txtBike;
+    private javax.swing.JTextField txtChair;
+    private javax.swing.JTextField txtCookware;
+    private javax.swing.JTextField txtHEater;
+    private javax.swing.JTextField txtMonitor;
+    private javax.swing.JTextField txtOrg;
+    private javax.swing.JTextField txtTable;
     // End of variables declaration//GEN-END:variables
 
     private void updateStock() {
         // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        if (txtAp.getText().isEmpty() || txtAm.getText().isEmpty() || txtBp.getText().isEmpty() || txtbm.getText().isEmpty() || txtOp.getText().isEmpty() || txtOm.getText().isEmpty() || txtABp.getText().isEmpty() || txtABm.getText().isEmpty()) {
+        if (txtTable.getText().isEmpty() || txtChair.getText().isEmpty() || txtBeds.getText().isEmpty() || txtMonitor.getText().isEmpty() || txtCookware.getText().isEmpty() || txtOrg.getText().isEmpty() || txtHEater.getText().isEmpty() || txtBike.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "please enter all mandatory fields");
             return;
         }
@@ -352,19 +352,63 @@ public class MarketStock extends javax.swing.JPanel {
             MarketPlace o = bw.get(i);
             if (o.getUsername().matches(b.getUsername())) {
 
-                Map<String, Integer> stock = new HashMap<String, Integer>();
-                stock.put("Tables", Integer.parseInt(txtAp.getText()));
-                stock.put("Chairs", Integer.parseInt(txtAm.getText()));
-                stock.put("Beds", Integer.parseInt(txtBp.getText()));
-                stock.put("Monitors", Integer.parseInt(txtbm.getText()));
-                stock.put("Cookware", Integer.parseInt(txtOp.getText()));
-                stock.put("Organizers", Integer.parseInt(txtOm.getText()));
-                stock.put("Heaters", Integer.parseInt(txtABp.getText()));
-                stock.put("Bikes", Integer.parseInt(txtABm.getText()));
-                o.setMarketMap(stock);
+                try {
+                    Map<String, Integer> stock = new HashMap<String, Integer>();
+                    stock.put("Tables", Integer.parseInt(txtTable.getText()));
+                    stock.put("Chairs", Integer.parseInt(txtChair.getText()));
+                    stock.put("Beds", Integer.parseInt(txtBeds.getText()));
+                    stock.put("Monitors", Integer.parseInt(txtMonitor.getText()));
+                    stock.put("Cookware", Integer.parseInt(txtCookware.getText()));
+                    stock.put("Organizers", Integer.parseInt(txtOrg.getText()));
+                    stock.put("Heaters", Integer.parseInt(txtHEater.getText()));
+                    stock.put("Bikes", Integer.parseInt(txtBike.getText()));
+                    o.setMarketMap(stock);
+                    JOptionPane.showMessageDialog(null, "stock updated!!");
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(this, "Should contain number only");
+                }
             }
         }
 
+    }
+
+    private void populateStock() {
+        MarketPlaceDirectory bwd = system.getMarketPlaceDirectory();
+        MarketPlace marketPlace = (MarketPlace) (userAcc);
+        List<MarketPlace> bw = bwd.getMarketPlaces();
+        for(MarketPlace mp: bw) {
+            if(mp.getUserId().equals(marketPlace.getUserId())) {
+                Map<String, Integer> marketMap = mp.getMarketMap();
+                for (Map.Entry<String,Integer> entry : marketMap.entrySet()) {
+                    switch(entry.getKey()) {
+                        case "Tables":
+                            txtTable.setText(entry.getValue().toString());
+                            break;
+                        case "Chairs":
+                            txtChair.setText(entry.getValue().toString());
+                            break;
+                        case "Beds":
+                            txtBeds.setText(entry.getValue().toString());
+                            break;
+                        case "Monitors":
+                            txtMonitor.setText(entry.getValue().toString());
+                            break;
+                        case "Cookware":
+                            txtCookware.setText(entry.getValue().toString());
+                            break;
+                        case "Organizers":
+                            txtOrg.setText(entry.getValue().toString());
+                            break;
+                        case "Heaters":
+                            txtHEater.setText(entry.getValue().toString());
+                            break;
+                        case "Bikes":
+                            txtBike.setText(entry.getValue().toString());
+                            break;
+                    }
+                }
+            }
+        }
     }
 
 }
