@@ -232,8 +232,9 @@ public class UserAppJPanel extends javax.swing.JPanel {
         for (int i = 0; i < l; i++) {
             DonateProduct productDonor = donList.get(i);
             MarketPlace bw = (MarketPlace) (userAcc);
-
-            if (productDonor.getMarketplaceName().matches(bw.getUsername())) {
+            System.out.println("MarketPlace name: "+bw.getStoreName());
+            System.out.println("productDonor.getMarketplaceName(): "+productDonor.getMarketplaceName());
+            if (productDonor.getMarketplaceName().matches(bw.getStoreName ())) {
 
                 DefaultTableModel table = (DefaultTableModel) tblAppDetails.getModel();
                 String s1 = String.valueOf(productDonor.getId());
