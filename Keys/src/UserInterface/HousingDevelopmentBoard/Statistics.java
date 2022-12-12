@@ -66,7 +66,7 @@ public class Statistics extends javax.swing.JPanel {
                 rentalStatsActionPerformed(evt);
             }
         });
-        add(rentalStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 180, 39));
+        add(rentalStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 310, 140));
 
         universityStats.setBackground(new java.awt.Color(51, 51, 255));
         universityStats.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -77,7 +77,7 @@ public class Statistics extends javax.swing.JPanel {
                 universityStatsActionPerformed(evt);
             }
         });
-        add(universityStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 180, 39));
+        add(universityStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 310, 140));
 
         preferredStats.setBackground(new java.awt.Color(51, 51, 255));
         preferredStats.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -88,7 +88,7 @@ public class Statistics extends javax.swing.JPanel {
                 preferredStatsActionPerformed(evt);
             }
         });
-        add(preferredStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 180, 39));
+        add(preferredStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 490, 310, 140));
 
         houseStats.setBackground(new java.awt.Color(51, 51, 255));
         houseStats.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -99,7 +99,7 @@ public class Statistics extends javax.swing.JPanel {
                 houseStatsActionPerformed(evt);
             }
         });
-        add(houseStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 180, 39));
+        add(houseStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 490, 310, 140));
     }// </editor-fold>//GEN-END:initComponents
 
     private void rentalStatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rentalStatsActionPerformed
@@ -118,13 +118,13 @@ public class Statistics extends javax.swing.JPanel {
             {
 
                 Questionnaire c2 = questionnaire.get(i);
-                if(c2.getExpectedRent().matches("500-1000"))
+                if(c2.getExpectedRent().matches("500 - 1000"))
                 {
                     rangeWithinThousand += 1;
-                }else  if(c2.getExpectedRent().matches("1000-2000"))
+                }else  if(c2.getExpectedRent().matches("1000 - 2000"))
                 {
                     rangeWithinTwoThousand += 1;
-                }else  if(c2.getExpectedRent().matches("2000-4000"))
+                }else  if(c2.getExpectedRent().matches("2000 - 4000"))
                 {
                     rangeWithinFourThousand += 1;
                 }else  if(c2.getExpectedRent().matches("4000+"))
@@ -132,10 +132,10 @@ public class Statistics extends javax.swing.JPanel {
                     rangeBeyondFourThousand += 1;
                 }
             }
-            rangeWithinThousand = (rangeWithinThousand + 1) * 100000;
-            rangeWithinTwoThousand = (rangeWithinTwoThousand + 1) * 100000;
-            rangeWithinFourThousand = (rangeWithinFourThousand + 1) * 100000;
-            rangeBeyondFourThousand = (rangeBeyondFourThousand + 1) * 100000;
+            rangeWithinThousand = (rangeWithinThousand == 0 ? rangeWithinThousand+1 : rangeWithinThousand) * 100000;
+            rangeWithinTwoThousand = (rangeWithinTwoThousand == 0 ? rangeWithinTwoThousand+1 : rangeWithinTwoThousand) * 100000;
+            rangeWithinFourThousand = (rangeWithinFourThousand == 0 ? rangeWithinFourThousand+1 : rangeWithinFourThousand) * 100000;
+            rangeBeyondFourThousand = (rangeBeyondFourThousand == 0 ? rangeBeyondFourThousand+1 : rangeBeyondFourThousand) * 100000;
             
             DefaultPieDataset pieDataset = new DefaultPieDataset();
             pieDataset.setValue("Rent Range $500-$1000", rangeWithinThousand);
@@ -224,16 +224,16 @@ public class Statistics extends javax.swing.JPanel {
             {
 
                 Questionnaire c2 = questionnaire.get(i);
-                if(c2.getConvenienceStore().matches("Northeastern"))
+                if(c2.getConvenienceStore().matches("Target"))
                 {
                     target += 1;
-                }else  if(c2.getConvenienceStore().matches("MIT"))
+                }else  if(c2.getConvenienceStore().matches("Walmart"))
                 {
                     walmart += 1;
-                }else  if(c2.getConvenienceStore().matches("Harvard"))
+                }else  if(c2.getConvenienceStore().matches("Stop & Shop"))
                 {
                     stopAndShop += 1;
-                }else  if(c2.getConvenienceStore().matches("BU"))
+                }else  if(c2.getConvenienceStore().matches("Patel Brothers"))
                 {
                     patelBrothers += 1;
                 }

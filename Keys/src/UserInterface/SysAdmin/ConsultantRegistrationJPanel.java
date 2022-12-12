@@ -4,6 +4,8 @@
  */
 package UserInterface.SysAdmin;
 
+import Business.Builder.Builder;
+import Business.Builder.BuilderDirectory;
 import Business.Consultant.Consultant;
 import Business.Consultant.ConsultantDirectory;
 import Business.DatabaseUtil.DB4OUtil;
@@ -11,6 +13,7 @@ import Business.EcoSystem;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -27,7 +30,6 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
     EcoSystem system;
     JPanel rightSidePanel;
     ArrayList<String> consultants = new ArrayList<String>();
-    ArrayList<String> specializations = new ArrayList<String>();
     int consultantCount = 0;
     int specializationCount = 0;
 
@@ -40,7 +42,7 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
         this.rightSidePanel = rightSidePanel;
         this.setSize(1160, 750);
         displayTable();
-//        populateDashBoard();
+//      populateDashBoard();
     }
 
     /**
@@ -483,14 +485,14 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
     private void populateDashBoard() {
         // Print the count of the location
         // Converting it to hash set
+        BuilderDirectory directory = system.getBuilderDirectory();
+        List<Builder> builderList = directory.getBuilders();
+        int length = builderList.size();
         System.out.println(consultants.size());
-        System.out.println(specializations.size());
         HashSet<String> uniqueHospital = new HashSet<String>(consultants);
-        HashSet<String> uniqueSpecialization = new HashSet<String>(specializations);
-
-        // get the count of hash sets
+        
         consultantCount = uniqueHospital.size();
-        specializationCount = uniqueSpecialization.size();
+        specializationCount = length;
 
         consultantsCount.setText(Integer.toString(consultantCount));
         splCount.setText(Integer.toString(specializationCount));

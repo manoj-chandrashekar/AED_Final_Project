@@ -259,6 +259,7 @@ public class AmbulanceRegistration extends javax.swing.JPanel {
 
                     }
                     populateTable();
+                    clearFields();
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Please Select a Row!!");

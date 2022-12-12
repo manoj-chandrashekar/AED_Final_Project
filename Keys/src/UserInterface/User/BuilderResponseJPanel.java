@@ -199,6 +199,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
             ListingRequest listingRequest = order.get(i);
             if (listingRequest.getStudentId().matches(r.getUserId())) {
                 DefaultTableModel table = (DefaultTableModel) listingsTbl.getModel();
+                table.setRowCount(0);
                 Object[] row = new Object[8];
                 row[0] = listingRequest;
                 row[1] = listingRequest.getListings().getAptNo();

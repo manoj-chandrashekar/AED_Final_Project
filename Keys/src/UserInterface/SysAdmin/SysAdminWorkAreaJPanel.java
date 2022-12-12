@@ -227,6 +227,11 @@ public class SysAdminWorkAreaJPanel extends javax.swing.JPanel {
         governmentButton.setText("Manage");
         governmentButton.setBorder(null);
         governmentButton.setFocusPainted(false);
+        governmentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                governmentButtonActionPerformed(evt);
+            }
+        });
         jPanel5.add(governmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 180, 40));
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/Husindev.png"))); // NOI18N
@@ -320,6 +325,13 @@ public class SysAdminWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(container);
     }//GEN-LAST:event_emergencyButtonActionPerformed
 
+    private void governmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_governmentButtonActionPerformed
+        // TODO add your handling code here:
+        HousingBoardEnterpirse boardEnterpirse = new HousingBoardEnterpirse(ecosystem, container);
+        container.add(boardEnterpirse);
+        CardLayout layout = (CardLayout) container.getLayout();
+        layout.next(container);
+    }//GEN-LAST:event_governmentButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton builderButton;

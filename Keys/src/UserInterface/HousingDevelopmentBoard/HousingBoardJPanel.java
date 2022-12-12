@@ -80,7 +80,6 @@ public class HousingBoardJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         goBack = new javax.swing.JPanel();
         jLabel52 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         timeLabel = new javax.swing.JLabel();
@@ -123,10 +122,12 @@ public class HousingBoardJPanel extends javax.swing.JPanel {
         });
         statisticsPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 90, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/stats.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/stats.png"))); // NOI18N
         statisticsPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         jPanel6.add(statisticsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 290, 60));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/keyslogo.png"))); // NOI18N
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 130));
 
         goBack.setBackground(new java.awt.Color(255, 255, 255));
@@ -143,8 +144,7 @@ public class HousingBoardJPanel extends javax.swing.JPanel {
         jLabel52.setText("Return");
         goBack.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Icons/exit.png"))); // NOI18N
-        goBack.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 28, 28));
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/exit.png"))); // NOI18N
         goBack.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 28, 28));
 
         jPanel6.add(goBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 780, 290, 60));
@@ -217,7 +217,6 @@ public class HousingBoardJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel52;

@@ -161,13 +161,13 @@ public class EmergencyReport extends javax.swing.JPanel {
         jLabel9.setText("Emergency");
         jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 220, -1));
 
-        emergencyBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medical", "Fire", "Police", "Maintenace" }));
+        emergencyBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medical", "Fire", "Maintenace" }));
         jPanel7.add(emergencyBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 420, 40));
 
         locationInputField.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
-        jPanel7.add(locationInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 220, 40));
+        jPanel7.add(locationInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 420, 40));
 
-        searchButton.setBackground(new java.awt.Color(51, 51, 255));
+        searchButton.setBackground(new java.awt.Color(255, 255, 255));
         searchButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
         searchButton.setForeground(new java.awt.Color(255, 255, 255));
         searchButton.setText("Search");
@@ -177,7 +177,7 @@ public class EmergencyReport extends javax.swing.JPanel {
                 searchButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 150, 39));
+        jPanel7.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 150, 39));
 
         jLabel8.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(73, 84, 90));

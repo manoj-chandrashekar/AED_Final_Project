@@ -239,6 +239,9 @@ public class MarketPlaceGiveawayJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Appointment Booked!");
                 // sendmail();
                 displayTable();
+                firstNameField.setText("");
+                lastNameField.setText("");
+                jDateChooser1.setDate(null);
             } else {
                 JOptionPane.showMessageDialog(null, "Appointment Available from Tomorrow");
             }

@@ -64,7 +64,7 @@ public class ConsultantRequest extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Id", "Name", "Location", "Status", "Response"
+                "Id", "Name", "Status", "MarketPlace", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -149,6 +149,7 @@ public class ConsultantRequest extends javax.swing.JPanel {
 
             if (productReq.getMarketPlaceName().matches(mp.getStoreName())) {
                 DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
+                table.setRowCount(0);
                 String s1 = String.valueOf(productReq.getId());
                 String s2[] = {s1, productReq.getFirstName(), productReq.getStatus(), productReq.getProductType(), Integer.toString(productReq.getUnits())};
                 table.addRow(s2);
@@ -279,7 +280,7 @@ public class ConsultantRequest extends javax.swing.JPanel {
                     }
                 }
             }
-            jTable1.setModel(new DefaultTableModel(null, new String[]{"ID", "Name", "Status", "Blood Type", "Units requested"}));
+            //jTable1.setModel(new DefaultTableModel(null, new String[]{"ID", "Name", "Lo", "Blood Type", "Units requested"}));
             displayTable();
         } else {
             JOptionPane.showMessageDialog(null, "Select a Row!!");

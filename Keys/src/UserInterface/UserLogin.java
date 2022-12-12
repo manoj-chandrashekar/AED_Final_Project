@@ -24,8 +24,11 @@ import Business.Roles.ConsultantRole;
 import Business.Roles.Fire_Man;
 import Business.Roles.MaintenanceMan;
 import Business.Roles.Roles;
+import Business.Roles.SurveyorRole;
 import Business.Roles.System_Admin;
 import Business.Roles.UserRole;
+import Business.Surveyor.Surveyor;
+import Business.Surveyor.SurveyorDirectory;
 import Business.User.User;
 import Business.User.UserDirectory;
 import Business.UserAccountManagement.UserAccount;
@@ -33,8 +36,10 @@ import UserInterface.Ambulance.AmbulanceView;
 import UserInterface.Builder.BuilderEnterpriseJFrame;
 import UserInterface.Consultant.ConsultantViewJPanel;
 import UserInterface.Fire.FireViewJPanel;
+import UserInterface.HousingDevelopmentBoard.HousingBoardJPanel;
 import UserInterface.Maintenance.MaintenanceMain;
 import UserInterface.MarketPlace.MarketPlaceView;
+import UserInterface.SysAdmin.HousingBoardEnterpirse;
 import UserInterface.User.UserAreaJPanel;
 import java.awt.CardLayout;
 import java.util.ArrayList;
@@ -248,6 +253,16 @@ public class UserLogin extends javax.swing.JPanel {
                         JOptionPane.showMessageDialog(this, "Invalid credentials");
                     }
                 }
+            } else if (userRole instanceof SurveyorRole) {
+                SurveyorDirectory directory = ecoSystem.getSurveyorDirectory();
+                List<Surveyor> surveyors = directory.getSurveyorList();
+                for (Surveyor surveyor : surveyors) {
+                    if (userAccount.getUsername().matches(surveyor.getUsername())) {
+                        viewSurveyorScreen();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Invalid credentials");
+                    }
+                }
             }
         }
     }
@@ -327,6 +342,13 @@ public class UserLogin extends javax.swing.JPanel {
     private void viewMaintenanceScreen() {
         MaintenanceMain maintenanceMain = new MaintenanceMain(workArea, userAccount, ecoSystem);
         workArea.add(maintenanceMain);
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
+    }
+
+    private void viewSurveyorScreen() {
+        HousingBoardJPanel boardJPanel = new HousingBoardJPanel(workArea, userAccount, ecoSystem);
+        workArea.add(boardJPanel);
         CardLayout layout = (CardLayout) workArea.getLayout();
         layout.next(workArea);
     }

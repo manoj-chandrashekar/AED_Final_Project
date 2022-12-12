@@ -78,7 +78,7 @@ public class HousingQuestionnaire extends javax.swing.JPanel {
         rentComboBox = new javax.swing.JComboBox<>();
         ammenityComboBox = new javax.swing.JComboBox<>();
         storeComboBox = new javax.swing.JComboBox<>();
-        registerButton = new javax.swing.JButton();
+        submitButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(250, 249, 251));
         setPreferredSize(new java.awt.Dimension(1160, 750));
@@ -252,7 +252,7 @@ public class HousingQuestionnaire extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel2)
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(universityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -300,32 +300,31 @@ public class HousingQuestionnaire extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 1090, 480));
 
-        registerButton.setBackground(new java.awt.Color(51, 51, 255));
-        registerButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
-        registerButton.setForeground(new java.awt.Color(255, 255, 255));
-        registerButton.setText("Submit");
-        registerButton.addActionListener(new java.awt.event.ActionListener() {
+        submitButton.setBackground(new java.awt.Color(51, 51, 255));
+        submitButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
+        submitButton.setForeground(new java.awt.Color(255, 255, 255));
+        submitButton.setText("Submit");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registerButtonActionPerformed(evt);
+                submitButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 600, 220, 39));
+        jPanel1.add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 600, 220, 39));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(512, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(248, 248, 248))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 30, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -342,10 +341,10 @@ public class HousingQuestionnaire extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_distanceComboBoxActionPerformed
 
-    private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-        //testRegistration();
-    }//GEN-LAST:event_registerButtonActionPerformed
+        surveyProcessing();
+    }//GEN-LAST:event_submitButtonActionPerformed
 
     private void bathsComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bathsComboBoxActionPerformed
         // TODO add your handling code here:
@@ -395,29 +394,29 @@ public class HousingQuestionnaire extends javax.swing.JPanel {
     private javax.swing.JLabel positive4;
     private javax.swing.JLabel positive5;
     private javax.swing.JLabel positive6;
-    private javax.swing.JButton registerButton;
     private javax.swing.JComboBox<String> rentComboBox;
     private javax.swing.JComboBox<String> sharingComboBox;
     private javax.swing.JComboBox<String> storeComboBox;
+    private javax.swing.JButton submitButton;
     private javax.swing.JLabel symptoms;
     private javax.swing.JComboBox<String> transportComboBox;
     private javax.swing.JComboBox<String> universityComboBox;
     // End of variables declaration//GEN-END:variables
 
-    private void testRegistration() {
+    private void surveyProcessing() {
        
         String admittedUniversity = universityComboBox.getSelectedItem().toString();
         String housing = housingComboBox.getSelectedItem().toString();
-        int distance = Integer.parseInt(housingComboBox.getSelectedItem().toString());
+        String distance = distanceComboBox.getSelectedItem().toString();
         int expectedNoOfBeds = Integer.parseInt(bedsComboBox.getSelectedItem().toString());
         int expectedNoOfBaths = Integer.parseInt(bathsComboBox.getSelectedItem().toString());
-        int expectedRoomMates = Integer.parseInt(sharingComboBox.getSelectedItem().toString());
+        String expectedRoomMates = sharingComboBox.getSelectedItem().toString();
         String expectedRent = rentComboBox.getSelectedItem().toString();
         String publicTransport = transportComboBox.getSelectedItem().toString();
         String expectedAmenities = ammenityComboBox.getSelectedItem().toString();
         String convenienceStore = storeComboBox.getSelectedItem().toString();
         
-        
+        JOptionPane.showMessageDialog(this, "Thank you for taking the survey");
         Questionnaire questionnaire = new Questionnaire(admittedUniversity, housing, distance, expectedNoOfBeds, expectedNoOfBaths, expectedRoomMates, expectedRent, publicTransport, expectedAmenities, convenienceStore);
         system.getQuestionnaireDirectory().addQuestionnaire(questionnaire);
         

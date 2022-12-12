@@ -13,16 +13,16 @@ public class Questionnaire {
     private int count =0;
     private String admittedUniversity;
     private String housingType;
-    private int distance;
+    private String distance;
     private int expectedNoOfBeds;
     private int expectedNoOfBaths;
-    private int expectedRoomMates;
+    private String expectedRoomMates;
     private String expectedRent;
     private String publicTransport;
     private String expectedAmenities;
     private String convenienceStore;
 
-    public Questionnaire(String admittedUniversity, String housingType, int distance, int expectedNoOfBeds, int expectedNoOfBaths, int expectedRoomMates, String expectedRent, String publicTransport, String expectedAmenities, String convenienceStore) {
+    public Questionnaire(String admittedUniversity, String housingType, String distance, int expectedNoOfBeds, int expectedNoOfBaths, String expectedRoomMates, String expectedRent, String publicTransport, String expectedAmenities, String convenienceStore) {
         id = count;
         this.admittedUniversity = admittedUniversity;
         this.housingType = housingType;
@@ -53,11 +53,11 @@ public class Questionnaire {
         this.housingType = housingType;
     }
 
-    public int getDistance() {
+    public String getDistance() {
         return distance;
     }
 
-    public void setDistance(int distance) {
+    public void setDistance(String distance) {
         this.distance = distance;
     }
 
@@ -77,11 +77,11 @@ public class Questionnaire {
         this.expectedNoOfBaths = expectedNoOfBaths;
     }
 
-    public int getExpectedRoomMates() {
+    public String getExpectedRoomMates() {
         return expectedRoomMates;
     }
 
-    public void setExpectedRoomMates(int expectedRoomMates) {
+    public void setExpectedRoomMates(String expectedRoomMates) {
         this.expectedRoomMates = expectedRoomMates;
     }
 
