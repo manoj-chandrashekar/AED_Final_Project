@@ -99,7 +99,6 @@ public class BuilderRegistrationJPanel extends javax.swing.JPanel {
         emailTextField = new javax.swing.JTextField();
         locationInputField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        searchButton = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         pharmaLabel = new javax.swing.JLabel();
@@ -258,18 +257,6 @@ public class BuilderRegistrationJPanel extends javax.swing.JPanel {
         jLabel8.setText("Location");
         jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 220, -1));
 
-        searchButton.setBackground(new java.awt.Color(255, 255, 255));
-        searchButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
-        searchButton.setForeground(new java.awt.Color(255, 255, 255));
-        searchButton.setText("Search");
-        searchButton.setBorder(null);
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
-            }
-        });
-        jPanel7.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 150, 39));
-
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 470, 630));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
@@ -424,14 +411,6 @@ public class BuilderRegistrationJPanel extends javax.swing.JPanel {
     }
 
 
-    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        // TODO add your handling code here:
-        MapViewJPanel oLJP = new MapViewJPanel(rightSidePanel);
-        rightSidePanel.add("MapViewr", oLJP);
-        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-        layout.next(rightSidePanel);
-    }//GEN-LAST:event_searchButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
@@ -463,7 +442,6 @@ public class BuilderRegistrationJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField nameTextField;
     private javax.swing.JTextField passwordTextField;
     private javax.swing.JLabel pharmaLabel;
-    private javax.swing.JButton searchButton;
     private javax.swing.JButton updateButton;
     private javax.swing.JTextField userIdTextField;
     // End of variables declaration//GEN-END:variables

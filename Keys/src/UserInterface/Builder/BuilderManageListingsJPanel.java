@@ -157,7 +157,7 @@ public class BuilderManageListingsJPanel extends javax.swing.JPanel {
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 570, 110, -1));
 
         rentTextField.setBackground(new java.awt.Color(248, 248, 249));
-        jPanel2.add(rentTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 500, 380, 40));
+        jPanel2.add(rentTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 510, 380, 40));
 
         jLabel9.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(73, 84, 90));
@@ -175,7 +175,7 @@ public class BuilderManageListingsJPanel extends javax.swing.JPanel {
         jLabel10.setForeground(new java.awt.Color(73, 84, 90));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel10.setText("Rent ($):");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 510, 215, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 520, 215, -1));
 
         availableRg.add(yesRb);
         yesRb.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -203,9 +203,7 @@ public class BuilderManageListingsJPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

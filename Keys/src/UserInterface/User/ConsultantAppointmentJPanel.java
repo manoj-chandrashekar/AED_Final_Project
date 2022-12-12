@@ -180,7 +180,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
         });
         container.add(findConsultant, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 620, 230, 50));
 
-        add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1139, 1073));
+        add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
     }// </editor-fold>//GEN-END:initComponents
 
     private void specializationComboActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_specializationComboActionPerformed

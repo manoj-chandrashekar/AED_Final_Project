@@ -114,7 +114,7 @@ public class BuilderConsult extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(listingTbl);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 1610, 420));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 1460, 420));
 
         jLabel2.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         jLabel2.setText("Builder");

@@ -71,7 +71,6 @@ public class MaintenanceRegistration extends javax.swing.JPanel {
         phoneTxt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         locationInputField = new javax.swing.JTextField();
-        searchButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(250, 249, 251));
         setPreferredSize(new java.awt.Dimension(1160, 750));
@@ -197,18 +196,6 @@ public class MaintenanceRegistration extends javax.swing.JPanel {
         locationInputField.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         jPanel7.add(locationInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 420, 40));
 
-        searchButton.setBackground(new java.awt.Color(255, 255, 255));
-        searchButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
-        searchButton.setForeground(new java.awt.Color(255, 255, 255));
-        searchButton.setText("Search");
-        searchButton.setBorder(null);
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
-            }
-        });
-        jPanel7.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 150, 39));
-
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 470, 630));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
@@ -272,19 +259,8 @@ public class MaintenanceRegistration extends javax.swing.JPanel {
                     Maintenance maintenance = list.get(i);
                     System.out.println("username" + maintenance.getMaintenanceName());
                     System.out.println("value" + value);
-                    if (maintenance.getMaintenanceName().matches(value)) {
-                        if (!phoneTxt.getText().matches("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]")) {
-                            JOptionPane.showMessageDialog(null, " 10 digit phone number");
-                            phoneTxt.setText("");
-                            return;
-                        }
-                        if (!passwordTxt.getText().matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")) {
-                            JOptionPane.showMessageDialog(null, "Password is in incorrect \nFormat. Should be minimum 8 in length "
-                                    + "with one upper case, one lower case, one digit and one special character");
-                            passwordTxt.setText("");
-                            return;
-                        }
-
+                    if (maintenance.getUsername().matches(value)) {
+                        
                         maintenance.setMaintenanceName(firstNameTxt.getText());
                         maintenance.setMaintenanceLocation(locationInputField.getText());
                         maintenance.setContactNo(Long.parseLong(phoneTxt.getText()));
@@ -292,9 +268,6 @@ public class MaintenanceRegistration extends javax.swing.JPanel {
                         maintenance.setUsername(userIdTxt.getText());
 
                     }
-//                else {
-//                    
-//                }
                 }
                 populateTable();
                 clearFields();
@@ -367,14 +340,6 @@ public class MaintenanceRegistration extends javax.swing.JPanel {
     }
 
 
-    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        // TODO add your handling code here:
-//        MapViewr oLJP = new MapViewr(rightSidePanel);
-//        rightSidePanel.add("MapViewr", oLJP);
-//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-//        layout.next(rightSidePanel);
-    }//GEN-LAST:event_searchButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DelBtn;
@@ -395,7 +360,6 @@ public class MaintenanceRegistration extends javax.swing.JPanel {
     private javax.swing.JTextField locationInputField;
     private javax.swing.JTextField passwordTxt;
     private javax.swing.JTextField phoneTxt;
-    private javax.swing.JButton searchButton;
     private javax.swing.JButton updateBtn;
     private javax.swing.JTextField userIdTxt;
     // End of variables declaration//GEN-END:variables

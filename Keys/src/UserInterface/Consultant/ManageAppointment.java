@@ -285,7 +285,10 @@ public class ManageAppointment extends javax.swing.JPanel {
                         CardLayout layout = (CardLayout) container.getLayout();
                         layout.next(container);
 
-                    } else {
+                    } else if(docList.getStatus() == AppointmentStatus.APPOINTMENT_BOOKED) {
+                        JOptionPane.showMessageDialog(this, "Please consult the student first");
+                    } 
+                    else {
                         JOptionPane.showMessageDialog(this, "Wrong Move! Meeting Done/Cancelled");
                     }
                 }
