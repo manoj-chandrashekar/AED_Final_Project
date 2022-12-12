@@ -86,16 +86,16 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 780, 310));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 1070, 310));
 
         updateStatus.setBackground(new java.awt.Color(51, 51, 255));
         updateStatus.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -107,7 +107,7 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
                 updateStatusActionPerformed(evt);
             }
         });
-        jPanel1.add(updateStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 660, 200, 39));
+        jPanel1.add(updateStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 600, 200, 39));
 
         resetButton.setBackground(new java.awt.Color(255, 55, 95));
         resetButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
@@ -119,7 +119,7 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
                 resetButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(resetButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 660, 180, 39));
+        jPanel1.add(resetButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 600, 180, 39));
 
         listingTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -137,13 +137,13 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
         listingTable.setRowSelectionAllowed(false);
         jScrollPane4.setViewportView(listingTable);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 990, 90));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 1290, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1160, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1160, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

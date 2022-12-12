@@ -197,9 +197,9 @@ public class MarketStock extends javax.swing.JPanel {
         jLabel11.setText("Bikes");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 250, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 779, 528));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 779, 528));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 636));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 650));
 
         btnAdd.setBackground(new java.awt.Color(51, 51, 255));
         btnAdd.setFont(new java.awt.Font("SF Pro Text", 1, 18)); // NOI18N
@@ -210,7 +210,7 @@ public class MarketStock extends javax.swing.JPanel {
                 btnAddActionPerformed(evt);
             }
         });
-        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 654, 179, 56));
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 650, 179, 56));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed

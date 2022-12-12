@@ -83,9 +83,9 @@ public class ConsultantViewJPanel extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        timeLabel = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        timeLabel = new javax.swing.JLabel();
         rightSidePanel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(250, 249, 251));
@@ -171,10 +171,6 @@ public class ConsultantViewJPanel extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        timeLabel.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
-        timeLabel.setText("3:45 PM");
-        jPanel6.add(timeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 20, -1, -1));
-
         jLabel10.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
         jLabel10.setText("Consultant Dashboard");
         jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 470, -1));
@@ -183,11 +179,15 @@ public class ConsultantViewJPanel extends javax.swing.JPanel {
         jLabel1.setText("Manage everything related to Consultant Enterprises");
         jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
+        timeLabel.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
+        timeLabel.setText("3:45 PM");
+        jPanel6.add(timeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 20, 190, -1));
+
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1630, 90));
 
         rightSidePanel.setBackground(new java.awt.Color(250, 249, 251));
         rightSidePanel.setLayout(new java.awt.CardLayout());
-        jPanel3.add(rightSidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 1300, 910));
+        jPanel3.add(rightSidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 1630, 990));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

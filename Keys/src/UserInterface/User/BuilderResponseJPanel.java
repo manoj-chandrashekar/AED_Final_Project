@@ -53,7 +53,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -75,12 +75,13 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 31, -1, -1));
 
         listingsTbl.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
+            new Object [][] {
 
-                },
-                new String[] {
-                        "ID", "AptNo", "Address", "Beds", "Baths", "Rent", "Builder", "Status"
-                }));
+            },
+            new String [] {
+                "ID", "AptNo", "Address", "Beds", "Baths", "Rent", "Builder", "Status"
+            }
+        ));
         listingsTbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listingsTblMouseClicked(evt);
@@ -88,7 +89,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(listingsTbl);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 1110, 400));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 1340, 400));
 
         confirmMoveIn.setBackground(new java.awt.Color(51, 51, 255));
         confirmMoveIn.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -99,7 +100,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
                 confirmMoveInActionPerformed(evt);
             }
         });
-        jPanel1.add(confirmMoveIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 630, 210, 39));
+        jPanel1.add(confirmMoveIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 570, 210, 39));
 
         cancelButton.setBackground(new java.awt.Color(255, 55, 95));
         cancelButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
@@ -110,20 +111,21 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
                 cancelButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 630, 200, 39));
+        jPanel1.add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 570, 200, 39));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1148, Short.MAX_VALUE)
-                                .addContainerGap()));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1908, Short.MAX_VALUE)
+                .addContainerGap())
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void listingsTblMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_listingsTblMouseClicked

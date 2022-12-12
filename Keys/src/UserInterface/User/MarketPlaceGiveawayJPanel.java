@@ -59,7 +59,7 @@ public class MarketPlaceGiveawayJPanel extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -93,15 +93,16 @@ public class MarketPlaceGiveawayJPanel extends javax.swing.JPanel {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 31, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
+            new Object [][] {
 
-                },
-                new String[] {
-                        "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
-                }));
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+            }
+        ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 580, 630));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 810, 630));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -115,7 +116,7 @@ public class MarketPlaceGiveawayJPanel extends javax.swing.JPanel {
                 bookButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(bookButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 140, 39));
+        jPanel7.add(bookButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 180, 39));
 
         cancelButton.setBackground(new java.awt.Color(255, 55, 95));
         cancelButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
@@ -126,7 +127,7 @@ public class MarketPlaceGiveawayJPanel extends javax.swing.JPanel {
                 cancelButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 580, 140, 39));
+        jPanel7.add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 160, 39));
 
         jLabel2.setFont(new java.awt.Font("SF Pro Display", 1, 24)); // NOI18N
         jLabel2.setText("Enter Details");
@@ -155,7 +156,7 @@ public class MarketPlaceGiveawayJPanel extends javax.swing.JPanel {
 
         jLabel9.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(73, 84, 90));
-        jLabel9.setText("Blood Bank");
+        jLabel9.setText("Marketplace");
         jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 220, -1));
 
         appointmentLabel.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
@@ -170,24 +171,22 @@ public class MarketPlaceGiveawayJPanel extends javax.swing.JPanel {
 
         jPanel7.add(storeBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 420, 40));
 
-        timeBox.setModel(new javax.swing.DefaultComboBoxModel<>(
-                new String[] { "09:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00",
-                        "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "19:00 - 20:00" }));
+        timeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "09:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "19:00 - 20:00" }));
         jPanel7.add(timeBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 420, 40));
         jPanel7.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 420, 40));
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 470, 630));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 470, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     public void setDonationCenterList() {
