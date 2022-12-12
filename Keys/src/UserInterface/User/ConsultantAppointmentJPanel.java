@@ -266,11 +266,12 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
 
     }
 
-    public void sendmail(String recipientEmail) {
+    public void sendmail(String recipientEmail, String date, String time) {
         Notification notification = new Notification();
         String toEmail = recipientEmail;
-        String emailSubject = "Doctor Appointment confirmation";
-        String emailContent = "Successfully booked your doctor appointment!!";
+        String emailSubject = "Consultant Appointment confirmation";
+        String emailContent = "Successfully booked your consultant appointment!\n"
+                + "Appointment Date: "+date+"\nAppointment Time: "+time;
         notification.sendMail(toEmail, emailSubject, emailContent);
     }
 
@@ -325,7 +326,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
 
                         // code to send email
                         // TODO send mail
-                        // sendmail();
+                         sendmail(user.getEmail(), DateFormatter.getDateString(appDate), timeCombo.getSelectedItem().toString());
                         // end of code
                         JOptionPane.showMessageDialog(this, "Your Appointment request is successful!!");
 

@@ -69,9 +69,9 @@ public class FireDepartmentRegistration extends javax.swing.JPanel {
         phoneTxt = new javax.swing.JTextField();
         locationInputField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
         addressInput = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -162,14 +162,22 @@ public class FireDepartmentRegistration extends javax.swing.JPanel {
         jPanel7.add(phoneTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 420, 40));
 
         locationInputField.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
-        jPanel7.add(locationInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 210, 40));
+        jPanel7.add(locationInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 420, 40));
 
         jLabel8.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(73, 84, 90));
         jLabel8.setText("Location");
         jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 220, -1));
 
-        jButton4.setBackground(new java.awt.Color(51, 51, 255));
+        addressInput.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
+        jPanel7.add(addressInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 420, 40));
+
+        jLabel12.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(73, 84, 90));
+        jLabel12.setText("Address");
+        jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 220, -1));
+
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Search");
@@ -179,15 +187,7 @@ public class FireDepartmentRegistration extends javax.swing.JPanel {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel7.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 150, 39));
-
-        addressInput.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
-        jPanel7.add(addressInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 420, 40));
-
-        jLabel12.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(73, 84, 90));
-        jLabel12.setText("Address");
-        jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 220, -1));
+        jPanel7.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 150, 39));
 
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 470, 630));
 

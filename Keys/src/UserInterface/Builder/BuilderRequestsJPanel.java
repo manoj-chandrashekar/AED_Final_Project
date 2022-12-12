@@ -190,6 +190,7 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
             ListingRequest request = listingRequests.get(i);
             if (builder.getBuilderName().matches(request.getBuilderName())) {
                 DefaultTableModel table = (DefaultTableModel) requestsTable.getModel();
+                table.setRowCount(0);
                 int r1 = request.getId();
 
                 Object r2[] = {r1, request.getStudentId(), request.getConsultantName(), request.getStatus()};
@@ -244,10 +245,7 @@ public class BuilderRequestsJPanel extends javax.swing.JPanel {
             ListingRequest listingRequest = listings.get(i);
             if (sRow == listingRequest.getId()) {
                 displayListingTable(listingRequest.getListings());
-            } else {
-                JOptionPane.showMessageDialog(this, "Wrong move!");
-
-            }
+            } 
         }
 
     }

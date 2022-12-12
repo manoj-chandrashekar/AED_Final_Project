@@ -251,14 +251,14 @@ public class BuilderRegistrationJPanel extends javax.swing.JPanel {
         jPanel7.add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 420, 40));
 
         locationInputField.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
-        jPanel7.add(locationInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 210, 40));
+        jPanel7.add(locationInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 420, 40));
 
         jLabel8.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(73, 84, 90));
         jLabel8.setText("Location");
         jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 220, -1));
 
-        searchButton.setBackground(new java.awt.Color(51, 51, 255));
+        searchButton.setBackground(new java.awt.Color(255, 255, 255));
         searchButton.setFont(new java.awt.Font("SF Pro Text", 1, 14)); // NOI18N
         searchButton.setForeground(new java.awt.Color(255, 255, 255));
         searchButton.setText("Search");
@@ -268,7 +268,7 @@ public class BuilderRegistrationJPanel extends javax.swing.JPanel {
                 searchButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 150, 39));
+        jPanel7.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 150, 39));
 
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 470, 630));
 

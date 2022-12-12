@@ -200,7 +200,7 @@ public class UserLogin extends javax.swing.JPanel {
                     if (userAccount.getUsername().matches(user.getUsername())) {
                         viewUserScreen();
                     } else {
-                        JOptionPane.showMessageDialog(this, "Invalid credentials");
+//                        JOptionPane.showMessageDialog(this, "Invalid credentials");
                     }
                 }
             } else if (userRole instanceof BuilderAdmin) {

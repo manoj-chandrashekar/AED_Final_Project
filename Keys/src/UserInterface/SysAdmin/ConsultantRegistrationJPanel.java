@@ -325,27 +325,9 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
                 return;
             }
             if (isValidated()) {
-                //TODO remove comments
-//                ConsultantDirectory consultantDirectory = system.getConsultantDirectory();
-//                ArrayList<Consultant> list = consultantDirectory.getConsultants();
 
                 Consultant selectedConsultant = (Consultant) table.getValueAt(sRow, 0);
-//                int listsize = list.size();
-//                for (int i = 0; i < listsize; i++) {
-//                    Doctor doc = list.get(i);
 
-//                    if (selectedConsultant.getUserId().matches(value)) {
-//                        if (!phoneNumberTextField.getText().matches("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]")) {
-//                            JOptionPane.showMessageDialog(null, " 10 digit phone number");
-//                            phoneNumberTextField.setText("");
-//                            return;
-//                        }
-//                        if (!passwordTextField.getText().matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")) {
-//                            JOptionPane.showMessageDialog(null, "Password is in incorrect \nFormat. Should be minimum 8 in length "
-//                                    + "with one upper case, one lower case, one digit and one special character");
-//                            passwordTextField.setText("");
-//                            return;
-//                        }
                 selectedConsultant.setName(nameTextField.getText());
                 selectedConsultant.setRentalAgency(rentalAgencyTextField.getText());
                 selectedConsultant.setSpecialization(expertiseTextField.getText());
@@ -353,8 +335,6 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
                 selectedConsultant.setAccPassword(passwordTextField.getText());
                 selectedConsultant.setPhoneNo(Long.valueOf(phoneNumberTextField.getText()));
 
-//                    }
-//                }
                 displayTable();
                 anotherLoad();
 

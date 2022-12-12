@@ -231,6 +231,11 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
         if (request.getStatus() == ListingStatus.READY_TO_MOVE_IN) {
             request.setStatus(ListingStatus.LEASED);
             JOptionPane.showMessageDialog(this, "Congrats! House leased successfully.");
+            User user = (User) userAcc;
+            sendMail(user.getEmail(), 
+                    "Congratulations on your new house!", 
+                    "The lease agreement will be shared to your registered email shortly.\nFor any queries, please contact your consultant.");
+            displayTable();
         } else {
             JOptionPane.showMessageDialog(this, "Not yet available to lease. Process pending approval.");
         }
@@ -238,7 +243,7 @@ public class BuilderResponseJPanel extends javax.swing.JPanel {
 
     public void sendMail(String emailId, String subject, String content) {
         Notification notification = new Notification();
-        String toEmail = "aedproject22@gmail.com";
+        String toEmail = emailId;
         String emailSubject = subject;
         String emailContent = content;
         notification.sendMail(toEmail, emailSubject, emailContent);
