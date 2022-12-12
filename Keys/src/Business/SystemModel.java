@@ -16,6 +16,7 @@ import Business.WorkQueue.EmergencyRequestDirectory;
 import Business.WorkQueue.ConsultantAppointmentDirectory;
 import Business.WorkQueue.SearchApplication;
 import Business.MarketPlace.MarketPlaceDirectory;
+import Business.Surveyor.SurveyorDirectory;
 import Business.WorkQueue.DonateProductDirectory;
 import Business.WorkQueue.ListingRequestDirectory;
 import Business.User.UserDirectory;
@@ -43,6 +44,7 @@ public class SystemModel {
     private ListingRequestDirectory listingRequestDirectory;
     private SearchApplication checkApplication;
     private UserDirectory userDirectory;
+    private SurveyorDirectory surveyorDirectory;
     
 
     public SystemModel() {
@@ -62,7 +64,21 @@ public class SystemModel {
         userDirectory = new UserDirectory();
         requestMarketPlaceDirectory = new RequestMarketPlaceDirectory();
         questionnaireDirectory = new QuestionnaireDirectory();
+        surveyorDirectory = new SurveyorDirectory();
     }
+
+    public SurveyorDirectory getSurveyorDirectory() {
+        if(surveyorDirectory == null){
+            surveyorDirectory = new SurveyorDirectory();   
+        }
+        return surveyorDirectory;
+    }
+
+    public void setSurveyorDirectory(SurveyorDirectory surveyorDirectory) {
+        this.surveyorDirectory = surveyorDirectory;
+    }
+    
+    
 
     public QuestionnaireDirectory getQuestionnaireDirectory() {
         if(questionnaireDirectory == null){

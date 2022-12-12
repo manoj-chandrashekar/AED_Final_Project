@@ -5,14 +5,17 @@
 package UserInterface.SysAdmin;
 
 import Business.EcoSystem;
+import Business.Surveyor.Surveyor;
+import Business.Surveyor.SurveyorDirectory;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Manoj Chandrasekaran
+ * @author Nagarjun Mallesh
  */
 public class SurveyorRegistrationJPanel extends javax.swing.JPanel {
 
@@ -20,7 +23,7 @@ public class SurveyorRegistrationJPanel extends javax.swing.JPanel {
     private final EcoSystem system;
 
     /**
-     * Creates new form GovernmentRegistration
+     * Creates new form SurveyorRegistration
      */
     public SurveyorRegistrationJPanel(JPanel container, EcoSystem system) {
         initComponents();
@@ -192,109 +195,86 @@ public class SurveyorRegistrationJPanel extends javax.swing.JPanel {
 
     private void addbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbtnActionPerformed
         // TODO add your handling code here:
-        if (firstNameTxt.getText().isEmpty() || lastNameTxt.getText().isEmpty() || userIdTxt.getText().isEmpty() || passwordTxt.getText().isEmpty() || phoneTxt.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "please enter all mandatory fields");
-            return;
-        }
+        if (isValidated()) {
+            if (system.getUserAccDirectory().checkIfUsernameIsUnique(userIdTxt.getText())) {
+                if (!phoneTxt.getText().matches("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]")) {
+                    JOptionPane.showMessageDialog(null, " 10 digit phone number");
+                    phoneTxt.setText("");
+                    return;
+                }
+                if (!passwordTxt.getText().matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")) {
+                    JOptionPane.showMessageDialog(null, "Password is in incorrect \nFormat. Should be minimum 8 in length "
+                            + "with one upper case, one lower case, one digit and one special character");
+                    passwordTxt.setText("");
+                    return;
+                }
 
-        if (system.getUserAccDirectory().checkIfUsernameIsUnique(userIdTxt.getText())) {
-            if (!phoneTxt.getText().matches("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]")) {
-                JOptionPane.showMessageDialog(null, " 10 digit phone number");
-                phoneTxt.setText("");
-                return;
-            }
-            if (!passwordTxt.getText().matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")) {
-                JOptionPane.showMessageDialog(null, "Password is in incorrect \nFormat. Should be minimum 8 in length "
-                        + "with one upper case, one lower case, one digit and one special character");
-                passwordTxt.setText("");
-                return;
-            }
+                Surveyor surveyor = new Surveyor(firstNameTxt.getText(), lastNameTxt.getText(), userIdTxt.getText(), passwordTxt.getText(), Long.parseLong(phoneTxt.getText()));
+                system.getUserAccDirectory().addAccount(surveyor);
+                system.getSurveyorDirectory().addSurveyor(surveyor);
+                populateTable();
+                clearFields();
 
-//            CDC customer = new CDC(firstNameTxt.getText(), lastNameTxt.getText(), userIdTxt.getText(), passwordTxt.getText(), phoneTxt.getText());
-//            system.getUserAccountDirectory().addAccount(customer);
-//            system.getcDCDir().addCDCPeople(customer);
-            populateTable();
-            firstNameTxt.setText("");
-            lastNameTxt.setText("");
-            phoneTxt.setText("");
-            userIdTxt.setText("");
-            passwordTxt.setText("");
-        } else {
-            JOptionPane.showMessageDialog(null, "Username " + userIdTxt.getText() + " already exists !!!, Please try a new one");
+            } else {
+                JOptionPane.showMessageDialog(null, "Username " + userIdTxt.getText() + " already exists !!!, Please try a new one");
+            }
         }
     }//GEN-LAST:event_addbtnActionPerformed
 
     private void populateTable() {
-//        CDCDirectory cdcDir = system.getcDCDir();
-//        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-//
-//        model.setRowCount(0);
-//        for (CDC customer : cdcDir.getCdcList()) {
-//            Object[] row = new Object[5];
-//            row[0] = customer.getFirstName();
-//            row[1] = customer.getSecondName();
-//            row[2] = customer.getUserID();
-//            row[3] = customer.getUserPassword();
-//            row[4] = customer.getPhoneNumber();
-//
-//            model.addRow(row);
-//
-//        }
+        SurveyorDirectory cdcDir = system.getSurveyorDirectory();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        model.setRowCount(0);
+        for (Surveyor customer : cdcDir.getSurveyorList()) {
+            Object[] row = new Object[5];
+            row[0] = customer.getFirstName();
+            row[1] = customer.getLastName();
+            row[2] = customer.getUserID();
+            row[3] = customer.getUserPassword();
+            row[4] = customer.getPhoneNumber();
+
+            model.addRow(row);
+
+        }
 
     }
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
-        String username = userIdTxt.getText();
-        DefaultTableModel t = (DefaultTableModel) jTable1.getModel();
-        int t1 = jTable1.getSelectedRow();
-        if (t1 >= 0) {
+        if (isValidated()) {
+            String username = userIdTxt.getText();
+            DefaultTableModel t = (DefaultTableModel) jTable1.getModel();
+            int t1 = jTable1.getSelectedRow();
+            if (t1 >= 0) {
 
-            {
-                String a = (String) t.getValueAt(t1, 2);
-//                CDCDirectory bbd = system.getcDCDir();
-//                ArrayList<CDC> cd1 = bbd.getCdcList();
-//                int z = cd1.size();
-//                if (!username.matches(a)) {
-//                    JOptionPane.showMessageDialog(null, "Cannot Update User ID , it is unique!!");
-//                    firstNameTxt.setText("");
-//                    userIdTxt.setText("");
-//                    phoneTxt.setText("");
-//                    passwordTxt.setText("");
-//                    userIdTxt.setText("");
-//                    return;
-//                }
-//                if (firstNameTxt.getText().isEmpty() || lastNameTxt.getText().isEmpty() || userIdTxt.getText().isEmpty() || passwordTxt.getText().isEmpty() || phoneTxt.getText().isEmpty()) {
-//                    JOptionPane.showMessageDialog(null, "please enter all mandatory fields");
-//                    return;
-//                }
-//                for (int i = 0; i < z; i++) {
-//                    CDC c = cd1.get(i);
-//                    c.getUserID();
-//                    if (c.getUserID().matches(a)) {
-//                        if (!phoneTxt.getText().matches("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]")) {
-//                            JOptionPane.showMessageDialog(null, " 10 digit phone number");
-//                            phoneTxt.setText("");
-//                            return;
-//                        }
-//                        if (!passwordTxt.getText().matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")) {
-//                            JOptionPane.showMessageDialog(null, "Password is in incorrect \nFormat. Should be minimum 8 in length "
-//                                    + "with one upper case, one lower case, one digit and one special character");
-//                            passwordTxt.setText("");
-//                            return;
-//                        }
-//
-//                        c.setFirstName(firstNameTxt.getText());
-//                        c.setSecondName(lastNameTxt.getText());
-//                        c.setPhoneNumber(phoneTxt.getText());
-//                        c.setUserID(userIdTxt.getText());
-//                        c.setUserPassword(passwordTxt.getText());
-//                    }
-//                }
-//                populateTable();
+                {
+                    String a = (String) t.getValueAt(t1, 2);
+                    SurveyorDirectory surveyorDir = system.getSurveyorDirectory();
+                    List<Surveyor> surveyorList = surveyorDir.getSurveyorList();
+                    int z = surveyorList.size();
+                    if (!username.matches(a)) {
+                        JOptionPane.showMessageDialog(null, "Cannot Update User ID , it is unique!!");
+                        clearFields();
+                        return;
+                    }
+                    for (int i = 0; i < z; i++) {
+                        Surveyor c = surveyorList.get(i);
+                        c.getUserID();
+                        if (c.getUserID().matches(a)) {
+
+                            c.setFirstName(firstNameTxt.getText());
+                            c.setLastName(lastNameTxt.getText());
+                            c.setPhoneNumber(Long.parseLong(phoneTxt.getText()));
+                            c.setUserID(userIdTxt.getText());
+                            c.setUserPassword(passwordTxt.getText());
+                        }
+                    }
+                    populateTable();
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Please Select a Row!!");
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "Please Select a Row!!");
         }
     }//GEN-LAST:event_updateBtnActionPerformed
 
@@ -306,25 +286,21 @@ public class SurveyorRegistrationJPanel extends javax.swing.JPanel {
         if (t1 >= 0) {
             String a = (String) t.getValueAt(t1, 3);
             System.out.println(a);
-//            CDCDirectory bbd = system.getcDCDir();
-//            ArrayList<CDC> cd1 = bbd.getCdcList();
-//            int z = cd1.size();
-//            for (int i = 0; i < z; i++) {
-//                CDC c = cd1.get(i);
-//                System.out.println(c.getUserID());
-//                if (c.getUserID().matches(a)) {
-//                    cd1.remove(c);
-//                    System.out.println("delete");
-//                    system.getUserAccountDirectory().removeccount(c);
-//                    break;
-//                }
-//            }
+            SurveyorDirectory directory = system.getSurveyorDirectory();
+            List<Surveyor> surveyList = directory.getSurveyorList();
+            int z = surveyList.size();
+            for (int i = 0; i < z; i++) {
+                Surveyor c = surveyList.get(i);
+                System.out.println(c.getUserID());
+                if (c.getUserID().matches(a)) {
+                    surveyList.remove(c);
+                    System.out.println("delete");
+                    system.getSurveyorDirectory().removeSurveyor(c);
+                    break;
+                }
+            }
             populateTable();
-            firstNameTxt.setText("");
-            lastNameTxt.setText("");
-            phoneTxt.setText("");
-            userIdTxt.setText("");
-            passwordTxt.setText("");
+            clearFields();
 
         } else {
             JOptionPane.showMessageDialog(null, "Please Select a Row!!");
@@ -371,4 +347,40 @@ public class SurveyorRegistrationJPanel extends javax.swing.JPanel {
     private javax.swing.JButton updateBtn;
     private javax.swing.JTextField userIdTxt;
     // End of variables declaration//GEN-END:variables
+
+    public boolean isValidated() {
+        if (null == firstNameTxt.getText() || firstNameTxt.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "please enter name");
+            return false;
+        }
+        if (null == lastNameTxt.getText() || lastNameTxt.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "please enter name");
+            return false;
+        }
+        if (null == userIdTxt.getText() || userIdTxt.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "please enter name");
+            return false;
+        }
+        if (!phoneTxt.getText().matches("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]")) {
+            JOptionPane.showMessageDialog(null, "please enter 10 digit phone number");
+            phoneTxt.setText("");
+            return false;
+        }
+        if (!passwordTxt.getText().matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")) {
+            JOptionPane.showMessageDialog(null, "Password is in incorrect Format.\nShould be minimum 8 in length "
+                    + "with one upper case, one lower case, one digit and one special character");
+            passwordTxt.setText("");
+            return false;
+        }
+        return true;
+    }
+
+    public void clearFields() {
+        firstNameTxt.setText("");
+        lastNameTxt.setText("");
+        phoneTxt.setText("");
+        userIdTxt.setText("");
+        passwordTxt.setText("");
+    }
+
 }
