@@ -249,10 +249,10 @@ public class BuilderEnterpriseJFrame extends javax.swing.JPanel {
         listingsPanel.setBackground(new Color(255, 255, 255));
         requestPanel.setBackground(new Color(213, 230, 249));
 
-//        PharmaOrder pharmaDisplay = new PharmaOrder(system, rightSidePanel, userAcc);
-//        rightSidePanel.add(pharmaDisplay);
-//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-//        layout.next(rightSidePanel);
+        BuilderRequestsJPanel builderRequestsJPanel = new BuilderRequestsJPanel(system, container, userAccount);
+        rightSidePanel.add(builderRequestsJPanel);
+        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
+        layout.next(rightSidePanel);
     }
 
     private void displayListings() {

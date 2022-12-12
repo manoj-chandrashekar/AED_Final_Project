@@ -4,9 +4,16 @@
  */
 package UserInterface;
 
+import Business.Builder.Builder;
+import Business.Consultant.Consultant;
 import Business.DatabaseUtil.DB4OUtil;
 import Business.EcoSystem;
+import Business.MarketPlace.MarketPlace;
+import Business.PointOfContact.Ambulance.Ambulance;
+import Business.PointOfContact.Fire.Fire;
+import Business.PointOfContact.Maintenance.Maintenance;
 import Business.SystemModel;
+import Business.User.User;
 import java.awt.CardLayout;
 
 /**
@@ -29,6 +36,7 @@ public class MainJFrame extends javax.swing.JFrame {
         this.setSize(1920, 1080);
         this.setResizable(false);
         setLoginPage();
+//        insertDummyData();
     }
 
     /**
@@ -104,5 +112,51 @@ public class MainJFrame extends javax.swing.JFrame {
         workArea.add("UserLogin", wa);
         CardLayout layout = (CardLayout) workArea.getLayout();
         layout.next(workArea);
+    }
+
+    private void insertDummyData() {
+        Consultant con1 = new Consultant("con", "con", "Ernie", "Low brokerage", 8888888888L, "Boston rental");
+        ecoSystem.getUserAccDirectory().addAccount(con1);
+        ecoSystem.getConsultantDirectory().addNewConsultant(con1);
+        
+        Consultant con2 = new Consultant("con2", "con", "Leslie", "Best locality", 857857857L, "LLRental");
+        ecoSystem.getUserAccDirectory().addAccount(con2);
+        ecoSystem.getConsultantDirectory().addNewConsultant(con2);
+        
+        MarketPlace m1 = new MarketPlace("Student goods", "1123-4123", "market", "market", 8128471924L);
+        ecoSystem.getUserAccDirectory().addAccount(m1);
+        ecoSystem.getMarketPlaceDirectory().addMarketPlace(m1);
+        
+        MarketPlace m2 = new MarketPlace("LetGo", "1251-4123", "market2", "market", 198274389L);
+        ecoSystem.getUserAccDirectory().addAccount(m2);
+        ecoSystem.getMarketPlaceDirectory().addMarketPlace(m2);
+        
+        Builder builder = new Builder("Rise", "Boston", "rise@support.com", "build", "build");
+        ecoSystem.getUserAccDirectory().addAccount(builder);
+        ecoSystem.getBuilderDirectory().addBuilder(builder);
+        
+        Builder builder2 = new Builder("Mission Park", "Cambridge", "support@park.com", "build2", "build");
+        ecoSystem.getUserAccDirectory().addAccount(builder2);
+        ecoSystem.getBuilderDirectory().addBuilder(builder2);
+        
+        User user = new User("Manoj", "Chandrashekar", "manuc2012@gmail.com", "8577990210", "manoj", "pass", "Boston");
+        ecoSystem.getUserAccDirectory().addAccount(user);
+        ecoSystem.getUserDirectory().addUser(user);
+        
+        User user2 = new User("Naga", "M", "naga@gmail.com", "8577990214", "naga", "pass", "Boston");
+        ecoSystem.getUserAccDirectory().addAccount(user2);
+        ecoSystem.getUserDirectory().addUser(user2);
+        
+        Fire fire = new Fire("fire", "fire", "Boston", "Samuel", 8646546846L);
+        ecoSystem.getUserAccDirectory().addAccount(fire);
+        ecoSystem.getFireDirectory().addFire(fire);
+        
+        Ambulance ambulance = new Ambulance("amb", "amb", "Private medic", "Josie", 911L);
+        ecoSystem.getUserAccDirectory().addAccount(ambulance);
+        ecoSystem.getAmbulanceDirectory().addAmbulance(ambulance);
+        
+        Maintenance maintenance = new Maintenance("main", "main", "Boston", "Rise", 85555L);
+        ecoSystem.getUserAccDirectory().addAccount(ambulance);
+        ecoSystem.getMaintenanceDirectory().addNewMaintenance(maintenance);
     }
 }

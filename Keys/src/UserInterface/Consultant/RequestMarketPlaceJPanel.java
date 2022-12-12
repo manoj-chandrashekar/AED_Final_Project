@@ -97,11 +97,11 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Name", "Status", "Item Type", "Units"
+                "ID", "Name", "Status", "Item Type", "Units"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -153,6 +153,7 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
         jLabel7.setText("Select Marketplace");
         units.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 220, -1));
 
+        firstNameTxt.setEditable(false);
         firstNameTxt.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         units.add(firstNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 420, 40));
 
@@ -186,7 +187,7 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
         });
         units.add(marketPlaceList, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 420, 40));
 
-        productList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chair", "Table", "Bed", "Heater", "Cookware", "Bike-" }));
+        productList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chair", "Table", "Bed", "Heater", "Cookware", "Bike", "Monitor", "Organizer" }));
         productList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 productListActionPerformed(evt);
@@ -315,8 +316,8 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
         reqMarket.setConsultantId(userAcc.getUsername());
         reqMarketDir.addProductRequest(reqMarket);
 
-        JOptionPane.showMessageDialog(null, "Blood Unit Requested Successfully!!");
-        jTable3.setModel(new DefaultTableModel(null, new String[]{"ID", "Center", "Status", "Blood Type", "Units requested"}));
+        JOptionPane.showMessageDialog(null, "Product Requested Successfully!!");
+//        jTable3.setModel(new DefaultTableModel(null, new String[]{"ID", "Center", "Status", "Blood Type", "Units requested"}));
         displayTable();
 
     }
