@@ -388,14 +388,6 @@ public class FireDepartmentRegistration extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "please enter User ID");
             return false;
         }
-        if (null == passwordTxt.getText() || passwordTxt.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "please enter password");
-            return false;
-        }
-        if (null == phoneTxt.getText() || phoneTxt.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "please enter phone number");
-            return false;
-        }
         if (!phoneTxt.getText().matches("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]")) {
             JOptionPane.showMessageDialog(null, "please enter 10 digit phone number");
             phoneTxt.setText("");

@@ -22,7 +22,7 @@ import javax.swing.Timer;
  *
  * @author shrikrishnajoisa
  */
-public class GovernmentView extends javax.swing.JPanel {
+public class HousingBoardJPanel extends javax.swing.JPanel {
 
     private UserAccount userAcc;
     private EcoSystem system;
@@ -51,7 +51,7 @@ public class GovernmentView extends javax.swing.JPanel {
 //     * @param system
 //     * @param ecosystem
 //     */
-    public GovernmentView(JPanel userProcessContainer, UserAccount userAcc,EcoSystem system) {
+    public HousingBoardJPanel(JPanel userProcessContainer, UserAccount userAcc,EcoSystem system) {
         initComponents();
         this.system = system;
         this.container = userProcessContainer;
@@ -127,8 +127,6 @@ public class GovernmentView extends javax.swing.JPanel {
         statisticsPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         jPanel6.add(statisticsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 290, 60));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\19452\\Downloads\\Iconskeys\\keyslogo.png")); // NOI18N
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 130));
 
         goBack.setBackground(new java.awt.Color(255, 255, 255));
