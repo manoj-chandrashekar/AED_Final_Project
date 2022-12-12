@@ -143,7 +143,7 @@ public class BuilderRegistrationJPanel extends javax.swing.JPanel {
         jLabel19.setText("are available in our database");
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 270, 220));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 270, 220));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -171,9 +171,9 @@ public class BuilderRegistrationJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(listingsTable);
 
-        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 370));
+        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 370));
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 580, 370));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 830, 370));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -270,7 +270,7 @@ public class BuilderRegistrationJPanel extends javax.swing.JPanel {
         });
         jPanel7.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 150, 39));
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 470, 630));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 470, 630));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -294,9 +294,9 @@ public class BuilderRegistrationJPanel extends javax.swing.JPanel {
         jLabel14.setText("we have under belt");
         jPanel8.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
-        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 270, 220));
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 270, 220));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 740));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed

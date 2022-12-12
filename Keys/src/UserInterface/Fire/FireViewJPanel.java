@@ -39,7 +39,7 @@ public class FireViewJPanel extends javax.swing.JPanel {
                 Date date= new Date();
                 DateFormat timeFormat =  new SimpleDateFormat("HH:mm a");
                 String time = timeFormat.format(date);
-                timeLabel1.setText(time);
+                timeLabel.setText(time);
             }
         };
         timer = new Timer(100, actionListener);
@@ -85,9 +85,9 @@ public class FireViewJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
-        timeLabel1 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        timeLabel = new javax.swing.JLabel();
         rightSidePanel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(250, 249, 251));
@@ -158,10 +158,6 @@ public class FireViewJPanel extends javax.swing.JPanel {
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        timeLabel1.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
-        timeLabel1.setText("3:45 PM");
-        jPanel14.add(timeLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(966, 20, 160, -1));
-
         jLabel23.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
         jLabel23.setText("Fire");
         jPanel14.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
@@ -170,11 +166,15 @@ public class FireViewJPanel extends javax.swing.JPanel {
         jLabel4.setText("Manage everything related to Fire Enterprises");
         jPanel14.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
+        timeLabel.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
+        timeLabel.setText("3:45 PM");
+        jPanel14.add(timeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 20, 190, -1));
+
         jPanel8.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1630, 90));
 
         rightSidePanel.setBackground(new java.awt.Color(250, 249, 251));
         rightSidePanel.setLayout(new java.awt.CardLayout());
-        jPanel8.add(rightSidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 1160, 750));
+        jPanel8.add(rightSidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 1630, 990));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -266,6 +266,6 @@ public class FireViewJPanel extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JPanel rightSidePanel;
-    private javax.swing.JLabel timeLabel1;
+    private javax.swing.JLabel timeLabel;
     // End of variables declaration//GEN-END:variables
 }

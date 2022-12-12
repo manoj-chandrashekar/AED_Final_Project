@@ -85,7 +85,7 @@ public class BuilderConsult extends javax.swing.JPanel {
                 reserveButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(reserveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 590, 180, 50));
+        jPanel1.add(reserveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 680, 180, 50));
 
         jLabel1.setFont(new java.awt.Font("SF Pro Display", 1, 24)); // NOI18N
         jLabel1.setText("Builder Consultant Contact");
@@ -114,11 +114,11 @@ public class BuilderConsult extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(listingTbl);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 853, 360));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 1610, 420));
 
         jLabel2.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         jLabel2.setText("Builder");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, -1, -1));
 
         jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -130,7 +130,7 @@ public class BuilderConsult extends javax.swing.JPanel {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 220, 50));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 150, 220, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

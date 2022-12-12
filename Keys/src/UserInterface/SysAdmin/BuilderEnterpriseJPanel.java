@@ -136,7 +136,7 @@ public class BuilderEnterpriseJPanel extends javax.swing.JPanel {
 
         timeLabel.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
         timeLabel.setText("3:45 PM");
-        jPanel6.add(timeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, -1, -1));
+        jPanel6.add(timeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 20, 190, -1));
 
         jLabel10.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
         jLabel10.setText("Builders");
@@ -150,7 +150,7 @@ public class BuilderEnterpriseJPanel extends javax.swing.JPanel {
 
         rightSidePanel.setBackground(new java.awt.Color(250, 249, 251));
         rightSidePanel.setLayout(new java.awt.CardLayout());
-        jPanel1.add(rightSidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 1160, 750));
+        jPanel1.add(rightSidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 1630, 990));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents

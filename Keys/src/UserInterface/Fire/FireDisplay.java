@@ -85,7 +85,7 @@ public class FireDisplay extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 853, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 1380, -1));
 
         respondButton.setBackground(new java.awt.Color(51, 51, 255));
         respondButton.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -97,7 +97,7 @@ public class FireDisplay extends javax.swing.JPanel {
                 respondButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(respondButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 590, 180, 50));
+        jPanel1.add(respondButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 590, 180, 50));
 
         closeCase.setBackground(new java.awt.Color(51, 51, 255));
         closeCase.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -109,7 +109,7 @@ public class FireDisplay extends javax.swing.JPanel {
                 closeCaseActionPerformed(evt);
             }
         });
-        jPanel1.add(closeCase, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 590, 180, 50));
+        jPanel1.add(closeCase, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 590, 180, 50));
 
         falseAlarm.setBackground(new java.awt.Color(255, 55, 95));
         falseAlarm.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -121,7 +121,7 @@ public class FireDisplay extends javax.swing.JPanel {
                 falseAlarmActionPerformed(evt);
             }
         });
-        jPanel1.add(falseAlarm, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, 180, 50));
+        jPanel1.add(falseAlarm, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 590, 180, 50));
 
         jLabel1.setFont(new java.awt.Font("SF Pro Display", 1, 24)); // NOI18N
         jLabel1.setText("Fire emergency details");
@@ -137,7 +137,7 @@ public class FireDisplay extends javax.swing.JPanel {
                 locationButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(locationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 590, 180, 50));
+        jPanel1.add(locationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 590, 180, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

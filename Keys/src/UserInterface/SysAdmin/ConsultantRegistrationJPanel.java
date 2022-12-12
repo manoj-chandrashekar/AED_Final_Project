@@ -59,7 +59,6 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -113,24 +112,19 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
 
         jLabel13.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(152, 151, 151));
-        jLabel13.setText("Total number of hospital that are");
+        jLabel13.setText("Total number of rental agencies ");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(152, 151, 151));
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
-        jLabel16.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(152, 151, 151));
-        jLabel16.setText("Total number of hospital that are");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
-
         jLabel19.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(152, 151, 151));
-        jLabel19.setText("registered with us");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
+        jLabel19.setText("that are registered with us");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 270, 220));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 270, 220));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -158,9 +152,9 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(consultantTable);
 
-        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 370));
+        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 370));
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 580, 370));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 850, 370));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -253,7 +247,7 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
         phoneNumberTextField.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         jPanel7.add(phoneNumberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 420, 40));
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 90, 470, 630));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 470, 630));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -273,15 +267,15 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
 
         jLabel17.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(152, 151, 151));
-        jLabel17.setText("Total number of specializations");
-        jPanel8.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        jLabel17.setText("Total number of builders");
+        jPanel8.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 150, 160, -1));
 
         jLabel14.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(152, 151, 151));
         jLabel14.setText("we have under belt");
-        jPanel8.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
+        jPanel8.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 130, -1));
 
-        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 270, 220));
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 270, 220));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -439,7 +433,6 @@ public class ConsultantRegistrationJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;

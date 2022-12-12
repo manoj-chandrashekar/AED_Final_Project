@@ -76,7 +76,7 @@ public class AmbulanceDisplay extends javax.swing.JPanel {
                 bookButton2ActionPerformed(evt);
             }
         });
-        falseAlarm.add(bookButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, 180, 50));
+        falseAlarm.add(bookButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 600, 180, 50));
 
         closeCaseButton.setBackground(new java.awt.Color(51, 51, 255));
         closeCaseButton.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -88,7 +88,7 @@ public class AmbulanceDisplay extends javax.swing.JPanel {
                 closeCaseButtonActionPerformed(evt);
             }
         });
-        falseAlarm.add(closeCaseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 590, 180, 50));
+        falseAlarm.add(closeCaseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 600, 180, 50));
 
         respondButton.setBackground(new java.awt.Color(51, 51, 255));
         respondButton.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -100,7 +100,7 @@ public class AmbulanceDisplay extends javax.swing.JPanel {
                 respondButtonActionPerformed(evt);
             }
         });
-        falseAlarm.add(respondButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 590, 180, 50));
+        falseAlarm.add(respondButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 600, 180, 50));
 
         locationButton.setBackground(new java.awt.Color(51, 51, 255));
         locationButton.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -112,7 +112,7 @@ public class AmbulanceDisplay extends javax.swing.JPanel {
                 locationButtonActionPerformed(evt);
             }
         });
-        falseAlarm.add(locationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 590, 180, 50));
+        falseAlarm.add(locationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 600, 180, 50));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -132,7 +132,7 @@ public class AmbulanceDisplay extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        falseAlarm.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 853, -1));
+        falseAlarm.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 1110, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -83,9 +83,9 @@ public class MaintenanceMain extends javax.swing.JPanel {
         jLabel24 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        timeLabel = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        timeLabel = new javax.swing.JLabel();
         rightSidePanel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(250, 249, 251));
@@ -143,16 +143,12 @@ public class MaintenanceMain extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/maintenancelogo.png"))); // NOI18N
         maintenancePanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, 30));
 
-        jPanel3.add(maintenancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 290, 60));
+        jPanel3.add(maintenancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 290, 60));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 288, 1080));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        timeLabel.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
-        timeLabel.setText("3:45 PM");
-        jPanel6.add(timeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 20, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
         jLabel10.setText("Maintenance");
@@ -162,11 +158,15 @@ public class MaintenanceMain extends javax.swing.JPanel {
         jLabel1.setText("Manage everything related to Maintenace Enterprises");
         jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
+        timeLabel.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
+        timeLabel.setText("3:45 PM");
+        jPanel6.add(timeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 20, 190, -1));
+
         jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1630, 90));
 
         rightSidePanel.setBackground(new java.awt.Color(250, 249, 251));
         rightSidePanel.setLayout(new java.awt.CardLayout());
-        jPanel2.add(rightSidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 1400, 750));
+        jPanel2.add(rightSidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 1630, 990));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

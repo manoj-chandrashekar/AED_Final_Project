@@ -84,7 +84,7 @@ public class ManageAppointment extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 853, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 1420, -1));
 
         consultation.setBackground(new java.awt.Color(51, 51, 255));
         consultation.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -95,7 +95,7 @@ public class ManageAppointment extends javax.swing.JPanel {
                 consultationActionPerformed(evt);
             }
         });
-        jPanel1.add(consultation, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 590, 180, 50));
+        jPanel1.add(consultation, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 590, 180, 50));
 
         cancel.setBackground(new java.awt.Color(255, 69, 58));
         cancel.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -106,7 +106,7 @@ public class ManageAppointment extends javax.swing.JPanel {
                 cancelActionPerformed(evt);
             }
         });
-        jPanel1.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 590, 180, 50));
+        jPanel1.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 590, 180, 50));
 
         prescribe.setBackground(new java.awt.Color(51, 51, 255));
         prescribe.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -117,7 +117,7 @@ public class ManageAppointment extends javax.swing.JPanel {
                 prescribeActionPerformed(evt);
             }
         });
-        jPanel1.add(prescribe, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, 180, 50));
+        jPanel1.add(prescribe, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 590, 180, 50));
 
         jLabel1.setFont(new java.awt.Font("SF Pro Display", 1, 24)); // NOI18N
         jLabel1.setText("Appointments");

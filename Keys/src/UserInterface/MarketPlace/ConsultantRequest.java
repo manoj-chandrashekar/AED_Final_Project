@@ -77,7 +77,7 @@ public class ConsultantRequest extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 853, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 1240, -1));
 
         processRequest.setBackground(new java.awt.Color(51, 51, 255));
         processRequest.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -88,7 +88,7 @@ public class ConsultantRequest extends javax.swing.JPanel {
                 processRequestActionPerformed(evt);
             }
         });
-        jPanel1.add(processRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 590, 180, 50));
+        jPanel1.add(processRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 590, 180, 50));
 
         cancelButton.setBackground(new java.awt.Color(255, 69, 58));
         cancelButton.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -99,7 +99,7 @@ public class ConsultantRequest extends javax.swing.JPanel {
                 cancelButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 590, 180, 50));
+        jPanel1.add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 590, 180, 50));
 
         jLabel1.setFont(new java.awt.Font("SF Pro Display", 1, 24)); // NOI18N
         jLabel1.setText("Process Request");

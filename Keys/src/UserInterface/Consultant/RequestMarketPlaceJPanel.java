@@ -115,9 +115,9 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(jTable3);
 
-        jPanel8.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 630));
+        jPanel8.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 630));
 
-        request.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 580, 630));
+        request.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 890, 630));
 
         units.setBackground(new java.awt.Color(255, 255, 255));
         units.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -199,7 +199,7 @@ public class RequestMarketPlaceJPanel extends javax.swing.JPanel {
         jLabel9.setText("Market place item");
         units.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 220, -1));
 
-        request.add(units, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 470, 630));
+        request.add(units, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 470, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

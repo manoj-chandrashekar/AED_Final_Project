@@ -56,7 +56,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         container = new javax.swing.JPanel();
@@ -98,9 +98,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
         jLabel3.setText("Time");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(793, 6, 86, -1));
 
-        timeCombo.setModel(
-                new javax.swing.DefaultComboBoxModel<>(new String[] { "09:00-10:00", "10:00-11:00", "11:00-12:00",
-                        "12:00-13:00", "13:00-14:00", "14:00-15:00", "15:00-16:00", "16:00-17:00", "17:00-18:00" }));
+        timeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "09:00-10:00", "10:00-11:00", "11:00-12:00", "12:00-13:00", "13:00-14:00", "14:00-15:00", "15:00-16:00", "16:00-17:00", "17:00-18:00" }));
         jPanel2.add(timeCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(793, 38, 231, 36));
 
         jLabel4.setFont(new java.awt.Font("SF Pro Text", 0, 16)); // NOI18N
@@ -116,7 +114,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
         jPanel2.add(specializationCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 38, 235, 36));
         jPanel2.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 210, 30));
 
-        container.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 1090, 90));
+        container.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 1090, 90));
 
         viewAppointmentButton.setBackground(new java.awt.Color(51, 51, 255));
         viewAppointmentButton.setFont(new java.awt.Font("SF Pro", 0, 14)); // NOI18N
@@ -129,18 +127,19 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
                 viewAppointmentButtonActionPerformed(evt);
             }
         });
-        container.add(viewAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 680, 230, 50));
+        container.add(viewAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 620, 230, 50));
 
         consultantAvailTbl.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
+            new Object [][] {
 
-                },
-                new String[] {
-                        "Name", "Specialization", "Consultancy agency", "Phone Number"
-                }));
+            },
+            new String [] {
+                "Name", "Specialization", "Consultancy agency", "Phone Number"
+            }
+        ));
         jScrollPane1.setViewportView(consultantAvailTbl);
 
-        container.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 1090, 250));
+        container.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 1380, 250));
 
         bookAppointment.setBackground(new java.awt.Color(51, 51, 255));
         bookAppointment.setFont(new java.awt.Font("SF Pro", 0, 14)); // NOI18N
@@ -153,7 +152,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
                 bookAppointmentActionPerformed(evt);
             }
         });
-        container.add(bookAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 680, 230, 50));
+        container.add(bookAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, 230, 50));
 
         cancel.setBackground(new java.awt.Color(255, 69, 50));
         cancel.setFont(new java.awt.Font("SF Pro", 0, 14)); // NOI18N
@@ -166,7 +165,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
                 cancelActionPerformed(evt);
             }
         });
-        container.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 680, 230, 50));
+        container.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 620, 230, 50));
 
         findConsultant.setBackground(new java.awt.Color(51, 51, 255));
         findConsultant.setFont(new java.awt.Font("SF Pro", 0, 14)); // NOI18N
@@ -179,7 +178,7 @@ public class ConsultantAppointmentJPanel extends javax.swing.JPanel {
                 findConsultantActionPerformed(evt);
             }
         });
-        container.add(findConsultant, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 680, 230, 50));
+        container.add(findConsultant, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 620, 230, 50));
 
         add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1139, 1073));
     }// </editor-fold>//GEN-END:initComponents

@@ -91,7 +91,7 @@ public class MaintenanceDisplay extends javax.swing.JPanel {
                 closeCaseButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(closeCaseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 590, 180, 50));
+        jPanel1.add(closeCaseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 590, 180, 50));
 
         respondButton.setBackground(new java.awt.Color(51, 51, 255));
         respondButton.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -103,7 +103,7 @@ public class MaintenanceDisplay extends javax.swing.JPanel {
                 respondButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(respondButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 590, 180, 50));
+        jPanel1.add(respondButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 590, 180, 50));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -123,7 +123,7 @@ public class MaintenanceDisplay extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 853, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 1460, -1));
 
         falseAlarmButton.setBackground(new java.awt.Color(255, 55, 95));
         falseAlarmButton.setFont(new java.awt.Font("SF Pro Text", 0, 14)); // NOI18N
@@ -135,7 +135,7 @@ public class MaintenanceDisplay extends javax.swing.JPanel {
                 falseAlarmButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(falseAlarmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, 180, 50));
+        jPanel1.add(falseAlarmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 590, 180, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

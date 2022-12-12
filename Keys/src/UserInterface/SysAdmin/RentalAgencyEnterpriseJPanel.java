@@ -75,9 +75,9 @@ public class RentalAgencyEnterpriseJPanel extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        timeLabel = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        timeLabel = new javax.swing.JLabel();
         rightSidePanel = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1920, 1080));
@@ -137,10 +137,6 @@ public class RentalAgencyEnterpriseJPanel extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        timeLabel.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
-        timeLabel.setText("3:45 PM");
-        jPanel6.add(timeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 20, -1, -1));
-
         jLabel10.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
         jLabel10.setText("Rental Agency");
         jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
@@ -148,6 +144,10 @@ public class RentalAgencyEnterpriseJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(152, 151, 151));
         jLabel1.setText("Manage everything related to rental enterprises");
         jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+
+        timeLabel.setFont(new java.awt.Font("SF Pro Display", 1, 36)); // NOI18N
+        timeLabel.setText("3:45 PM");
+        jPanel6.add(timeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 20, 190, -1));
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1630, 90));
 
