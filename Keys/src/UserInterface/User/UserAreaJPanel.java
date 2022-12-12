@@ -85,7 +85,7 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         builder = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        testing = new javax.swing.JPanel();
+        survey = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         marketPlace = new javax.swing.JPanel();
@@ -178,25 +178,25 @@ public class UserAreaJPanel extends javax.swing.JPanel {
 
         jPanel3.add(builder, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 290, 60));
 
-        testing.setBackground(new java.awt.Color(255, 255, 255));
-        testing.setPreferredSize(new java.awt.Dimension(100, 48));
-        testing.addMouseListener(new java.awt.event.MouseAdapter() {
+        survey.setBackground(new java.awt.Color(255, 255, 255));
+        survey.setPreferredSize(new java.awt.Dimension(100, 48));
+        survey.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                testingMousePressed(evt);
+                surveyMousePressed(evt);
             }
         });
-        testing.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        survey.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setFont(new java.awt.Font("SF Pro Text", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(115, 120, 128));
         jLabel11.setText("Survey");
-        testing.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 150, -1));
+        survey.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 150, -1));
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Images/Icons/managelisting30.png"))); // NOI18N
         jLabel24.setText("jLabel9");
-        testing.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, -1));
+        survey.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, -1));
 
-        jPanel3.add(testing, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 290, 60));
+        jPanel3.add(survey, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 290, 60));
 
         marketPlace.setBackground(new java.awt.Color(255, 255, 255));
         marketPlace.setPreferredSize(new java.awt.Dimension(100, 48));
@@ -285,14 +285,13 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         bookAppointment();
     }//GEN-LAST:event_bookAppointmentMousePressed
 
-    private void testingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_testingMousePressed
+    private void surveyMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_surveyMousePressed
         // TODO add your handling code here:
         housingQuestionnaire();
-    }//GEN-LAST:event_testingMousePressed
+    }//GEN-LAST:event_surveyMousePressed
 
     private void marketPlaceMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_marketPlaceMousePressed
         // TODO add your handling code here:
-        //BloodDonation();
         marketPlaceRequest();
     }//GEN-LAST:event_marketPlaceMousePressed
 
@@ -306,7 +305,7 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     private void emergencyReportMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emergencyReportMousePressed
         // TODO add your handling code here:
 
-        //displayEmergencyScreen();
+        emergencyReport();
 
     }//GEN-LAST:event_emergencyReportMousePressed
 
@@ -340,7 +339,7 @@ public class UserAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel marketPlace;
     private javax.swing.JPanel rightSidePanel;
-    private javax.swing.JPanel testing;
+    private javax.swing.JPanel survey;
     private javax.swing.JLabel timeLabel;
     // End of variables declaration//GEN-END:variables
 
@@ -349,95 +348,65 @@ public class UserAreaJPanel extends javax.swing.JPanel {
         emergencyReport.setBackground(new Color(255, 255, 255));
         builder.setBackground(new Color(255, 255, 255));
         marketPlace.setBackground(new Color(255, 255, 255));
-        //vaccination.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(255, 255, 255));
+        survey.setBackground(new Color(255, 255, 255));
         bookAppointment.setBackground(new Color(213, 230, 249));
-        //255,255,255 PandemicTestCentreJPanel
-        //BloodDonations pcr=new BloodDonations (system, container);
         ConsultantAppointmentJPanel pr = new ConsultantAppointmentJPanel(system, container, userAcc);
         rightSidePanel.add(pr);
         CardLayout layout = (CardLayout) rightSidePanel.getLayout();
         layout.next(rightSidePanel);
 
     }
-//
-//    private void vaccinationStatus() {
-//        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    
-//        emergencyReport.setBackground(new Color(255,255,255));
-//        medicine.setBackground(new Color(255,255,255));
-//         bloodDonation.setBackground(new Color(255,255,255));
-//         bookAppointment.setBackground(new Color(255,255,255));
-//        testing.setBackground(new Color(255,255,255));
-//        //vaccination.setBackground(new Color(213,230,249));
-//        //255,255,255 PandemicTestCentreJPanel
-//        //VaccinationAppointments pcr=new VaccinationAppointments (system, container,userAcc);
-//        rightSidePanel.add(pcr);
-//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-//        layout.next(rightSidePanel);
-//    }
-//
+
     private void housingQuestionnaire() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
         emergencyReport.setBackground(new Color(255,255,255));
         builder.setBackground(new Color(255,255,255));
-         marketPlace.setBackground(new Color(255,255,255));
-         //vaccination.setBackground(new Color(255,255,255));
+        marketPlace.setBackground(new Color(255,255,255));
         bookAppointment.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(213,230,249));
-        //255,255,255 HousingQuestionnaire
+        survey.setBackground(new Color(213,230,249));
         HousingQuestionnaire questionnaire=new HousingQuestionnaire (system, rightSidePanel,userAcc);
         rightSidePanel.add(questionnaire);
         CardLayout layout = (CardLayout) rightSidePanel.getLayout();
         layout.next(rightSidePanel);
     }
-//    
+   
 
     private void marketPlaceRequest() {
         emergencyReport.setBackground(new Color(255, 255, 255));
         builder.setBackground(new Color(255, 255, 255));
         marketPlace.setBackground(new Color(213, 230, 249));
-        //vaccination.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(255, 255, 255));
+        survey.setBackground(new Color(255, 255, 255));
         bookAppointment.setBackground(new Color(255, 255, 255));
-
         MarketPlaceGiveawayJPanel pcr = new MarketPlaceGiveawayJPanel(system, container, userAcc);
         rightSidePanel.add(pcr);
         CardLayout layout = (CardLayout) rightSidePanel.getLayout();
         layout.next(rightSidePanel);
 
     }
-//   
-//
-//    private void displayEmergencyScreen() {
-//        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    
-//     emergencyReport.setBackground(new Color(213,230,249));
-//        medicine.setBackground(new Color(255,255,255));
-//        bloodDonation.setBackground(new Color(255,255,255));
-//        vaccination.setBackground(new Color(255,255,255));
-//        testing.setBackground(new Color(255,255,255));
-//        bookAppointment.setBackground(new Color(255,255,255));
-//      
-//        EmergencyReport pcr = new EmergencyReport(rightSidePanel,system,userAcc,locationPoint);
-//        rightSidePanel.add(pcr);
-//        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
-//        layout.next(rightSidePanel);
-//    
-//    
-//    }
-//
+
+    private void emergencyReport() {
+        
+    
+        emergencyReport.setBackground(new Color(213,230,249));
+        builder.setBackground(new Color(255,255,255));
+        marketPlace.setBackground(new Color(255,255,255));
+        survey.setBackground(new Color(255,255,255));
+        bookAppointment.setBackground(new Color(255,255,255));
+        EmergencyReport pcr = new EmergencyReport(rightSidePanel,system,userAcc);
+        rightSidePanel.add(pcr);
+        CardLayout layout = (CardLayout) rightSidePanel.getLayout();
+        layout.next(rightSidePanel);
+    
+    
+    }
+
 
     private void BuilderResponse() {
-        // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         emergencyReport.setBackground(new Color(255, 255, 255));
         builder.setBackground(new Color(213, 230, 249));
         marketPlace.setBackground(new Color(255, 255, 255));
-        //vaccination.setBackground(new Color(255,255,255));
-        testing.setBackground(new Color(255, 255, 255));
+        survey.setBackground(new Color(255, 255, 255));
         bookAppointment.setBackground(new Color(255, 255, 255));
-
-        //BuilderResponseJPanel pcr = new BuilderResponseJPanel(container, system, userAcc);
         BuilderResponseJPanel pcr = new BuilderResponseJPanel(rightSidePanel, system, userAcc);
         rightSidePanel.add(pcr);
         CardLayout layout = (CardLayout) rightSidePanel.getLayout();
